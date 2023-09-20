@@ -1,6 +1,6 @@
 #include <SoftwareSerial.h>
 
-SoftwareSerial EEBlue(10, 11); // RX | TX
+SoftwareSerial EEBlue(10, 9); // RX | TX
 
 void setup()
 
