@@ -38,7 +38,7 @@ STD_ReturnType UART_u8SendByte( u8 , u8 );
 /* Input Parameters: UART Peripheral ID								*/
 /* Return value: Data byte											*/
 /* To ensure data integrity availability check must be performed	*/
-STD_ReturnType UART_u8SendByte( u8 );
+STD_ReturnType UART_u8ReceiveByte( u8 );
 
 /* Set callback function for the UART receive by interrupt			*/
 /* Input Parameters: UART Peripheral ID								*/
