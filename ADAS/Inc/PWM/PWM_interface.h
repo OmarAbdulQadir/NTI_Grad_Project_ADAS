@@ -1,9 +1,7 @@
-/*
- * PWM_interface.h
- *
- *  Created on: Sep 20, 2023
- *      Author: Omar A.Qadir
- */
+/**********************************************************************************/
+/***						Date: 20/9/2023	Day: Wednesday						***/
+/***    PWM driver for STM32F401 a graduation project for thE NTI 	program	    ***/
+/**********************************************************************************/
 
 #ifndef PWM_INTERFACE_H_
 #define PWM_INTERFACE_H_

@@ -1,3 +1,8 @@
+/**********************************************************************************/
+/***						Date: 20/9/2023	Day: Wednesday						***/
+/***    RCC driver for STM32F401 a graduation project for thE NTI 	program	    ***/
+/**********************************************************************************/
+
 #ifndef RCC_CONFIG_H_
 #define RCC_CONFIG_H_
 

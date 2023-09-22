@@ -1,8 +1,6 @@
-/*
- * NVIC_program.c
- *
- *  Created on: Sep 20, 2023
- *      Author: Omar A.Qadir
- */
+/**********************************************************************************/
+/***						Date: 20/9/2023	Day: Wednesday						***/
+/***    NVIC driver for STM32F401 a graduation project for thE NTI 	program	    ***/
+/**********************************************************************************/
 
 
