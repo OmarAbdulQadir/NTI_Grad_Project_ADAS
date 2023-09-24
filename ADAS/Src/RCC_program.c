@@ -5,14 +5,14 @@
 
 
 /************** INCLUDE LIB **************/
-		 #include "../Inc/STD_TYPES.h"
-		 #include "../Inc/BIT_MATH.h"
+		 #include "../Inc/LIB/STD_TYPES.h"
+		 #include "../Inc/LIB/BIT_MATH.h"
 /*****************************************/	 
 
 /************** INCLUDE MCAL**************/
-		#include "../Inc/RCC_private.h"
-		#include "../Inc/RCC_interface.h"
-		#include "../Inc/RCC_config.h"
+		#include "../Inc/RCC/RCC_private.h"
+		#include "../Inc/RCC/RCC_interface.h"
+		#include "../Inc/RCC/RCC_config.h"
 /*****************************************/
 
 /************** INCLUDE HALL**************/

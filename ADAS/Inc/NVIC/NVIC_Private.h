@@ -6,6 +6,8 @@
 #ifndef NVIC_PRIVATE_H_
 #define NVIC_PRIVATE_H_
 
+#include "../Inc/NVIC/NVIC_interface.h"
+#include "../Inc/NVIC/NVIC_config.h"
 
 
 #endif /* NVIC_PRIVATE_H_ */

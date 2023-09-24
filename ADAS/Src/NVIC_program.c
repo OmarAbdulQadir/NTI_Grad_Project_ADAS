@@ -5,8 +5,6 @@
 
 /*							Private includes									  */
 #include "../Inc/NVIC/NVIC_private.h"
-#include "../Inc/NVIC/NVIC_config.h"
-#include "../Inc/NVIC/NVIC_interface.h"
 
 /*--------------------------------------------------------------------------------*/
 /*							Global variables									  */

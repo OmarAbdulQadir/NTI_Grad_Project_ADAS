@@ -8,20 +8,15 @@
 /**********************************************************************************
  *******************	 	   Standard libraries section			***************
  **********************************************************************************/ 
-#include "../Inc/STD_TYPES.h"
-#include "../Inc/BIT_MATH.h"
-
-/**********************************************************************************
- *******************		 	MCAL libraries section				***************
- **********************************************************************************/
-#include "../Inc/RCC_interface.h"
+#include "../Inc/LIB/STD_TYPES.h"
+#include "../Inc/LIB/BIT_MATH.h"
 
 /**********************************************************************************
  *******************		 	Private headers section				***************
  **********************************************************************************/
-#include "../Inc/GPIO_config.h"
-#include "../Inc/GPIO_private.h"
-#include "../Inc/GPIO_interface.h"
+#include "../Inc/GPIO/GPIO_config.h"
+#include "../Inc/GPIO/GPIO_private.h"
+#include "../Inc/GPIO/GPIO_interface.h"
 
 
 /**********************************************************************************
@@ -42,8 +37,6 @@ volatile GPIO_t* GPIO_bases[GPIO_bases_max] = {GPIOA_BASE_ADDRESS,
 void GPIO_voidSysInit(void ){
 
 	#if		GPIOA_CONFIG_EN == GPIO_ENABLE
-
-		RCC_voidEnableClock(AHB1_BUS, RCC_GPIOAEN_bit);
 		GPIO_bases[GPIOA_PORT] -> MODER = GPIOA_CONFIG_MODER;
 		GPIO_bases[GPIOA_PORT] -> OTYPER = GPIOA_CONFIG_OTYPER;
 		GPIO_bases[GPIOA_PORT] -> OSPEEDR = GPIOA_CONFIG_OSPEEDR;
@@ -56,8 +49,6 @@ void GPIO_voidSysInit(void ){
 	#endif
 
 	#if		GPIOB_CONFIG_EN == GPIO_ENABLE
-
-		RCC_voidEnableClock(AHB1_BUS, RCC_GPIOBEN_bit);
 		GPIO_bases[GPIOB_PORT] -> MODER = GPIOB_CONFIG_MODER;
 		GPIO_bases[GPIOB_PORT] -> OTYPER = GPIOB_CONFIG_OTYPER;
 		GPIO_bases[GPIOB_PORT] -> OSPEEDR = GPIOB_CONFIG_OSPEEDR;
@@ -70,8 +61,6 @@ void GPIO_voidSysInit(void ){
 	#endif
 
 	#if		GPIOC_CONFIG_EN == GPIO_ENABLE
-
-		RCC_voidEnableClock(AHB1_BUS, RCC_GPIOCEN_bit);
 		GPIO_bases[GPIOC_PORT] -> MODER = GPIOC_CONFIG_MODER;
 		GPIO_bases[GPIOC_PORT] -> OTYPER = GPIOC_CONFIG_OTYPER;
 		GPIO_bases[GPIOC_PORT] -> OSPEEDR = GPIOC_CONFIG_OSPEEDR;
@@ -84,8 +73,6 @@ void GPIO_voidSysInit(void ){
 	#endif
 
 	#if		GPIOD_CONFIG_EN == GPIO_ENABLE
-
-		RCC_voidEnableClock(AHB1_BUS, RCC_GPIODEN_bit);
 		GPIO_bases[GPIOD_PORT] -> MODER = GPIOD_CONFIG_MODER;
 		GPIO_bases[GPIOD_PORT] -> OTYPER = GPIOD_CONFIG_OTYPER;
 		GPIO_bases[GPIOD_PORT] -> OSPEEDR = GPIOD_CONFIG_OSPEEDR;
@@ -98,8 +85,6 @@ void GPIO_voidSysInit(void ){
 	#endif
 
 	#if		GPIOE_CONFIG_EN == GPIO_ENABLE
-
-		RCC_voidEnableClock(AHB1_BUS, RCC_GPIOEEN_bit);
 		GPIO_bases[GPIOE_PORT] -> MODER = GPIOE_CONFIG_MODER;
 		GPIO_bases[GPIOE_PORT] -> OTYPER = GPIOE_CONFIG_OTYPER;
 		GPIO_bases[GPIOE_PORT] -> OSPEEDR = GPIOE_CONFIG_OSPEEDR;
@@ -112,7 +97,6 @@ void GPIO_voidSysInit(void ){
 	#endif
 
 	#if		GPIOH_CONFIG_EN == GPIO_ENABLE
-
 		RCC_voidEnableClock(AHB1_BUS, RCC_GPIOHEN_bit);
 		GPIO_bases[GPIOH_PORT] -> MODER = GPIOH_CONFIG_MODER;
 		GPIO_bases[GPIOH_PORT] -> OTYPER = GPIOH_CONFIG_OTYPER;

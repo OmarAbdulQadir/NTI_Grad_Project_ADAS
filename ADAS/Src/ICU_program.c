@@ -4,9 +4,9 @@
 /**********************************************************************************/
 
 /*							Private includes									  */
-#include "../Inc/ICU_private.h"
-#include "../Inc/ICU_config.h"
-#include "../Inc/ICU_interface.h"
+#include "../Inc/ICU/ICU_private.h"
+#include "../Inc/ICU/ICU_config.h"
+#include "../Inc/ICU/ICU_interface.h"
 
 /*--------------------------------------------------------------------------------*/
 /*							Global variables									  */
