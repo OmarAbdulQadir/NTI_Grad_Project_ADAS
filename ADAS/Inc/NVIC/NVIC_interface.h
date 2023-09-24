@@ -7,8 +7,8 @@
 #define NVIC_INTERFACE_H_
 
 // Libraries includes
-#include "../Inc/STD_TYPES.h"
-#include "../Inc/BIT_MATH.h"
+#include "../Inc/LIB/STD_TYPES.h"
+#include "../Inc/LIB/BIT_MATH.h"
 
 /* Enables the IRQx interrupt										*/
 /* Input Parameters: IRQx ID										*/

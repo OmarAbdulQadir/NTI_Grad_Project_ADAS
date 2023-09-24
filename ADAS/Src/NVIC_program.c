@@ -4,9 +4,9 @@
 /**********************************************************************************/
 
 /*							Private includes									  */
-#include "../Inc/UART_private.h"
-#include "../Inc/UART_config.h"
-#include "../Inc/UART_interface.h"
+#include "../Inc/NVIC/NVIC_private.h"
+#include "../Inc/NVIC/NVIC_config.h"
+#include "../Inc/NVIC/NVIC_interface.h"
 
 /*--------------------------------------------------------------------------------*/
 /*							Global variables									  */
