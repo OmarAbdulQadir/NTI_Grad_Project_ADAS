@@ -7,8 +7,8 @@
 #define UART_INTERFACE_H_
 
 // Libraries includes
-#include "../Inc/STD_TYPES.h"
-#include "../Inc/BIT_MATH.h"
+#include "../Inc/LIB/STD_TYPES.h"
+#include "../Inc/LIB/BIT_MATH.h"
 
 /* Configure UART Peripheral using pre-build configurations			*/
 /* Input Parameters: UART Peripheral ID								*/
@@ -32,13 +32,12 @@ STD_ReturnType UART_u8SendByte( u8 , u8 );
 
 /* Get Data byte from the receive buffer of the UART peripheral		*/
 /* Input Parameters: UART Peripheral ID								*/
-/* Return value: Data byte											*/
-/* To ensure data integrity availability check must be performed	*/
-STD_ReturnType UART_u8ReceiveByte( u8 );
+/* Return value: STD_TRUE -> Success, STD_FALSE -> Collision action	*/
+STD_ReturnType UART_u8ReceiveByte( u8 , u8* );
 
 /* Set callback function for the UART receive by interrupt			*/
 /* Input Parameters: UART Peripheral ID								*/
 /* Return value: STD_TRUE -> Success, STD_FALSE -> Failed			*/
-STD_ReturnType UART_u8SetRxCallback( u8 , ( ( void ) ( *ptr_UARTcallback ) ( u8 ) ) );
+STD_ReturnType UART_u8SetRxCallback( u8 ,  void ( *ptr_UARTcallback ) ( u8 ) );
 
 #endif /* UART_INTERFACE_H_ */

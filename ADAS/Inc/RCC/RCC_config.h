@@ -105,7 +105,7 @@
 #define		RCC_GPIOAEN			1
 
 // GPIOB clock enable
-#define		RCC_GPIOBEN			0
+#define		RCC_GPIOBEN			1
 
 // GPIOC clock enable
 #define		RCC_GPIOCEN			0
@@ -171,7 +171,7 @@
 #define		RCC_WWDGEN			0
 
 // TIM2 clock enable
-#define		RCC_TIM2EN			0
+#define		RCC_TIM2EN			1
 
 // TIM3 clock enable
 #define		RCC_TIM3EN			0
@@ -180,7 +180,7 @@
 #define		RCC_TIM4EN			0
 
 // TIM5 clock enable
-#define		RCC_TIM5EN			0
+#define		RCC_TIM5EN			1
 
 // RCC_APB1LPENR Reg init value
 #define		RCC_APB1LPENR_init	(										\

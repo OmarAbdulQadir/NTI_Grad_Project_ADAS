@@ -6,6 +6,9 @@
 #ifndef PWM_INTERFACE_H_
 #define PWM_INTERFACE_H_
 
-
+// Dummy definition till there actual timer ID definition
+#define TIM1		0
+// Dummy definition till there actual channel ID definition
+#define CH1			0
 
 #endif /* PWM_INTERFACE_H_ */

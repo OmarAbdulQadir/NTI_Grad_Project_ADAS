@@ -41,7 +41,7 @@ STD_ReturnType UART_u8IfTxAvailable( u8 copy_u8UART_ID )
 /* Return value: STD_TRUE -> Available, STD_FALSE -> Not available	*/
 STD_ReturnType UART_u8IfRxAvailable( u8 copy_u8UART_ID )
 {
-
+	return 0;
 }
 
 
@@ -58,20 +58,18 @@ STD_ReturnType UART_u8SendByte( u8 copy_u8UART_ID , u8 copy_u8DataByte )
 
 /*--------------------------------------------------------------------------------*/
 /* Get Data byte from the receive buffer of the UART peripheral		*/
-/* Input Parameters: UART Peripheral ID								*/
-/* Return value: Data byte											*/
-/* To ensure data integrity availability check must be performed	*/
-STD_ReturnType UART_u8SendByte( u8 copy_u8UART_ID )
+/* Input Parameters: UART Peripheral ID, Ptr to Rx data variable	*/
+/* Return value: STD_TRUE -> Success, STD_FALSE -> Collision action	*/
+STD_ReturnType UART_u8ReceiveByte( u8 copy_u8UART_ID , u8* ptr_u8DataByte  )
 {
 	return 0;
 }
-
 
 /*--------------------------------------------------------------------------------*/
 /* Set callback function for the UART receive by interrupt			*/
 /* Input Parameters: UART Peripheral ID								*/
 /* Return value: STD_TRUE -> Success, STD_FALSE -> Failed			*/
-STD_ReturnType UART_u8SetRxCallback( u8 copy_u8UART_ID , ( ( void ) ( *ptr_UARTcallback ) ( u8 ) ) )
+STD_ReturnType UART_u8SetRxCallback( u8 copy_u8UART_ID , void ( *ptr_UARTcallback ) ( u8 ) )
 {
 	return 0;
 }

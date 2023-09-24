@@ -1,0 +1,4 @@
+../Src/MDC_program.c:20:16:MDC_u8Init	16	static
+../Src/MDC_program.c:29:16:MDC_u8StartCW	16	static
+../Src/MDC_program.c:38:16:MDC_u8startCCW	16	static
+../Src/MDC_program.c:47:16:MDC_u8Stop	16	static

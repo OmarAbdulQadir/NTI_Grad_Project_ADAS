@@ -5,11 +5,10 @@
 
 /*							Private includes									  */
 #include "../Inc/ICU/ICU_private.h"
-#include "../Inc/ICU/ICU_config.h"
-#include "../Inc/ICU/ICU_interface.h"
 
 /*--------------------------------------------------------------------------------*/
 /*							Global variables									  */
+static u8 ICU_Init = 0;
 
 /*--------------------------------------------------------------------------------*/
 /*					Global functions implementation								  */
@@ -19,17 +18,37 @@
 /* Return value: STD_TRUE -> Success, STD_FALSE -> Failed			*/
 STD_ReturnType ICU_u8Init( u8 copy_u8TIM_ID )
 {
-	return 0;
-}
-
-
-/*--------------------------------------------------------------------------------*/
-/* Set the event to be captured										*/
-/* Input Parameters: TIMER Peripheral ID, Input channel ID, Trigger	*/
-/* Return value: STD_TRUE -> Success, STD_FALSE -> Failed			*/
-STD_ReturnType ICU_u8SetTrigger(  u8 copy_u8TIM_ID , u8 copy_u8CH_ID, u8 copy_u8Trigger )
-{
-	return 0;
+	// Check data validity
+	if ( ( ( copy_u8TIM_ID == TIMER2ID ) || ( copy_u8TIM_ID == TIMER5ID ) ) && ( ( ICU_Init == TIM_NOT_Init ) || ( ICU_Init == TIM2_Init ) || ( ICU_Init == TIM5_Init) ) )
+	{
+		switch(copy_u8TIM_ID)
+		{
+		case TIMER2ID:
+			TIM2_CR1_ADR = TIM_CR1_CONFIG;
+			TIM2_CCMR1_ADR = TIM_CCMR1_CONFIG;
+			TIM2_CCMR2_ADR = TIM_CCMR2_CONFIG;
+			TIM2_CCER_ADR = TIM_CCER_CONFIG;
+			TIM2_PSR_ADR = TIM_PSR_CONFIG;
+			ICU_Init |= TIM2_Init;
+			break;
+		case TIMER5ID:
+			TIM5_CR1_ADR = TIM_CR1_CONFIG;
+			TIM5_CCMR1_ADR = TIM_CCMR1_CONFIG;
+			TIM5_CCMR2_ADR = TIM_CCMR2_CONFIG;
+			TIM5_CCER_ADR = TIM_CCER_CONFIG;
+			TIM5_PSR_ADR = TIM_PSR_CONFIG;
+			ICU_Init |= TIM5_Init;
+			break;
+		default:
+			return STD_FALSE;
+			break;
+		}
+		return STD_TRUE;
+	}
+	else
+	{
+		return STD_FALSE;
+	}
 }
 
 
@@ -57,7 +76,7 @@ STD_ReturnType ICU_u8Stop( u8 copy_u8TIM_ID ,  u8 copy_u8CH_ID )
 /* Set callback function to be excuted when event is captured		*/
 /* Input Parameters: TIMER Peripheral ID, ptr to callback function	*/
 /* Return value: STD_TRUE -> Success, STD_FALSE -> Failed			*/
-STD_ReturnType ICU_u8SetCallback( u8 copy_u8TIM_ID ,  u8 copy_u8CH_ID , ( ( void ) ( *ptr_ICUcallback ) ( u32 ) ) )
+STD_ReturnType ICU_u8SetCallback( u8 copy_u8TIM_ID ,  u8 copy_u8CH_ID ,  void  ( *ptr_ICUcallback ) ( u32 )  )
 {
 	return 0;
 }

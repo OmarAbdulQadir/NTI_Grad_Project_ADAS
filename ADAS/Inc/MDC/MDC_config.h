@@ -11,6 +11,7 @@
 
 #include "../GPIO/GPIO_interface.h"
 #include "../PWM/PWM_interface.h"
+#include "MDC_private.h"
 
 
 // Number of channels
