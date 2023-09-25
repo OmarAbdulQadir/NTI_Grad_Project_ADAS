@@ -10,13 +10,16 @@
 #include "../Inc/LIB/STD_TYPES.h"
 #include "../Inc/LIB/BIT_MATH.h"
 
-#define		TIMER2ID			TIM2PRIV_ID
-#define 	TIMER5ID			TIM5PRIV_ID
+// Timers ID
+#define		TIMER2ID			0
+#define 	TIMER5ID			1
+#define		TIMER10ID			2
 
-#define		CH1ID				CH1PRIV_ID
-#define		CH2ID				CH2PRIV_ID
-#define		CH3ID				CH3PRIV_ID
-#define		CH4ID				CH4PRIV_ID
+// Channels ID
+#define		CH1ID				0
+#define		CH2ID				1
+#define		CH3ID				2
+#define		CH4ID				3
 
 /* Configure TIMER Peripheral using pre-build configurations		*/
 /* Input Parameters: TIMER Peripheral ID							*/

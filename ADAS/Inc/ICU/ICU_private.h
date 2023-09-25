@@ -44,16 +44,6 @@
 #define TIMx_CH3EN							8
 #define TIMx_CH4EN							12
 
-// Timers ID
-#define TIM2PRIV_ID							0
-#define TIM5PRIV_ID							1
-
-// Channel ID
-#define CH1PRIV_ID							0
-#define CH2PRIV_ID							1
-#define CH3PRIV_ID							2
-#define CH4PRIV_ID							3
-
 // Timers initiation value
 #define TIM2_Init							0x0F
 #define TIM5_Init							0xF0

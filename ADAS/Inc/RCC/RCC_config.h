@@ -174,10 +174,10 @@
 #define		RCC_TIM2EN			1
 
 // TIM3 clock enable
-#define		RCC_TIM3EN			0
+#define		RCC_TIM3EN			1
 
 // TIM4 clock enable
-#define		RCC_TIM4EN			0
+#define		RCC_TIM4EN			1
 
 // TIM5 clock enable
 #define		RCC_TIM5EN			1
@@ -205,7 +205,7 @@
 #define		RCC_TIM9EN			0
 
 // TIM10 clock enable
-#define		RCC_TIM10EN			0
+#define		RCC_TIM10EN			1
 
 // TIM11 clock enable
 #define		RCC_TIM11EN			0
