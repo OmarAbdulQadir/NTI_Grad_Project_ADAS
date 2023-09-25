@@ -24,19 +24,36 @@
 STD_ReturnType ICU_u8Init( u8 );
 
 
-/* Start counting with according to the configured event			*/
+/* Enables the timer and start event detection						*/
+/* Input Parameters: TIMER Peripheral ID							*/
+/* Return value: STD_TRUE -> Success, STD_FALSE -> Failed			*/
+STD_ReturnType ICU_u8StartTim( u8 );
+
+/* Enables a certain channel										*/
 /* Input Parameters: TIMER Peripheral ID, Input channel ID			*/
 /* Return value: STD_TRUE -> Success, STD_FALSE -> Failed			*/
-STD_ReturnType ICU_u8Start(  u8 , u8 );
+STD_ReturnType ICU_u8StartCh(  u8 , u8 );
 
 
-/* Stop ICU detection and counting									*/
+/* Disable certain channel											*/
 /* Input Parameters: TIMER Peripheral ID, Input channel ID			*/
 /* Return value: STD_TRUE -> Success, STD_FALSE -> Failed			*/
-STD_ReturnType ICU_u8Stop( u8 ,  u8 );
+STD_ReturnType ICU_u8StopCh( u8 ,  u8 );
 
 
-/* Set callback function to be excuted when event is captured		*/
+/* Disable the timer and stop counting								*/
+/* Input Parameters: TIMER Peripheral ID							*/
+/* Return value: STD_TRUE -> Success, STD_FALSE -> Failed			*/
+STD_ReturnType ICU_u8StopTim( u8 );
+
+
+/* Return the saved count of timer for last detected event			*/
+/* Input Parameters: TIMER Peripheral ID, Ch ID, Ptr to variable	*/
+/* Return value: STD_TRUE -> Success, STD_FALSE -> Failed			*/
+STD_ReturnType ICU_u8GetCh( u8 , u8 , u32* );
+
+
+/* Set callback function to be executed when event is captured		*/
 /* Input Parameters: TIMER Peripheral ID, ptr to callback function	*/
 /* Return value: STD_TRUE -> Success, STD_FALSE -> Failed			*/
 STD_ReturnType ICU_u8SetCallback( u8 ,  u8 , void ( *ptr_ICUcallback ) ( u32 )  );

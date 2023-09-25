@@ -95,13 +95,17 @@ Discarded input sections
  .data          0x0000000000000000        0x0 ./Src/ICU_program.o
  .bss           0x0000000000000000        0x0 ./Src/ICU_program.o
  .text.ICU_u8Init
-                0x0000000000000000       0x6c ./Src/ICU_program.o
- .text.ICU_u8SetTrigger
-                0x0000000000000000        0x4 ./Src/ICU_program.o
- .text.ICU_u8Start
-                0x0000000000000000        0x4 ./Src/ICU_program.o
- .text.ICU_u8Stop
-                0x0000000000000000        0x4 ./Src/ICU_program.o
+                0x0000000000000000       0x78 ./Src/ICU_program.o
+ .text.ICU_u8StartTim
+                0x0000000000000000       0x3c ./Src/ICU_program.o
+ .text.ICU_u8StartCh
+                0x0000000000000000       0x98 ./Src/ICU_program.o
+ .text.ICU_u8StopCh
+                0x0000000000000000       0x98 ./Src/ICU_program.o
+ .text.ICU_u8StopTim
+                0x0000000000000000       0x3c ./Src/ICU_program.o
+ .text.ICU_u8GetCh
+                0x0000000000000000       0x80 ./Src/ICU_program.o
  .text.ICU_u8SetCallback
                 0x0000000000000000        0x4 ./Src/ICU_program.o
  .bss.ICU_Init  0x0000000000000000        0x1 ./Src/ICU_program.o

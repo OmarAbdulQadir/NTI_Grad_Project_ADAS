@@ -1,5 +1,7 @@
-../Src/ICU_program.c:19:16:ICU_u8Init	6
-../Src/ICU_program.c:59:16:ICU_u8SetTrigger	1
-../Src/ICU_program.c:69:16:ICU_u8Start	1
-../Src/ICU_program.c:79:16:ICU_u8Stop	1
-../Src/ICU_program.c:89:16:ICU_u8SetCallback	1
+../Src/ICU_program.c:19:16:ICU_u8Init	7
+../Src/ICU_program.c:69:16:ICU_u8StartTim	5
+../Src/ICU_program.c:106:16:ICU_u8StartCh	13
+../Src/ICU_program.c:199:16:ICU_u8StopCh	13
+../Src/ICU_program.c:292:16:ICU_u8StopTim	5
+../Src/ICU_program.c:329:16:ICU_u8GetCh	13
+../Src/ICU_program.c:421:16:ICU_u8SetCallback	1
