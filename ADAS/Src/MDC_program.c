@@ -15,10 +15,9 @@ static u8 Channel_Flag=0;
 STD_ReturnType MDC_u8Init(u8 copy_u8MDC_ID) {
     // Check if the specified motor channel is valid
 
-    if(get_bit(Channel_Flag,copy_u8MDC_ID) != 1)
+    if(get_bit(Channel_Flag,copy_u8MDC_ID) != 1 && copy_u8MDC_ID < NUM_MOTOR_CHANNELS)
     {
     	set_bit(Channel_Flag,copy_u8MDC_ID);
-        if (copy_u8MDC_ID < NUM_MOTOR_CHANNELS) {
         // Initialize GPIO pins for the motor channel
         GPIO_u8SetPinMode(MDC_MotorChannels[copy_u8MDC_ID].MDC_IN1_PORTID, MDC_MotorChannels[copy_u8MDC_ID].MDC_IN1_PINID, GPIO_MODE_OUTPUT);
         GPIO_u8SetPinMode(MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PORTID, MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PINID, GPIO_MODE_OUTPUT);
@@ -28,14 +27,10 @@ STD_ReturnType MDC_u8Init(u8 copy_u8MDC_ID) {
 
         // Return success status
         return E_OK;
-        } else {
-        // Invalid motor channel ID
-        return E_NOT_OK;
-        }
     }
     else
     {
-        /*Do Nothing*/
+       return E_NOT_OK;
     }
 
 }
@@ -43,7 +38,7 @@ STD_ReturnType MDC_u8Init(u8 copy_u8MDC_ID) {
 /* Start motor in clockwise direction with specific speed */
 STD_ReturnType MDC_u8StartCW(u8 copy_u8MDC_ID, u8 copy_u8MotorSpeed) {
     // Check if the specified motor channel is valid
-    if (copy_u8MDC_ID < NUM_MOTOR_CHANNELS) {
+    if (get_bit(Channel_Flag,copy_u8MDC_ID) != 1 && copy_u8MDC_ID < NUM_MOTOR_CHANNELS) {
         // Set motor direction (clockwise)
         GPIO_u8WriteData(MDC_MotorChannels[copy_u8MDC_ID].MDC_IN1_PORTID, MDC_MotorChannels[copy_u8MDC_ID].MDC_IN1_PINID, HIGH);
         GPIO_u8WriteData(MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PORTID, MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PINID, LOW);
@@ -67,7 +62,7 @@ STD_ReturnType MDC_u8StartCCW(u8 copy_u8MDC_ID, u8 copy_u8MotorSpeed) {
 
     u16 Duty_Cycle=0;
     // Check if the specified motor channel is valid
-    if (copy_u8MDC_ID < NUM_MOTOR_CHANNELS) {
+    if (get_bit(Channel_Flag,copy_u8MDC_ID) != 1 && copy_u8MDC_ID < NUM_MOTOR_CHANNELS) {
         // Set motor direction (counterclockwise)
         GPIO_u8WriteData(MDC_MotorChannels[copy_u8MDC_ID].MDC_IN1_PORTID, MDC_MotorChannels[copy_u8MDC_ID].MDC_IN1_PINID, LOW);
         GPIO_u8WriteData(MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PORTID, MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PINID, HIGH);
@@ -89,7 +84,7 @@ STD_ReturnType MDC_u8StartCCW(u8 copy_u8MDC_ID, u8 copy_u8MotorSpeed) {
 /* Stop motor */
 STD_ReturnType MDC_u8Stop(u8 copy_u8MDC_ID) {
     // Check if the specified motor channel is valid
-    if (copy_u8MDC_ID < NUM_MOTOR_CHANNELS) {
+    if (get_bit(Channel_Flag,copy_u8MDC_ID) != 1 && copy_u8MDC_ID < NUM_MOTOR_CHANNELS) {
         // Stop PWM to stop the motor
         PWM_u8Stop(MDC_MotorChannels[copy_u8MDC_ID].MDC_EN_TIMID);
 
