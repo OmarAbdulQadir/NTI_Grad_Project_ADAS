@@ -9,4 +9,6 @@
 #include "../LIB/BIT_MATH.h"
 #include "../LIB/STD_TYPES.h"
 
+void BSD_vMain( void );
+
 #endif /* BSD_INTERFACE_H_ */
