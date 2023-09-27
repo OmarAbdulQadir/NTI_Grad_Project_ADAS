@@ -168,19 +168,19 @@ Discarded input sections
  .data          0x0000000000000000        0x0 ./Src/NVIC_program.o
  .bss           0x0000000000000000        0x0 ./Src/NVIC_program.o
  .text.NVIC_u8EnableIRQ
-                0x0000000000000000        0x4 ./Src/NVIC_program.o
+                0x0000000000000000       0x60 ./Src/NVIC_program.o
  .text.NVIC_u8DisableIRQ
-                0x0000000000000000        0x4 ./Src/NVIC_program.o
+                0x0000000000000000       0x60 ./Src/NVIC_program.o
  .text.NVIC_u8SetPendingIRQ
-                0x0000000000000000        0x4 ./Src/NVIC_program.o
+                0x0000000000000000       0x60 ./Src/NVIC_program.o
  .text.NVIC_u8ClearPendingIRQ
-                0x0000000000000000        0x4 ./Src/NVIC_program.o
+                0x0000000000000000       0x4a ./Src/NVIC_program.o
  .text.NVIC_u8GetStateIRQ
                 0x0000000000000000        0x4 ./Src/NVIC_program.o
  .text.NVIC_u8SetPriority
-                0x0000000000000000        0x4 ./Src/NVIC_program.o
+                0x0000000000000000       0x34 ./Src/NVIC_program.o
  .text.NVIC_u8GetPriority
-                0x0000000000000000        0x4 ./Src/NVIC_program.o
+                0x0000000000000000       0x24 ./Src/NVIC_program.o
  .comment       0x0000000000000000       0x44 ./Src/NVIC_program.o
  .ARM.attributes
                 0x0000000000000000       0x34 ./Src/NVIC_program.o
