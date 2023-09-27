@@ -3,9 +3,10 @@
 /***    				Blind spot detection algorithm for ADAS Project		    ***/
 /**********************************************************************************/
 
-#ifndef BSD_PRIVATE_H_
-#define BSD_PRIVATE_H_
+#ifndef BSD_INTERFACE_H_
+#define BSD_INTERFACE_H_
 
+#include "../LIB/BIT_MATH.h"
+#include "../LIB/STD_TYPES.h"
 
-
-#endif /* BSD_PRIVATE_H_ */
+#endif /* BSD_INTERFACE_H_ */

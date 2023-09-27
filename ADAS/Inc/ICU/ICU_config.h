@@ -6,11 +6,16 @@
 #ifndef ICU_CONFIG_H_
 #define ICU_CONFIG_H_
 
-// Timer Registers configurations
-#define	TIM_CR1_CONFIG						(u32)(0x8)
-#define TIM_CCMR1_CONFIG					(u32)(0x1)
-#define TIM_CCMR2_CONFIG					(u32)(0x101)
-#define TIM_CCER_CONFIG						(u32)(0xAAAA)
-#define TIM_PSR_CONFIG						(u16)(0xF)
+// Timer 2/5 registers configurations
+#define TIM_CCMR1_CONFIG					(0x1111u)
+#define TIM_CCMR2_CONFIG					(0x1111u)
+#define TIM_CCER_CONFIG						(0xAAAAu)
+#define TIM_PSR_CONFIG						(0x7Cu)
+
+// Timer 10 register configurations
+#define TIM10_EGR_CONFIG					(0x1u)
+#define TIM10_CCMR1_CONFIG					(0x11u)
+#define TIM10_CCER_CONFIG					(0xAu)
+#define TIM10_PSR_CONFIG					(0x7Cu)
 
 #endif /* ICU_CONFIG_H_ */

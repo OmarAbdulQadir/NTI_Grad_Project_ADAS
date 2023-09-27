@@ -26,8 +26,8 @@ typedef struct{
 	volatile u32 ODR;
 	volatile u32 BSRR;
 	volatile u32 LCKR;
-	volatile u64 AFR;
-
+	volatile u32 AFRL;
+	volatile u32 AFRH;
 }GPIO_t;
 
 

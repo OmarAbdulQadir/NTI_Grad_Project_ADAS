@@ -9,6 +9,9 @@
 	- First You Must Know The Peripheral On Which Bus
 */
 
+#include "../Inc/LIB/STD_TYPES.h"
+#include "../Inc/LIB/BIT_MATH.h"
+
 /*
 -Function To Set System CLK From preconfigurations Send :
 												* ClkSrcName_t 		: RCC_HSE  RCC_HSI	RCC_PLL

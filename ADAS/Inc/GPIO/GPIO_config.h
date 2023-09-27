@@ -15,21 +15,22 @@
 /**********************************************************************************
  *******************		 		GPIOA configurations			***************
  **********************************************************************************/
-#define	GPIOA_CONFIG_EN				GPIO_ENABLE
-#define	GPIOA_CONFIG_MODER			0x2
+#define	GPIOA_CONFIG_EN				GPIO_DISABLE
+#define	GPIOA_CONFIG_MODER			0x02
 #define GPIOA_CONFIG_OTYPER			0x0
 #define GPIOA_CONFIG_OSPEEDR		0x0
 #define GPIOA_CONFIG_PUPDR			0x0
 #define GPIOA_CONFIG_ODR			0x0
 #define GPIOA_CONFIG_BSRR			0x0
 #define GPIOA_CONFIG_LCKR			0x0
-#define GPIOA_CONFIG_AFR			0x02
+#define GPIOA_CONFIG_AFRL			0x02
+#define GPIOA_CONFIG_AFRH			0x00
 
 /**********************************************************************************
  *******************		 		GPIOB configurations			***************
  **********************************************************************************/
 #define	GPIOB_CONFIG_EN				GPIO_DISABLE
-#define	GPIOB_CONFIG_MODER			0x0
+#define	GPIOB_CONFIG_MODER			0x02
 #define GPIOB_CONFIG_OTYPER			0x0
 #define GPIOB_CONFIG_OSPEEDR		0x0
 #define GPIOB_CONFIG_PUPDR			0x0
@@ -37,7 +38,8 @@
 #define GPIOB_CONFIG_ODR			0x0
 #define GPIOB_CONFIG_BSRR			0x0
 #define GPIOB_CONFIG_LCKR			0x0
-#define GPIOB_CONFIG_AFR			0x0
+#define GPIOB_CONFIG_AFRL			0x02
+#define GPIOB_CONFIG_AFRH			0x0
 
 /**********************************************************************************
  *******************		 		GPIOC configurations			***************
@@ -51,7 +53,8 @@
 #define GPIOC_CONFIG_ODR			0x0
 #define GPIOC_CONFIG_BSRR			0x0
 #define GPIOC_CONFIG_LCKR			0x0
-#define GPIOC_CONFIG_AFR			0x0
+#define GPIOC_CONFIG_AFRL			0x0
+#define GPIOC_CONFIG_AFRH			0x0
 
 /**********************************************************************************
  *******************		 		GPIOD configurations			***************
@@ -65,7 +68,9 @@
 #define GPIOD_CONFIG_ODR			0x0
 #define GPIOD_CONFIG_BSRR			0x0
 #define GPIOD_CONFIG_LCKR			0x0
-#define GPIOD_CONFIG_AFR			0x0
+#define GPIOD_CONFIG_AFRL			0x0
+#define GPIOD_CONFIG_AFRH			0x0
+
 
 /**********************************************************************************
  *******************		 		GPIOE configurations			***************
@@ -79,7 +84,8 @@
 #define GPIOE_CONFIG_ODR			0x0
 #define GPIOE_CONFIG_BSRR			0x0
 #define GPIOE_CONFIG_LCKR			0x0
-#define GPIOE_CONFIG_AFR			0x0
+#define GPIOD_CONFIG_AFRL			0x0
+#define GPIOD_CONFIG_AFRH			0x0
 
 /**********************************************************************************
  *******************		 		GPIOH configurations			***************
@@ -93,7 +99,8 @@
 #define GPIOH_CONFIG_ODR			0x0
 #define GPIOH_CONFIG_BSRR			0x0
 #define GPIOH_CONFIG_LCKR			0x0
-#define GPIOH_CONFIG_AFR			0x0
+#define GPIOH_CONFIG_AFRL			0x0
+#define GPIOH_CONFIG_AFRH			0x0
 
 
 

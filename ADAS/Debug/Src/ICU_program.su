@@ -1,5 +1,7 @@
-../Src/ICU_program.c:18:16:ICU_u8Init	16	static
-../Src/ICU_program.c:28:16:ICU_u8SetTrigger	16	static
-../Src/ICU_program.c:38:16:ICU_u8Start	16	static
-../Src/ICU_program.c:48:16:ICU_u8Stop	16	static
-../Src/ICU_program.c:58:16:ICU_u8SetCallback	16	static
+../Src/ICU_program.c:19:16:ICU_u8Init	16	static
+../Src/ICU_program.c:69:16:ICU_u8StartTim	16	static
+../Src/ICU_program.c:106:16:ICU_u8StartCh	16	static
+../Src/ICU_program.c:199:16:ICU_u8StopCh	16	static
+../Src/ICU_program.c:292:16:ICU_u8StopTim	16	static
+../Src/ICU_program.c:329:16:ICU_u8GetCh	16	static
+../Src/ICU_program.c:421:16:ICU_u8SetCallback	16	static

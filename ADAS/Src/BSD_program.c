@@ -4,7 +4,7 @@
 /**********************************************************************************/
 
 /*							Private includes									  */
-#include "../Inc/BDS/BSD_private.h
+#include "../Inc/BSD/BSD_private.h"
 #include "../Inc/BSD/BSD_interface.h"
 
 /*--------------------------------------------------------------------------------*/
@@ -15,7 +15,7 @@
 /*					Global functions implementation								  */
 STD_ReturnType BSD_u8Init( void )
 {
-	
+	return 0;
 }
 
 void BSD_vMain( void )

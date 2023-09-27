@@ -1,6 +1,8 @@
+"./Src/BSD_program.o"
 "./Src/EXTI_program.o"
 "./Src/GPIO_program.o"
 "./Src/ICU_program.o"
+"./Src/LCD_program.o"
 "./Src/LED_program.o"
 "./Src/MDC_config.o"
 "./Src/MDC_program.o"

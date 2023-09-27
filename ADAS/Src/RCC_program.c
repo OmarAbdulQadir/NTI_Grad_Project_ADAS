@@ -4,11 +4,6 @@
 /**********************************************************************************/
 
 
-/************** INCLUDE LIB **************/
-		 #include "../Inc/LIB/STD_TYPES.h"
-		 #include "../Inc/LIB/BIT_MATH.h"
-/*****************************************/	 
-
 /************** INCLUDE MCAL**************/
 		#include "../Inc/RCC/RCC_private.h"
 		#include "../Inc/RCC/RCC_interface.h"

@@ -1,7 +1,7 @@
 ../Src/ICU_program.c:19:16:ICU_u8Init	0	static
-../Src/ICU_program.c:69:16:ICU_u8StartTim	0	static
-../Src/ICU_program.c:106:16:ICU_u8StartCh	0	static
-../Src/ICU_program.c:199:16:ICU_u8StopCh	0	static
-../Src/ICU_program.c:292:16:ICU_u8StopTim	0	static
-../Src/ICU_program.c:329:16:ICU_u8GetCh	0	static
-../Src/ICU_program.c:421:16:ICU_u8SetCallback	0	static
+../Src/ICU_program.c:77:16:ICU_u8StartTim	0	static
+../Src/ICU_program.c:118:16:ICU_u8StartCh	0	static
+../Src/ICU_program.c:225:16:ICU_u8StopCh	0	static
+../Src/ICU_program.c:331:16:ICU_u8StopTim	0	static
+../Src/ICU_program.c:372:16:ICU_u8GetCh	0	static
+../Src/ICU_program.c:476:16:ICU_u8SetCallback	0	static

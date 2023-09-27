@@ -42,7 +42,8 @@ void GPIO_voidSysInit(void ){
 		GPIO_bases[GPIOA_PORT] -> ODR = GPIOA_CONFIG_ODR;
 		GPIO_bases[GPIOA_PORT] -> BSRR = GPIOA_CONFIG_BSRR;
 		GPIO_bases[GPIOA_PORT] -> LCKR = GPIOA_CONFIG_LCKR;
-		GPIO_bases[GPIOA_PORT] -> AFR = GPIOA_CONFIG_AFR;
+		GPIO_bases[GPIOA_PORT] -> AFRL = GPIOA_CONFIG_AFRL;
+		GPIO_bases[GPIOA_PORT] -> AFRH = GPIOA_CONFIG_AFRH;
 
 	#endif
 
@@ -54,7 +55,8 @@ void GPIO_voidSysInit(void ){
 		GPIO_bases[GPIOB_PORT] -> ODR = GPIOB_CONFIG_ODR;
 		GPIO_bases[GPIOB_PORT] -> BSRR = GPIOB_CONFIG_BSRR;
 		GPIO_bases[GPIOB_PORT] -> LCKR = GPIOB_CONFIG_LCKR;
-		GPIO_bases[GPIOB_PORT] -> AFR = GPIOB_CONFIG_AFR;
+		GPIO_bases[GPIOB_PORT] -> AFRL = GPIOA_CONFIG_AFRL;
+		GPIO_bases[GPIOB_PORT] -> AFRH = GPIOA_CONFIG_AFRH;
 
 	#endif
 
@@ -66,7 +68,8 @@ void GPIO_voidSysInit(void ){
 		GPIO_bases[GPIOC_PORT] -> ODR = GPIOC_CONFIG_ODR;
 		GPIO_bases[GPIOC_PORT] -> BSRR = GPIOC_CONFIG_BSRR;
 		GPIO_bases[GPIOC_PORT] -> LCKR = GPIOC_CONFIG_LCKR;
-		GPIO_bases[GPIOC_PORT] -> AFR = GPIOC_CONFIG_AFR;
+		GPIO_bases[GPIOC_PORT] -> AFRL = GPIOA_CONFIG_AFRL;
+		GPIO_bases[GPIOC_PORT] -> AFRH = GPIOA_CONFIG_AFRH;
 
 	#endif
 
@@ -78,7 +81,8 @@ void GPIO_voidSysInit(void ){
 		GPIO_bases[GPIOD_PORT] -> ODR = GPIOD_CONFIG_ODR;
 		GPIO_bases[GPIOD_PORT] -> BSRR = GPIOD_CONFIG_BSRR;
 		GPIO_bases[GPIOD_PORT] -> LCKR = GPIOD_CONFIG_LCKR;
-		GPIO_bases[GPIOD_PORT] -> AFR = GPIOD_CONFIG_AFR;
+		GPIO_bases[GPIOD_PORT] -> AFRL = GPIOA_CONFIG_AFRL;
+		GPIO_bases[GPIOD_PORT] -> AFRH = GPIOA_CONFIG_AFRH;
 
 	#endif
 
@@ -90,7 +94,8 @@ void GPIO_voidSysInit(void ){
 		GPIO_bases[GPIOE_PORT] -> ODR = GPIOE_CONFIG_ODR;
 		GPIO_bases[GPIOE_PORT] -> BSRR = GPIOE_CONFIG_BSRR;
 		GPIO_bases[GPIOE_PORT] -> LCKR = GPIOE_CONFIG_LCKR;
-		GPIO_bases[GPIOE_PORT] -> AFR = GPIOE_CONFIG_AFR;
+		GPIO_bases[GPIOE_PORT] -> AFRL = GPIOA_CONFIG_AFRL;
+		GPIO_bases[GPIOE_PORT] -> AFRH = GPIOA_CONFIG_AFRH;
 
 	#endif
 
@@ -103,7 +108,8 @@ void GPIO_voidSysInit(void ){
 		GPIO_bases[GPIOH_PORT] -> ODR = GPIOH_CONFIG_ODR;
 		GPIO_bases[GPIOH_PORT] -> BSRR = GPIOH_CONFIG_BSRR;
 		GPIO_bases[GPIOH_PORT] -> LCKR = GPIOH_CONFIG_LCKR;
-		GPIO_bases[GPIOH_PORT] -> AFR = GPIOH_CONFIG_AFR;
+		GPIO_bases[GPIOH_PORT] -> AFRL = GPIOA_CONFIG_AFRL;
+		GPIO_bases[GPIOH_PORT] -> AFRH = GPIOA_CONFIG_AFRH;
 
 	#endif
 
@@ -216,9 +222,7 @@ u8 GPIO_u8ReadData(u8 copy_u8PORT ,u8 copy_u8PIN)
 {
 	u8 u8Local_Data = 0 ;
 	 if((copy_u8PORT <= GPIOH_PORT) && (copy_u8PIN <= PIN15)){
-
-		 get_bit( ( GPIO_bases[copy_u8PORT] -> IDR ), copy_u8PIN );
-
+		 u8Local_Data = get_bit( ( GPIO_bases[copy_u8PORT] -> IDR ) , copy_u8PIN );
 	 }
 	 else{
 	 }
@@ -252,11 +256,18 @@ void GPIO_voidWriteData(u8 copy_u8PORT ,u8 copy_u8PIN , u8 copy_u8Value )
 			Function Set The AltFn		: Every Pin Need 4 Bits SO We Have High AND Low
 */
 void GPIO_voidPinSetAltFn(u8 copy_u8PORT, u8 copy_u8PIN, u8 copy_u8AlT)
-
 {
 	if((copy_u8PORT <= GPIOH_PORT) && (copy_u8PIN <= PIN15) && (copy_u8AlT <= GPIO_AFR_MAX)){
-		GPIO_bases[copy_u8PORT] -> AFR &= GPIO_AFR_MASK( copy_u8PIN * 4 );
-		GPIO_bases[copy_u8PORT] -> AFR |= ( ( ( u64 ) copy_u8AlT ) << copy_u8PIN * 4 );
+		if(copy_u8PIN <= PIN7)
+		{
+			GPIO_bases[copy_u8PORT] -> AFRL &= GPIO_AFR_MASK( copy_u8PIN * 4 );
+			GPIO_bases[copy_u8PORT] -> AFRL |= ( ( ( u32 ) copy_u8AlT ) << copy_u8PIN * 4 );
+		}
+		if(copy_u8PIN > PIN7)
+		{
+			GPIO_bases[copy_u8PORT] -> AFRH &= GPIO_AFR_MASK( copy_u8PIN * 4 );
+			GPIO_bases[copy_u8PORT] -> AFRH |= ( ( ( u32 ) copy_u8AlT ) << copy_u8PIN * 4 );
+		}
 	}
 }
 
