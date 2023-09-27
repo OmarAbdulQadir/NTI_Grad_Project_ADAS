@@ -3,8 +3,6 @@
 	.def	__main;	.scl	2;	.type	32;	.endef
 	.section .rdata,"dr"
 .LC0:
-	.ascii "org: %u\12\0"
-.LC1:
 	.ascii "test: %u\12\0"
 	.text
 	.globl	main
@@ -19,11 +17,8 @@ main:
 	.seh_stackalloc	32
 	.seh_endprologue
 	call	__main
-	movq	$-536812282, %rdx
+	movl	$126, %edx
 	leaq	.LC0(%rip), %rcx
-	call	printf
-	movq	$-536812282, %rdx
-	leaq	.LC1(%rip), %rcx
 	call	printf
 	movl	$0, %eax
 	addq	$32, %rsp

@@ -879,18 +879,15 @@ void __attribute__((__cdecl__)) __mingw_str_free(void *ptr);
 # 1 "D:/Engineering/Embedded/IMT_Dip/Embedded-Tools/MinGW/x86_64-w64-mingw32/include/_mingw_print_pop.h" 1 3
 # 1400 "D:/Engineering/Embedded/IMT_Dip/Embedded-Tools/MinGW/x86_64-w64-mingw32/include/stdio.h" 2 3
 # 2 "main.c" 2
+# 10 "main.c"
 
-
-
-
-
-
-
-# 8 "main.c"
+# 10 "main.c"
 int main(void){
 
-    printf("org: %u\n", (((volatile int*) (((int)(0xE000E100))+0x400+0x04+0x2))));
- printf("test: %u\n", (((volatile int*) (((int)(0xE000E100))+0x400+0x04+(0x02)))));
+
+
+
+ printf("test: %u\n", (char)(((int)3883850685 >> 16) & 0xFF));
 
     return 0;
 }

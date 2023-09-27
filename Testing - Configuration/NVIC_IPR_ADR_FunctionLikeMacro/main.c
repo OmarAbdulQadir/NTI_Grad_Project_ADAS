@@ -4,11 +4,15 @@
 #define NVIC_IPR2_ADR				(((volatile int*) (NVIC_BASE_ADR+0x400+0x04+0x2)))
 #define NVIC_IPRx_ADR(REG_ID)		(((volatile int*) (NVIC_BASE_ADR+0x400+0x04+(REG_ID))))
 
+#define NVIC_IPRx_GETMASK(Value, ST_LOC)	(char)(((int)Value >> ST_LOC) & 0xFF)
+
 
 int main(void){
 
-    printf("org: %u\n", NVIC_IPR2_ADR);
-	printf("test: %u\n", NVIC_IPRx_ADR(0x02));
+    //printf("org: %u\n", NVIC_IPR2_ADR);
+	//printf("test: %u\n", NVIC_IPRx_ADR(0x02));
+	
+	printf("test: %u\n", NVIC_IPRx_GETMASK(3883850685, 16));
 
     return 0;
 }
