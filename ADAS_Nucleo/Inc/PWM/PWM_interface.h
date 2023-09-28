@@ -63,6 +63,8 @@ u8 PWM_u8Stop(u8 timerID);
 #define ACTIVE_HIGH_POL			0
 #define ACTIVE_LOW_POL			1
 
+/*pwm freq = Fclk/((PSC+1)*(ARR+1))*/
+/*pwm duty = CCR4/ARR*/
 #define PRESCALER				(1600 - 1)
 #define AUTO_RELOAD_VAL			255
 
