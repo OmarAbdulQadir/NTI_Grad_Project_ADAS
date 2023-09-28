@@ -7,7 +7,7 @@
 #ifndef PWM_CONFIG_H_
 #define PWM_CONFIG_H_
 
-#define DIR							UPCOUNTER
+#define DIRECTION							UPCOUNTER
 #define AUTO_RELOAD_PRELOAD			EN_AUTO_RELOAD_PRELOAD
 #define PWM_MODE					PWM_MODE1
 #define CHANNEL_ID					CHANNEL4_ID
