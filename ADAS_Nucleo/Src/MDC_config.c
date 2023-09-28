@@ -8,7 +8,7 @@
 
 /*--------------------------------------------------------------------------------*/
 /*							Configuration variables								  */
-
+//
 /* Motor Channel configuration initialization						*/
 MotorChannel_t MDC_MotorChannels[MDC_NO_CHANNELs] =
 {

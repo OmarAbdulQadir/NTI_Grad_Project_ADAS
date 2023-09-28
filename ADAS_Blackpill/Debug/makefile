@@ -59,8 +59,13 @@ all: main-build
 main-build: ADAS_Blackpill.elf secondary-outputs
 
 # Tool invocations
+<<<<<<< Updated upstream:ADAS_Blackpill/Debug/makefile
 ADAS_Blackpill.elf ADAS_Blackpill.map: $(OBJS) $(USER_OBJS) D:\Engineering\Embedded\NTI_prog\Interfacing\ADAS-Project\ADAS_Blackpill\STM32F401RCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	arm-none-eabi-gcc -o "ADAS_Blackpill.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Engineering\Embedded\NTI_prog\Interfacing\ADAS-Project\ADAS_Blackpill\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADAS_Blackpill.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+=======
+ADAS.elf ADAS.map: $(OBJS) $(USER_OBJS) D:\Esraa\NTI\Drivers\ &\ projects\ADAS\NTI_Grad_Project_ADAS\ADAS\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "ADAS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Esraa\NTI\Drivers & projects\ADAS\NTI_Grad_Project_ADAS\ADAS\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADAS.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+>>>>>>> Stashed changes:ADAS/Release/makefile
 	@echo 'Finished building target: $@'
 	@echo ' '
 
