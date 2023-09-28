@@ -1,18 +1,62 @@
 #include <stdio.h>
 
-#define NVIC_BASE_ADR				((int)(0xE000E100))
-#define NVIC_IPR2_ADR				(((volatile int*) (NVIC_BASE_ADR+0x400+0x04+0x2)))
-#define NVIC_IPRx_ADR(REG_ID)		(((volatile int*) (NVIC_BASE_ADR+0x400+0x04+(REG_ID))))
+#define TIM2_Init							0x03
+#define TIM5_Init							0x0C
+#define TIM10_Init							0x30
+#define TIM_NOT_Init						0x0
+#define	TIMER2ID                			0
+#define TIMER5ID			                1
+#define	TIMER10ID			                2
 
-#define NVIC_IPRx_GETMASK(Value, ST_LOC)	(char)(((int)Value >> ST_LOC) & 0xFF)
+
+#define REG0_ID					        	0
+#define REG1_ID					        	1
+#define REG2_ID					        	2
+
+#define mask(ID)                            ~((int)0xFF << ID)
+#define REGP_MAX_IRQ		        		4
+#define REGP_IRQ_BITS				        8
+
+#define GETMASK(value, ID)                  (char)(((int)value >> ID) & 0xFF)
 
 
-int main(void){
-
-    //printf("org: %u\n", NVIC_IPR2_ADR);
-	//printf("test: %u\n", NVIC_IPRx_ADR(0x02));
-	
-	printf("test: %u\n", NVIC_IPRx_GETMASK(3883850685, 16));
+int main() {
+    // Write C code here
+    
+    /*
+    int copy_u8TIM_ID = TIMER5ID;
+    int ICU_Init = TIM_NOT_Init | TIM5_Init;
+    
+    printf("%d", ( ( copy_u8TIM_ID == TIMER5ID  ) && ( ( ICU_Init & TIM5_Init ) == TIM_NOT_Init  ) ) );
+    */
+    
+  
+    int copy_u8IRQ_ID = 20;
+    /*
+    if((copy_u8IRQ_ID/32) == REG0_ID)
+        printf("%d", REG0_ID);
+    else if((copy_u8IRQ_ID/32) == REG1_ID)
+        printf("%d", REG1_ID);
+    else if((copy_u8IRQ_ID/32) == REG2_ID)
+        printf("%d", REG2_ID);
+    else
+        printf("%d", 255);
+    
+    
+    printf("Reg id: %d\n", copy_u8IRQ_ID/4);
+    printf("Reg loc: %d\n", copy_u8IRQ_ID%4);
+    */
+    
+    /*
+	int IRQ_RegID = copy_u8IRQ_ID / REGP_MAX_IRQ;
+    int IRQ_LOC = ( ( copy_u8IRQ_ID - ( IRQ_RegID * REGP_MAX_IRQ ) ) * REGP_IRQ_BITS );
+    
+    printf("%u\n", IRQ_RegID);
+    printf("%u\n", IRQ_LOC);
+    printf("%u", mask(IRQ_LOC));
+    */
+    
+    printf("%u",  GETMASK(2683927005 >> 16));
 
     return 0;
 }
