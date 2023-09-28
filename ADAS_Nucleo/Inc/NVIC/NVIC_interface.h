@@ -18,6 +18,25 @@
 #define	NVIC_IRQ_ID_USART1				37
 #define	NVIC_IRQ_ID_TIM5				50
 
+// Priority Macros
+#define NVIC_PRIORITY_0					0x00
+#define NVIC_PRIORITY_1					0x10
+#define NVIC_PRIORITY_2					0x20
+#define NVIC_PRIORITY_3					0x30
+#define NVIC_PRIORITY_4					0x40
+#define NVIC_PRIORITY_5					0x50
+#define NVIC_PRIORITY_6					0x60
+#define NVIC_PRIORITY_7					0x70
+#define NVIC_PRIORITY_8					0x80
+#define NVIC_PRIORITY_9					0x90
+#define NVIC_PRIORITY_10				0xA0
+#define NVIC_PRIORITY_11				0xB0
+#define NVIC_PRIORITY_12				0xC0
+#define NVIC_PRIORITY_13				0xD0
+#define NVIC_PRIORITY_14				0xE0
+#define NVIC_PRIORITY_15				0xF0
+
+
 /* Enables the IRQx interrupt										*/
 /* Input Parameters: IRQx ID										*/
 /* Return value: STD_TRUE -> Success, STD_FALSE -> Failed			*/
