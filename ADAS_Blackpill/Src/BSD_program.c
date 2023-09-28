@@ -5,15 +5,14 @@
 
 /*							Private includes									  */
 
-#include "../Inc/BDS/BSD_private.h
-#include "../Inc/BSD/BSD_interface.h"
+#include "../Inc/BSD/BSD_private.h"
 
 /*--------------------------------------------------------------------------------*/
 /*						Global variables for Ultrasonic Sensors			     	  */
 
 
-extern const u8 Global_u8ReRightUS = 0;
-extern const u8 Global_u8ReLeftUS  = 0;
+extern const u8 Global_u8ReRightUS;
+extern const u8 Global_u8ReLeftUS;
 
 
 /*--------------------------------------------------------------------------------*/

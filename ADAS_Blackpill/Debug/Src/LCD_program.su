@@ -1,0 +1,15 @@
+../Src/LCD_program.c:37:5:LCD_pow	24	static
+../Src/LCD_program.c:61:6:LCD_write_data_8bit	24	static
+../Src/LCD_program.c:90:6:LCD_write_cmd_8bit	24	static
+../Src/LCD_program.c:154:6:LCD_write_data_4bit	32	static
+../Src/LCD_program.c:198:6:LCD_write_cmd_4bit	32	static
+../Src/LCD_program.c:242:6:LCD_function_set_4bit	24	static
+../Src/LCD_program.c:347:6:LCD_init	24	static
+../Src/LCD_program.c:405:6:LCD_set_cursor	24	static
+../Src/LCD_program.c:431:6:LCD_clear	16	static
+../Src/LCD_program.c:459:6:LCD_off	16	static
+../Src/LCD_program.c:479:6:LCD_on	16	static
+../Src/LCD_program.c:531:6:LCD_write_char	24	static
+../Src/LCD_program.c:552:6:LCD_write_str	24	static
+../Src/LCD_program.c:571:6:LCD_write_s32_number	32	static
+../Src/LCD_program.c:609:6:LCD_write_float	32	static

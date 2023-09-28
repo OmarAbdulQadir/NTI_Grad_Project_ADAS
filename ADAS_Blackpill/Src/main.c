@@ -4,6 +4,10 @@
 #include "../Inc/GPIO/GPIO_interface.h"
 #include "../Inc/ICU/ICU_interface.h"
 
+/*  Temporary Global Variables  */
+u8 Global_u8ReRightUS = 0;
+u8 Global_u8ReLeftUS  = 0;
+
 int main( void )
 {
 

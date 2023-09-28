@@ -11,4 +11,8 @@
 // Dummy definition till there actual channel ID definition
 #define CH1			0
 
+STD_ReturnType PWM_u8Init( u8 );
+STD_ReturnType PWM_u8Start( u8 , u8 );
+STD_ReturnType PWM_u8Stop( u8 );
+
 #endif /* PWM_INTERFACE_H_ */

@@ -33,34 +33,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := ADAS
+BUILD_ARTIFACT_NAME := ADAS_Nucleo
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-ADAS.elf \
+ADAS_Nucleo.elf \
 
 MAP_FILES += \
-ADAS.map \
+ADAS_Nucleo.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-ADAS.list \
+ADAS_Nucleo.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: ADAS.elf secondary-outputs
+main-build: ADAS_Nucleo.elf secondary-outputs
 
 # Tool invocations
-ADAS.elf ADAS.map: $(OBJS) $(USER_OBJS) D:\Engineering\Embedded\NTI_prog\Interfacing\ADAS-Project\ADAS\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "ADAS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Engineering\Embedded\NTI_prog\Interfacing\ADAS-Project\ADAS\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADAS.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+ADAS_Nucleo.elf ADAS_Nucleo.map: $(OBJS) $(USER_OBJS) D:\Engineering\Embedded\NTI_prog\Interfacing\ADAS-Project\ADAS_Nucleo\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "ADAS_Nucleo.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Engineering\Embedded\NTI_prog\Interfacing\ADAS-Project\ADAS_Nucleo\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADAS_Nucleo.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -69,14 +69,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-ADAS.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "ADAS.list"
+ADAS_Nucleo.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "ADAS_Nucleo.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) ADAS.elf ADAS.list ADAS.map default.size.stdout
+	-$(RM) ADAS_Nucleo.elf ADAS_Nucleo.list ADAS_Nucleo.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

@@ -1,6 +1,0 @@
-../Src/UART_program.c:20:16:UART_u8Init	0	static
-../Src/UART_program.c:31:16:UART_u8IfTxAvailable	0	static
-../Src/UART_program.c:42:16:UART_u8IfRxAvailable	0	static
-../Src/UART_program.c:53:16:UART_u8SendByte	0	static
-../Src/UART_program.c:63:16:UART_u8ReceiveByte	0	static
-../Src/UART_program.c:72:16:UART_u8SetRxCallback	0	static
