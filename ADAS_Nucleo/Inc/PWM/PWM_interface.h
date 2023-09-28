@@ -67,8 +67,4 @@ u8 PWM_u8Stop(u8 timerID);
 #define AUTO_RELOAD_VAL			255
 
 
-STD_ReturnType PWM_u8Init( u8 );
-STD_ReturnType PWM_u8Start( u8 , u8 );
-STD_ReturnType PWM_u8Stop( u8 );
-
 #endif /* PWM_INTERFACE_H_ */
