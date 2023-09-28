@@ -19,6 +19,7 @@
 #include "../inc/LIB/STD_TYPES.h"
 
 /* Initialize timer registers */
+/*< Driver Should contain a static global flag to ensure that init is done before use and do not allow re-init >*/
 
 u8 PWM_u8Init(u8 timerID) {
 	if ((timerID == TIM3_ID) || (timerID == TIM4_ID)) {
@@ -147,6 +148,7 @@ u8 PWM_u8Init(u8 timerID) {
 		}
 		return STD_TRUE;
 	}
+	/*< All IFs should have an else :: Misra C >*/
 	return STD_FALSE;
 }
 
@@ -172,6 +174,7 @@ u8 PWM_u8Start(u8 timerID, u8 duty) {
 				set_bit(TIM3_CCER, 12);
 				break;
 			}
+			/*< Feeding the Compare register with the new values should by done before enable and not vise versa >*/
 			if ((duty >= 0) && (duty <= 100)) {
 				TIM3_CCR4 = ((u16) 255 * duty) / 100;
 			}
@@ -195,6 +198,7 @@ u8 PWM_u8Start(u8 timerID, u8 duty) {
 				set_bit(TIM4_CCER, 12);
 				break;
 			}
+			/*< Feeding the Compare register with the new values should by done before enable and not vise versa >*/
 			if ((duty >= 0) && (duty <= 100)) {
 				TIM4_CCR4 = ((u16) 255 * duty) / 100;
 			}
@@ -203,6 +207,7 @@ u8 PWM_u8Start(u8 timerID, u8 duty) {
 		}
 		return STD_TRUE;
 	}
+	// All IFs should have an else :: Misra C
 	return STD_FALSE;
 }
 
@@ -223,5 +228,10 @@ u8 PWM_u8Stop(u8 timerID) {
 		}
 		return STD_TRUE;
 	}
+	/*< All IFs should have an else :: Misra C *>/
 	return STD_FALSE;
 }
+
+
+/*< And Don't use magic numbers use macros or enums *>/
+/*< Please insert more comments to describe the code *>/

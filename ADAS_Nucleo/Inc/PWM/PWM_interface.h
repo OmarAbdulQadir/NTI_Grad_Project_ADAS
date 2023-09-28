@@ -43,6 +43,7 @@ u8 PWM_u8Stop(u8 timerID);
 #define TIM11_ID								11
 
 
+/*< This descriptive macros should be in the config file not the interface >*/
 /****************************** channel IDs ******************************/
 #define CHANNEL1_ID				1
 #define CHANNEL2_ID				2
