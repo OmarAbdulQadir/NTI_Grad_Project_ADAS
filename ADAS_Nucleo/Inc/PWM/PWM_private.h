@@ -74,6 +74,29 @@
 #define TIM4_DCR					(*((volatile u32*) (TIM4_BASE_ADDRESS +0x48)))
 #define TIM4_DMAR					(*((volatile u32*) (TIM4_BASE_ADDRESS +0x4C)))
 
+/*********************************** Registers' Bits ********************************************/
+#define CEN							0
+#define DIR							4
+#define ARPE						7
+
+#define UG							0
+#define OC1PE						3
+#define OC1CE						7
+#define OC2PE						11
+#define OC2CE						15
+#define OC3PE						3
+#define OC3CE						7
+#define OC4PE						11
+#define OC4CE						15
+#define OC4M0						12
+#define OC4M1						13
+#define OC4M2						14
+
+#define CC1E						0
+#define CC2E						4
+#define CC3E						8
+#define CC4E						12
+#define CC4P						13
 
 
 #endif /* PWM_PRIVATE_H_ */
