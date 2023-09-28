@@ -2,7 +2,7 @@
 
 #include "../Inc/RCC/RCC_interface.h"
 #include "../Inc/GPIO/GPIO_interface.h"
-#include "../Inc/ICU/ICU_interface.h"
+#include "../Inc/NVIC/NVIC_interface.h"
 
 /*  Temporary Global Variables  */
 u8 Global_u8ReRightUS = 0;
@@ -13,17 +13,12 @@ int main( void )
 
 	RCC_voidInitSysClock();
 	GPIO_voidSysInit();
-	GPIO_voidSetPinMode(GPIOA_PORT, PIN0, MODE_ALTF);
-	GPIO_voidPinSetAltFn(GPIOA_PORT, PIN0, (0b0010u));
-	GPIO_voidSetPinMode(GPIOA_PORT, PIN1, MODE_ALTF);
-	GPIO_voidPinSetAltFn(GPIOA_PORT, PIN1, (0b0010u));
-	GPIO_voidSetPinMode(GPIOA_PORT, PIN2, MODE_ALTF);
-	GPIO_voidPinSetAltFn(GPIOA_PORT, PIN2, (0b0010u));
-	ICU_u8Init(TIMER5ID);
-    ICU_u8StartTim(TIMER5ID);
-    ICU_u8StartCh(TIMER5ID, CH1ID);
-    ICU_u8StartCh(TIMER5ID, CH2ID);
-    ICU_u8StartCh(TIMER5ID, CH3ID);
+	NVIC_u8EnableIRQ(NVIC_IRQ_ID_USART1);
+	NVIC_u8SetPriority(NVIC_IRQ_ID_USART1, NVIC_PRIORITY_4);
+	u8 P= 0;
+	NVIC_u8GetPriority(NVIC_IRQ_ID_USART1, &P);
+	//NVIC_u8SetPendingIRQ(NVIC_IRQ_ID_USART1);
+	NVIC_u8DisableIRQ(NVIC_IRQ_ID_USART1);
 
 
 	/* Loop forever */
