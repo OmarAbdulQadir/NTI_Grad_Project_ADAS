@@ -54,7 +54,7 @@ STD_ReturnType LED_u8On(u8 user_u8PORT, u8 user_u8PIN)
         if (led_initialized[user_u8PIN]) 
 		{
             GPIO_voidWriteData(user_u8PORT, user_u8PIN, LED_ON);
-            return STD_TRUE; // LED turned on successfully
+            return STD_TRUE; // LED turned on succeeded
         } else 
 		{
             return STD_FALSE; // LED not initialized
@@ -71,7 +71,7 @@ STD_ReturnType LED_u8Off(u8 user_u8PORT, u8 user_u8PIN)
         if (led_initialized[user_u8PIN]) 
 		{
             GPIO_voidWriteData(user_u8PORT, user_u8PIN, LED_OFF);
-            return STD_TRUE; // LED turned off successfully
+            return STD_TRUE; // LED turned off succeeded
         } else 
 		{
             return STD_FALSE; // LED not initialized
