@@ -86,7 +86,7 @@ u8 PWM_u8Init(u8 timerID) {
 			break;
 
 		case TIM4_ID:
-			switch (DIRECTIONECTION) {
+			switch (DIRECTION) {
 			case UPCOUNTER:
 				agn_bit(TIM4_CR1, DIR, UPCOUNTER)
 				;
@@ -247,5 +247,5 @@ u8 PWM_u8Stop(u8 timerID) {
 
 }
 
-/*< And Don't use magic numbers use macros or enums *>/
- /*< Please insert more comments to describe the code *>/
+/*< And Don't use magic numbers use macros or enums >*/
+ /*< Please insert more comments to describe the code >*/
