@@ -25,7 +25,7 @@ STD_ReturnType MDC_u8StartCW( u8 , u8 );
 /* Start motor in counter clock wise with specific speed			*/
 /* Input Parameters: Motor channel ID, Motor speed 0 - 100			*/
 /* Return value: STD_TRUE -> Success, STD_FALSE -> Failed			*/
-STD_ReturnType MDC_u8startCCW( u8 , u8 );
+STD_ReturnType MDC_u8StartCCW( u8 , u8 );
 
 /* Stop motor														*/
 /* Input Parameters: Motor channel ID								*/

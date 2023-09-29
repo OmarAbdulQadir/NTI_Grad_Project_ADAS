@@ -7,8 +7,9 @@
 #define ICU_CONFIG_H_
 
 // Timer 2/5 registers configurations
-#define TIM_CCMR1_CONFIG					(0x7171u)
-#define TIM_CCMR2_CONFIG					(0x7171u)
+#define TIM_DIER_CONFIG						(0x30u)
+#define TIM_CCMR1_CONFIG					(0x1111u)
+#define TIM_CCMR2_CONFIG					(0x1111u)
 #define TIM_CCER_CONFIG						(0xAAAAu)
 #define TIM_PSR_CONFIG						(0x7Cu)
 

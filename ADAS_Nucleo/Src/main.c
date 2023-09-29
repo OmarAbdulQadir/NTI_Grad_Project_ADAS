@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 #include "../Inc/RCC/RCC_interface.h"
 #include "../Inc/GPIO/GPIO_interface.h"
 #include "../Inc/PWM/PWM_interface.h"
@@ -24,9 +18,11 @@ int main(void) {
 	PWM_u8Init(TIM3_ID);
 	PWM_u8Init(TIM4_ID);
 
-	PWM_u8Start(TIM3_ID, 50);
+	PWM_u8Start(TIM3_ID, 10);
 	PWM_u8Start(TIM4_ID, 50);
-	PWM_u8Start(TIM3_ID, 25);
+	u16 i;
+	for(i=0; i<500000; i++);
+	PWM_u8Stop(TIM4_ID);
 
 	/* Loop forever */
 	while (1) {

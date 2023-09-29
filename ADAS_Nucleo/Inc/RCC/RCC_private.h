@@ -86,13 +86,13 @@
 */
 
 // APB high-speed pre-scaler (APB2)
-#define			RCC_PPRE2_bit					15
+#define			RCC_PPRE2_bit					13
 
 // APB Low speed pre-scaler (APB1)
-#define			RCC_PPRE1_bit					12
+#define			RCC_PPRE1_bit					10
 
 // AHB pre-scaler
-#define			RCC_PRE_bit						7
+#define			RCC_PRE_bit						4
 
 /*
 			- General Macros

@@ -62,8 +62,8 @@ all: main-build
 main-build: ADAS_Nucleo.elf secondary-outputs
 
 # Tool invocations
-ADAS_Nucleo.elf ADAS_Nucleo.map: $(OBJS) $(USER_OBJS) D:\Engineering\Embedded\NTI_prog\Interfacing\ADAS-Project\ADAS_Nucleo\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "ADAS_Nucleo.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Engineering\Embedded\NTI_prog\Interfacing\ADAS-Project\ADAS_Nucleo\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADAS_Nucleo.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+ADAS_Nucleo.elf ADAS_Nucleo.map: $(OBJS) $(USER_OBJS) D:\Esraa\NTI\Drivers\ &\ projects\ADAS\NTI_Grad_Project_ADAS\ADAS_Nucleo\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "ADAS_Nucleo.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Esraa\NTI\Drivers & projects\ADAS\NTI_Grad_Project_ADAS\ADAS_Nucleo\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADAS_Nucleo.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

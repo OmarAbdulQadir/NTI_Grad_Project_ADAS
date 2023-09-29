@@ -25,4 +25,6 @@ typedef struct
 #define MDC_CH1_INIT			0x0F
 #define MDC_CH2_INIT			0xF0
 
+#define MDC_MOTTION_CH_AFT		0x02u
+
 #endif /* MDC_PRIVATE_H_ */
