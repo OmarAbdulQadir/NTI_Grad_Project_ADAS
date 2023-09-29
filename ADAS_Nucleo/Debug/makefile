@@ -51,6 +51,9 @@ default.size.stdout \
 OBJDUMP_LIST += \
 ADAS_Nucleo.list \
 
+OBJCOPY_HEX += \
+ADAS_Nucleo.hex \
+
 
 # All Target
 all: main-build
@@ -59,8 +62,8 @@ all: main-build
 main-build: ADAS_Nucleo.elf secondary-outputs
 
 # Tool invocations
-ADAS_Nucleo.elf ADAS_Nucleo.map: $(OBJS) $(USER_OBJS) D:\Esraa\NTI\Drivers\ &\ projects\ADAS\NTI_Grad_Project_ADAS\ADAS_Nucleo\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "ADAS_Nucleo.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Esraa\NTI\Drivers & projects\ADAS\NTI_Grad_Project_ADAS\ADAS_Nucleo\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADAS_Nucleo.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+ADAS_Nucleo.elf ADAS_Nucleo.map: $(OBJS) $(USER_OBJS) D:\Engineering\Embedded\NTI_prog\Interfacing\ADAS-Project\ADAS_Nucleo\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "ADAS_Nucleo.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Engineering\Embedded\NTI_prog\Interfacing\ADAS-Project\ADAS_Nucleo\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADAS_Nucleo.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -74,12 +77,17 @@ ADAS_Nucleo.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
+ADAS_Nucleo.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "ADAS_Nucleo.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
-	-$(RM) ADAS_Nucleo.elf ADAS_Nucleo.list ADAS_Nucleo.map default.size.stdout
+	-$(RM) ADAS_Nucleo.elf ADAS_Nucleo.hex ADAS_Nucleo.list ADAS_Nucleo.map default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'

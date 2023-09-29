@@ -19,9 +19,9 @@ static u8 ICU_Init = TIM_NOT_Init;
 STD_ReturnType ICU_u8Init( u8 copy_u8TIM_ID )
 {
 	// Check data validity
-	if ( ( ( copy_u8TIM_ID == TIMER2ID  ) && ( ( ICU_Init & TIM2_Init ) == TIM_NOT_Init  ) ) ||
-		 ( ( copy_u8TIM_ID == TIMER5ID  ) && ( ( ICU_Init & TIM5_Init ) == TIM_NOT_Init  ) ) ||
-		 ( ( copy_u8TIM_ID == TIMER10ID ) && ( ( ICU_Init & TIM10_Init ) == TIM_NOT_Init ) ) )
+	if ( ( ( copy_u8TIM_ID == TIMER2ID  ) && ( ( ICU_Init & TIM2_Init  ) == TIM_NOT_Init  ) ) ||
+		 ( ( copy_u8TIM_ID == TIMER5ID  ) && ( ( ICU_Init & TIM5_Init  ) == TIM_NOT_Init  ) ) ||
+		 ( ( copy_u8TIM_ID == TIMER10ID ) && ( ( ICU_Init & TIM10_Init ) == TIM_NOT_Init  ) ) )
 	{
 		// Check which timer is selected to be initiated
 		switch( copy_u8TIM_ID )
@@ -67,7 +67,6 @@ STD_ReturnType ICU_u8Init( u8 copy_u8TIM_ID )
 		return STD_FALSE;
 	}
 }
-
 
 
 /*--------------------------------------------------------------------------------*/

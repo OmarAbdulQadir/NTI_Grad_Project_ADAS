@@ -22,8 +22,8 @@
 #define MDC1_IN1_PINID			PIN0
 #define MDC1_IN2_PORTID			GPIOA_PORT
 #define MDC1_IN2_PINID			PIN1
-#define MDC1_EN_TIMID			TIM1
-#define MDC1_EN_CHID			CH1
+#define MDC1_EN_TIMID			TIM3_ID
+#define MDC1_EN_CHID			CHANNEL1_ID
 
 #endif /* MDC_CONFIG_H_ */
 

@@ -1,7 +1,7 @@
-../Src/NVIC_program.c:19:16:NVIC_u8EnableIRQ	5
-../Src/NVIC_program.c:68:16:NVIC_u8DisableIRQ	5
-../Src/NVIC_program.c:117:16:NVIC_u8SetPendingIRQ	5
-../Src/NVIC_program.c:166:16:NVIC_u8ClearPendingIRQ	5
-../Src/NVIC_program.c:215:16:NVIC_u8GetStateIRQ	1
-../Src/NVIC_program.c:226:16:NVIC_u8SetPriority	2
-../Src/NVIC_program.c:254:16:NVIC_u8GetPriority	2
+../Src/NVIC_program.c:19:16:NVIC_u8EnableIRQ	2
+../Src/NVIC_program.c:45:16:NVIC_u8DisableIRQ	2
+../Src/NVIC_program.c:71:16:NVIC_u8SetPendingIRQ	2
+../Src/NVIC_program.c:97:16:NVIC_u8ClearPendingIRQ	2
+../Src/NVIC_program.c:123:16:NVIC_u8GetStateIRQ	1
+../Src/NVIC_program.c:134:16:NVIC_u8SetPriority	2
+../Src/NVIC_program.c:162:16:NVIC_u8GetPriority	2
