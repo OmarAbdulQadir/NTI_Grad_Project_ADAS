@@ -12,11 +12,20 @@
 /* Motor Channel configuration initialization						*/
 MotorChannel_t MDC_MotorChannels[MDC_NO_CHANNELs] =
 {
+		// Motor 1 Configurations
 		{MDC1_IN1_PORTID,
 		 MDC1_IN1_PINID,
 		 MDC1_IN2_PORTID,
 		 MDC1_IN2_PINID,
-		 MDC1_EN_TIMID,
-		 MDC1_EN_CHID}
+		 MDC1_EN_PORTID,
+		 MDC1_EN_PINID,
+		 MDC1_EN_TIMID},
+		 // Motor 2 Configurations
+		{MDC2_IN1_PORTID,
+		 MDC2_IN1_PINID,
+		 MDC2_IN2_PORTID,
+		 MDC2_IN2_PINID,
+		 MDC2_EN_PORTID,
+		 MDC2_EN_PINID,
+		 MDC2_EN_TIMID}
 };
-

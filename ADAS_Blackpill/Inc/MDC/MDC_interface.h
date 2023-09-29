@@ -9,6 +9,9 @@
 #include "../LIB/BIT_MATH.h"
 #include "../LIB/STD_TYPES.h"
 
+#define MDC_MOTION_CHANNEL				0
+#define MDC_STEERING_CHANNEL			1
+
 /* Initiate the GPIO, PWM modules for certain channel				*/
 /* Input Parameters: Motor channel ID								*/
 /* Return value: STD_TRUE -> Success, STD_FALSE -> Failed			*/
