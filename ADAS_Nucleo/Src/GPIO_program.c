@@ -132,7 +132,7 @@ void GPIO_voidSetPinMode(u8 copy_u8PORT, u8 copy_u8PIN, u8 copy_u8MODE)
 	 if((copy_u8PORT <= GPIOH_PORT) && (copy_u8PIN <= PIN15) && (copy_u8MODE <= MODE_ANALOG)){
 
 		 GPIO_bases[copy_u8PORT] -> MODER &= GPIO_MODER_MASK( copy_u8PIN * 2 );
-		 GPIO_bases[copy_u8PORT] -> MODER |= ( ( ( u32 ) copy_u8MODE ) << copy_u8PIN * 2 );
+		 GPIO_bases[copy_u8PORT] -> MODER |= ( ( ( u32 ) copy_u8MODE ) << ( copy_u8PIN * 2 ) );
 
 	 }
 	 else{
@@ -265,8 +265,8 @@ void GPIO_voidPinSetAltFn(u8 copy_u8PORT, u8 copy_u8PIN, u8 copy_u8AlT)
 		}
 		if(copy_u8PIN > PIN7)
 		{
-			GPIO_bases[copy_u8PORT] -> AFRH &= GPIO_AFR_MASK( copy_u8PIN * 4 );
-			GPIO_bases[copy_u8PORT] -> AFRH |= ( ( ( u32 ) copy_u8AlT ) << copy_u8PIN * 4 );
+			GPIO_bases[copy_u8PORT] -> AFRH &= GPIO_AFR_MASK( ( copy_u8PIN - PIN8 ) * 4 );
+			GPIO_bases[copy_u8PORT] -> AFRH |= ( ( ( u32 ) copy_u8AlT ) << ( copy_u8PIN - PIN8 ) * 4 );
 		}
 	}
 }
