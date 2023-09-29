@@ -16,7 +16,7 @@ int main( void )
 	MDC_u8StartCCW(MDC_STEERING_CHANNEL, 50);
 	u16 i;
 	for(i=0; i<500000; i++);
-	MDC_u8Init(MDC_STEERING_CHANNEL);
+	MDC_u8Stop(MDC_MOTION_CHANNEL);
 	MDC_u8Stop(MDC_STEERING_CHANNEL);
 
 	/* Loop forever */
