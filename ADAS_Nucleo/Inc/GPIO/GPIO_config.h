@@ -16,11 +16,7 @@
  *******************		 		GPIOA configurations			***************
  **********************************************************************************/
 #define	GPIOA_CONFIG_EN				GPIO_DISABLE
-<<<<<<< Updated upstream:ADAS_Nucleo/Inc/GPIO/GPIO_config.h
 #define	GPIOA_CONFIG_MODER			0x02
-=======
-#define	GPIOA_CONFIG_MODER			0x2
->>>>>>> Stashed changes:ADAS/Inc/GPIO/GPIO_config.h
 #define GPIOA_CONFIG_OTYPER			0x0
 #define GPIOA_CONFIG_OSPEEDR		0x0
 #define GPIOA_CONFIG_PUPDR			0x0
@@ -33,13 +29,8 @@
 /**********************************************************************************
  *******************		 		GPIOB configurations			***************
  **********************************************************************************/
-<<<<<<< Updated upstream:ADAS_Nucleo/Inc/GPIO/GPIO_config.h
 #define	GPIOB_CONFIG_EN				GPIO_DISABLE
 #define	GPIOB_CONFIG_MODER			0x02
-=======
-#define	GPIOB_CONFIG_EN				GPIO_Enable
-#define	GPIOB_CONFIG_MODER			0x0
->>>>>>> Stashed changes:ADAS/Inc/GPIO/GPIO_config.h
 #define GPIOB_CONFIG_OTYPER			0x0
 #define GPIOB_CONFIG_OSPEEDR		0x0
 #define GPIOB_CONFIG_PUPDR			0x0
