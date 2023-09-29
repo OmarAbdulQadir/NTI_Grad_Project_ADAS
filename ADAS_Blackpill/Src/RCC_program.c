@@ -45,7 +45,7 @@ void RCC_voidInitSysClock(void )
 	// Set the HSI on bit to enable
 	set_bit(RCC_CR, RCC_HSION_bit);
 	// Wait till HSI is locked
-	//while(get_bit(RCC_CR, RCC_HSIRDY_bit));
+	while(get_bit(RCC_CR, RCC_HSIRDY_bit) == 0);
 
 #elif	RCC_Clk_SRC == RCC_HSE
 	// Set the HSE on bit enable
@@ -91,7 +91,7 @@ void RCC_voidInitSysClock(void )
 	// Select the PLL clk source
 	RCC_PLLCFGR |= RCC_PLL_Clk_Src;
 	// Wait till PLL is locked
-	//while(get_bit(RCC_CR, RCC_PLLRDY_bit));
+	while(get_bit(RCC_CR, RCC_PLLRDY_bit) == 0);
 
 #else
 	#if		RCC_Clk_SRC == RCC_HSI

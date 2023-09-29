@@ -28,25 +28,25 @@ STD_ReturnType ICU_u8Init( u8 copy_u8TIM_ID )
 		{
 		case TIMER2ID:// Case of timer 2 is selected
 			// Configure the registers
+			//Enable Timer capture interrupt and implement the IRQ
 			TIM2_CCMR1_ADR = TIM_CCMR1_CONFIG;
 			TIM2_CCMR2_ADR = TIM_CCMR2_CONFIG;
 			TIM2_CCER_ADR = TIM_CCER_CONFIG;
-			TIM2_PSR_ADR = TIM_PSR_CONFIG;
 			// Set the init flag
 			ICU_Init |= TIM2_Init;
 			break;
 		case TIMER5ID: // Case of timer 5 is selected
 			// Configure the registers
+			//Enable Timer capture interrupt and implement the IRQ
 			TIM5_CCMR1_ADR = TIM_CCMR1_CONFIG;
 			TIM5_CCMR2_ADR = TIM_CCMR2_CONFIG;
 			TIM5_CCER_ADR = TIM_CCER_CONFIG;
-			TIM5_PSR_ADR = TIM_PSR_CONFIG;
 			// Set the init flag
 			ICU_Init |= TIM5_Init;
 			break;
-		case TIMER10ID: // Case of timer 5 is selected
+		case TIMER10ID: // Case of timer 10 is selected
 			// Configure the registers
-			TIM10_EGR_ADR = TIM10_EGR_CONFIG;
+			//Enable Timer capture interrupt and implement the IRQ
 			TIM10_CCMR1_ADR = TIM10_CCMR1_CONFIG;
 			TIM10_CCER_ADR = TIM10_CCER_CONFIG;
 			TIM10_PSR_ADR = TIM10_PSR_CONFIG;
@@ -77,8 +77,9 @@ STD_ReturnType ICU_u8Init( u8 copy_u8TIM_ID )
 STD_ReturnType ICU_u8StartTim(  u8 copy_u8TIM_ID )
 {
 	// Check data validity
-	if( ( ( ICU_Init == TIM2_Init ) && ( copy_u8TIM_ID == TIMER2ID ) ) ||
-		( ( ICU_Init == TIM5_Init ) && ( copy_u8TIM_ID == TIMER5ID ) ) )
+	if( ( ( ( ICU_Init & TIM2_Init  ) == TIM2_Init   ) && ( copy_u8TIM_ID == TIMER2ID  ) ) ||
+		( ( ( ICU_Init & TIM5_Init  ) == TIM5_Init   ) && ( copy_u8TIM_ID == TIMER5ID  ) ) ||
+		( ( ( ICU_Init & TIM10_Init ) == TIM10_Init  ) && ( copy_u8TIM_ID == TIMER10ID ) ) )
 	{
 		// Check which timer is selected to be initiated
 		switch( copy_u8TIM_ID )
@@ -118,9 +119,10 @@ STD_ReturnType ICU_u8StartTim(  u8 copy_u8TIM_ID )
 STD_ReturnType ICU_u8StartCh(  u8 copy_u8TIM_ID , u8 copy_u8CH_ID )
 {
 	// Check data validity
-	if( ( ( ( ICU_Init == TIM2_Init ) && ( copy_u8TIM_ID == TIMER2ID ) ) ||
-		( ( ICU_Init == TIM5_Init ) && ( copy_u8TIM_ID == TIMER5ID ) ) ) &&
-		( copy_u8CH_ID <= CH4ID ) )
+	if( ( ( ( ( ICU_Init & TIM2_Init  ) == TIM2_Init   ) && ( copy_u8TIM_ID == TIMER2ID  ) ) ||
+		  ( ( ( ICU_Init & TIM5_Init  ) == TIM5_Init   ) && ( copy_u8TIM_ID == TIMER5ID  ) ) ||
+		  ( ( ( ICU_Init & TIM10_Init ) == TIM10_Init  ) && ( copy_u8TIM_ID == TIMER10ID ) ) ) &&
+		  ( copy_u8CH_ID <= CH4ID ) )
 	{
 		// Check which channel is selected
 		switch( copy_u8CH_ID )
@@ -137,7 +139,7 @@ STD_ReturnType ICU_u8StartCh(  u8 copy_u8TIM_ID , u8 copy_u8CH_ID )
 				// Enable the selected channel
 				set_bit( TIM5_CCER_ADR , TIMx_CH1EN );
 				break;
-			case TIMER10ID: // Case of timer 10 is selected
+			case TIMER10ID: // Case of timer 5 is selected
 				// Enable the selected channel
 				set_bit( TIM10_CCER_ADR , TIMx_CH1EN );
 				break;
@@ -225,9 +227,10 @@ STD_ReturnType ICU_u8StartCh(  u8 copy_u8TIM_ID , u8 copy_u8CH_ID )
 STD_ReturnType ICU_u8StopCh( u8 copy_u8TIM_ID ,  u8 copy_u8CH_ID )
 {
 	// Check data validity
-	if( ( ( ( ICU_Init == TIM2_Init ) && ( copy_u8TIM_ID == TIMER2ID ) ) ||
-		( ( ICU_Init == TIM5_Init ) && ( copy_u8TIM_ID == TIMER5ID ) ) ) &&
-		( copy_u8CH_ID <= CH4ID ) )
+	if( ( ( ( ( ICU_Init & TIM2_Init  ) == TIM2_Init   ) && ( copy_u8TIM_ID == TIMER2ID  ) ) ||
+		  ( ( ( ICU_Init & TIM5_Init  ) == TIM5_Init   ) && ( copy_u8TIM_ID == TIMER5ID  ) ) ||
+		  ( ( ( ICU_Init & TIM10_Init ) == TIM10_Init  ) && ( copy_u8TIM_ID == TIMER10ID ) ) ) &&
+		  ( copy_u8CH_ID <= CH4ID ) )
 	{
 		// Check which channel is selected
 		switch( copy_u8CH_ID )
@@ -372,8 +375,9 @@ STD_ReturnType ICU_u8StopTim( u8 copy_u8TIM_ID )
 STD_ReturnType ICU_u8GetCh( u8 copy_u8TIM_ID , u8 copy_u8CH_ID , u32* ptr_u32Counterdata )
 {
 	// Check data validity
-	if( ( ( ICU_Init == TIM2_Init ) && ( copy_u8TIM_ID == TIMER2ID ) ) ||
-		( ( ICU_Init == TIM5_Init ) && ( copy_u8TIM_ID == TIMER5ID ) ) )
+	if( ( ( ( ICU_Init & TIM2_Init  ) == TIM2_Init   ) && ( copy_u8TIM_ID == TIMER2ID  ) ) ||
+		( ( ( ICU_Init & TIM5_Init  ) == TIM5_Init   ) && ( copy_u8TIM_ID == TIMER5ID  ) ) ||
+		( ( ( ICU_Init & TIM10_Init ) == TIM10_Init  ) && ( copy_u8TIM_ID == TIMER10ID ) ) )
 	{
 		// Check which channel is selected to be initiated
 		switch(copy_u8CH_ID)
@@ -478,5 +482,34 @@ STD_ReturnType ICU_u8SetCallback( u8 copy_u8TIM_ID ,  u8 copy_u8CH_ID ,  void  (
 	return 0;
 }
 
+
+/*--------------------------------------------------------------------------------*/
+/* Timer 5 Interrupt request handler								*/
+/* Input Parameters: void											*/
+/* Return value: void												*/
+void TIM5_IRQHandler( void )
+{
+
+}
+
+
+/*--------------------------------------------------------------------------------*/
+/* Timer 2 Interrupt request handler								*/
+/* Input Parameters: void											*/
+/* Return value: void												*/
+void TIM2_IRQHandler( void )
+{
+
+}
+
+
+/*--------------------------------------------------------------------------------*/
+/* Timer 2 Interrupt request handler								*/
+/* Input Parameters: void											*/
+/* Return value: void												*/
+void TIM1_UP_TIM10_IRQHandler( void )
+{
+
+}
 
 /*--------------------------------------------------------------------------------*/

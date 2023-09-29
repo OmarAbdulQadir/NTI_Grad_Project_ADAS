@@ -28,11 +28,14 @@
 
 // Registers offset address of timer 2
 #define	TIM5_CR1_ADR						(*((volatile u32*) (TIM5_BASE_ADR+0x00)))
+#define TIM5_SMCR_ADR						(*((volatile u32*) (TIM5_BASE_ADR+0x08)))
 #define TIM5_EGR_ADR						(*((volatile u32*) (TIM5_BASE_ADR+0x14)))
 #define TIM5_CCMR1_ADR						(*((volatile u32*) (TIM5_BASE_ADR+0x18)))
 #define TIM5_CCMR2_ADR						(*((volatile u32*) (TIM5_BASE_ADR+0x1C)))
 #define TIM5_CCER_ADR						(*((volatile u32*) (TIM5_BASE_ADR+0x20)))
+#define TIM5_CNT_ADR						(*((volatile u32*) (TIM5_BASE_ADR+0x24)))
 #define TIM5_PSR_ADR						(*((volatile u32*) (TIM5_BASE_ADR+0x28)))
+#define TIM5_ARR_ADR						(*((volatile u32*) (TIM5_BASE_ADR+0x2C)))
 #define TIM5_CRR1_ADR						(*((volatile u32*) (TIM5_BASE_ADR+0x34)))
 #define TIM5_CRR2_ADR						(*((volatile u32*) (TIM5_BASE_ADR+0x38)))
 #define TIM5_CRR3_ADR						(*((volatile u32*) (TIM5_BASE_ADR+0x3C)))
@@ -48,6 +51,8 @@
 
 // Timer/Counter Enable
 #define TIMx_EN								0
+#define EGR_UG								0
+#define TIM_RESET_VALUE						0
 
 // Input channels enable bit number
 #define TIMx_CH1EN							0
@@ -60,5 +65,10 @@
 #define TIM5_Init							0x0C
 #define TIM10_Init							0x30
 #define TIM_NOT_Init						0x0
+
+
+void TIM5_IRQHandler( void );
+void TIM2_IRQHandler( void );
+void TIM1_UP_TIM10_IRQHandler( void );
 
 #endif /* ICU_PRIVATE_H_ */

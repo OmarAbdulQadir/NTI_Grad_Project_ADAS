@@ -24,7 +24,7 @@
 
 #endif
 
-// Clock securty system enable
+// Clock security system enable
 #define		RCC_CSSON				0
 
 /*
@@ -71,14 +71,14 @@
 #endif
 
 // APB1 low speed bus pre-scaler (Caution: Max freq is 42MHz)
-#define		RCC_PPRE1			(0b111u)
+#define		RCC_PPRE1			(0b100u)
 
 #if			RCC_PPRE1 == (0b000u)
 	#warning: Assigning APB1 clock - AHB clock not divided
 #endif
 
 // APB2 high speed bus pre-scaler (Caution: Max freq is 84MHz)
-#define 	RCC_PPRE2			(0b101u)
+#define 	RCC_PPRE2			(0b100u)
 
 #if			RCC_PPRE2 == (0b0000u)
 	#warning: Assigning APB2 clock - AHB clock not divided
@@ -202,13 +202,13 @@
 /*			APB2 Peripheral clock enable			*/
 
 // TIM9 clock enable
-#define		RCC_TIM9EN			0
+#define		RCC_TIM9EN			1
 
 // TIM10 clock enable
 #define		RCC_TIM10EN			1
 
 // TIM11 clock enable
-#define		RCC_TIM11EN			0
+#define		RCC_TIM11EN			1
 
 // System configuration controller clock enable
 #define		RCC_SYSCFGEN		0
@@ -226,7 +226,7 @@
 #define		RCC_ADC1EN			0
 
 // USART1 clock enable
-#define		RCC_USART1EN		0
+#define		RCC_USART1EN		1
 
 // USART6 clock enable
 #define		RCC_USART6EN		0
