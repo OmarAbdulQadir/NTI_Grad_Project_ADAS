@@ -58,7 +58,7 @@ STD_ReturnType MDC_u8Init(u8 copy_u8MDC_ID) {
 							 MDC_MotorChannels[copy_u8MDC_ID].MDC_EN_PINID,
 							 MDC_MOTTION_CH_AFT);
 		// Initiate PWM
-		//PWM_u8Init(MDC_MotorChannels[copy_u8MDC_ID].MDC_EN_TIMID);
+		PWM_u8Init(MDC_MotorChannels[copy_u8MDC_ID].MDC_EN_TIMID);
 
 		// Return success status
         return STD_TRUE;
@@ -82,7 +82,7 @@ STD_ReturnType MDC_u8StartCW(u8 copy_u8MDC_ID, u8 copy_u8MotorSpeed) {
         GPIO_voidWriteData(MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PORTID, MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PINID, LOW);
 
         // Start PWM
-        //PWM_u8Start( MDC_MotorChannels[copy_u8MDC_ID].MDC_EN_TIMID , copy_u8MotorSpeed );
+        PWM_u8Start( MDC_MotorChannels[copy_u8MDC_ID].MDC_EN_TIMID , copy_u8MotorSpeed );
 
         // Return success status
         return STD_TRUE;
@@ -106,7 +106,7 @@ STD_ReturnType MDC_u8StartCCW(u8 copy_u8MDC_ID, u8 copy_u8MotorSpeed) {
         GPIO_voidWriteData(MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PORTID, MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PINID, HIGH);
 
         // Start PWM
-        //PWM_u8Start( MDC_MotorChannels[copy_u8MDC_ID].MDC_EN_TIMID , copy_u8MotorSpeed );
+        PWM_u8Start( MDC_MotorChannels[copy_u8MDC_ID].MDC_EN_TIMID , copy_u8MotorSpeed );
 
         // Return success status
         return STD_TRUE;
@@ -127,7 +127,7 @@ STD_ReturnType MDC_u8Stop(u8 copy_u8MDC_ID) {
         GPIO_voidWriteData(MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PORTID, MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PINID, LOW);
 
         // Stop PWM to stop the motor
-        //PWM_u8Stop( MDC_MotorChannels[ copy_u8MDC_ID ].MDC_EN_TIMID );
+        PWM_u8Stop( MDC_MotorChannels[ copy_u8MDC_ID ].MDC_EN_TIMID );
 
         // Return success status
         return STD_TRUE;

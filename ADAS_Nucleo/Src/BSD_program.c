@@ -27,7 +27,7 @@ extern const u8 Global_u8ReLeftUS;
 
 STD_ReturnType BSD_u8Init( void )
 {
-	
+	return 0;
 }
 
 void BSD_vMain( void )

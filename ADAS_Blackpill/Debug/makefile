@@ -51,6 +51,9 @@ default.size.stdout \
 OBJDUMP_LIST += \
 ADAS_Blackpill.list \
 
+OBJCOPY_HEX += \
+ADAS_Blackpill.hex \
+
 
 # All Target
 all: main-build
@@ -74,12 +77,17 @@ ADAS_Blackpill.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
+ADAS_Blackpill.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "ADAS_Blackpill.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
-	-$(RM) ADAS_Blackpill.elf ADAS_Blackpill.list ADAS_Blackpill.map default.size.stdout
+	-$(RM) ADAS_Blackpill.elf ADAS_Blackpill.hex ADAS_Blackpill.list ADAS_Blackpill.map default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'
