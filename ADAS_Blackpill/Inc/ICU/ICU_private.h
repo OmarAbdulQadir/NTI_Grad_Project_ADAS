@@ -29,6 +29,8 @@
 // Registers offset address of timer 2
 #define	TIM5_CR1_ADR						(*((volatile u32*) (TIM5_BASE_ADR+0x00)))
 #define TIM5_SMCR_ADR						(*((volatile u32*) (TIM5_BASE_ADR+0x08)))
+#define TIM5_DIER_ADR						(*((volatile u32*) (TIM5_BASE_ADR+0x0C)))
+#define TIM5_SR_ADR							(*((volatile u32*) (TIM5_BASE_ADR+0x10)))
 #define TIM5_EGR_ADR						(*((volatile u32*) (TIM5_BASE_ADR+0x14)))
 #define TIM5_CCMR1_ADR						(*((volatile u32*) (TIM5_BASE_ADR+0x18)))
 #define TIM5_CCMR2_ADR						(*((volatile u32*) (TIM5_BASE_ADR+0x1C)))
@@ -49,16 +51,25 @@
 #define TIM10_PSR_ADR						(*((volatile u32*) (TIM5_BASE_ADR+0x28)))
 #define TIM10_CRR1_ADR						(*((volatile u32*) (TIM5_BASE_ADR+0x34)))
 
-// Timer/Counter Enable
+// Timer/Counter macros
 #define TIMx_EN								0
 #define EGR_UG								0
 #define TIM_RESET_VALUE						0
+#define ICU_MODE_LOW						0
+#define ICU_MODE_HIGH						1
+#define ICU_CH_EN							1
 
 // Input channels enable bit number
 #define TIMx_CH1EN							0
 #define TIMx_CH2EN							4
 #define TIMx_CH3EN							8
 #define TIMx_CH4EN							12
+
+// Input Channels flag bit number
+#define TIMx_CH1IF							1
+#define TIMx_CH2IF							2
+#define TIMx_CH3IF							3
+#define TIMx_CH4IF							4
 
 // Timers initiation value
 #define TIM2_Init							0x03

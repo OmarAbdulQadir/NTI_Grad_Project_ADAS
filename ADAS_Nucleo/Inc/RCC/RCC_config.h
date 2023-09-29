@@ -24,7 +24,7 @@
 
 #endif
 
-// Clock securty system enable
+// Clock security system enable
 #define		RCC_CSSON				0
 
 /*
@@ -71,14 +71,14 @@
 #endif
 
 // APB1 low speed bus pre-scaler (Caution: Max freq is 42MHz)
-#define		RCC_PPRE1			(0b111u)
+#define		RCC_PPRE1			(0b100u)
 
 #if			RCC_PPRE1 == (0b000u)
 	#warning: Assigning APB1 clock - AHB clock not divided
 #endif
 
 // APB2 high speed bus pre-scaler (Caution: Max freq is 84MHz)
-#define 	RCC_PPRE2			(0b101u)
+#define 	RCC_PPRE2			(0b100u)
 
 #if			RCC_PPRE2 == (0b0000u)
 	#warning: Assigning APB2 clock - AHB clock not divided
@@ -121,16 +121,16 @@
 
 // RCC_AHB1ENR Reg init value
 #define		RCC_AHB1LPENR_init	(										\
-								(RCC_DMA1EN << RCC_DMA1EN_bit		) | \
-								(RCC_DMA2EN << RCC_DMA2EN_bit		) | \
-								(RCC_CRCEN << RCC_CRCEN_bit			) | \
-								(RCC_GPIOAEN << RCC_GPIOAEN_bit		) | \
-								(RCC_GPIOBEN << RCC_GPIOBEN_bit		) | \
-								(RCC_GPIOCEN << RCC_GPIOCEN_bit		) | \
-								(RCC_GPIODEN << RCC_GPIODEN_bit		) | \
-								(RCC_GPIOEEN << RCC_GPIOEEN_bit		) | \
-								(RCC_GPIOHEN << RCC_GPIOHEN_bit		)	\
-																	)
+								(RCC_DMA1EN	 	<< RCC_DMA1EN_bit		) | \
+								(RCC_DMA2EN	 	<< RCC_DMA2EN_bit		) | \
+								(RCC_CRCEN	 	<< RCC_CRCEN_bit		) | \
+								(RCC_GPIOAEN 	<< RCC_GPIOAEN_bit		) | \
+								(RCC_GPIOBEN 	<< RCC_GPIOBEN_bit		) | \
+								(RCC_GPIOCEN 	<< RCC_GPIOCEN_bit		) | \
+								(RCC_GPIODEN 	<< RCC_GPIODEN_bit		) | \
+								(RCC_GPIOEEN 	<< RCC_GPIOEEN_bit		) | \
+								(RCC_GPIOHEN 	<< RCC_GPIOHEN_bit		)	\
+)
 
 
 /*			AHB2 Peripheral clock enable			*/
@@ -140,7 +140,7 @@
 
 // RCC_AHB2ENR Reg init value
 #define		RCC_AHB2LPENR_init	(										\
-								(RCC_OTGFSEN << RCC_OTGFSEN_bit		)	\
+								(RCC_OTGFSEN 	<< RCC_OTGFSEN_bit		)	\
 																		)
 
 
@@ -184,19 +184,19 @@
 
 // RCC_APB1LPENR Reg init value
 #define		RCC_APB1LPENR_init	(										\
-								(RCC_PWREN << RCC_PWREN_bit			) | \
-								(RCC_I2C1EN << RCC_I2C1EN_bit		) | \
-								(RCC_I2C2EN << RCC_I2C2EN_bit		) | \
-								(RCC_I2C3EN << RCC_I2C3EN_bit		) | \
-								(RCC_USART2EN << RCC_USART2EN_bit) | \
-								(RCC_SPI2EN << RCC_SPI2EN_bit		) | \
-								(RCC_SPI3EN << RCC_SPI3EN_bit		) | \
-								(RCC_WWDGEN << RCC_WWDGEN_bit		) | \
-								(RCC_TIM2EN << RCC_TIM2EN_bit		) | \
-								(RCC_TIM3EN << RCC_TIM3EN_bit		) | \
-								(RCC_TIM4EN << RCC_TIM4EN_bit		) | \
-								(RCC_TIM5EN << RCC_TIM5EN_bit		)	\
-																	)
+								(RCC_PWREN 		<< RCC_PWREN_bit		) | \
+								(RCC_I2C1EN 	<< RCC_I2C1EN_bit		) | \
+								(RCC_I2C2EN 	<< RCC_I2C2EN_bit		) | \
+								(RCC_I2C3EN 	<< RCC_I2C3EN_bit		) | \
+								(RCC_USART2EN 	<< RCC_USART2EN_bit		) | \
+								(RCC_SPI2EN 	<< RCC_SPI2EN_bit		) | \
+								(RCC_SPI3EN 	<< RCC_SPI3EN_bit		) | \
+								(RCC_WWDGEN 	<< RCC_WWDGEN_bit		) | \
+								(RCC_TIM2EN 	<< RCC_TIM2EN_bit		) | \
+								(RCC_TIM3EN 	<< RCC_TIM3EN_bit		) | \
+								(RCC_TIM4EN 	<< RCC_TIM4EN_bit		) | \
+								(RCC_TIM5EN 	<< RCC_TIM5EN_bit		)	\
+																		)
 
 
 /*			APB2 Peripheral clock enable			*/
@@ -226,7 +226,7 @@
 #define		RCC_ADC1EN			0
 
 // USART1 clock enable
-#define		RCC_USART1EN		0
+#define		RCC_USART1EN		1
 
 // USART6 clock enable
 #define		RCC_USART6EN		0
@@ -236,18 +236,18 @@
 
 // RCC_APB2LPENR Reg init value
 #define		RCC_APB2LPENR_init	(										\
-								(RCC_TIM9EN << RCC_TIM9EN_bit		) | \
-								(RCC_TIM10EN << RCC_TIM10EN_bit		) | \
-								(RCC_TIM11EN << RCC_TIM11EN_bit		) | \
-								(RCC_SYSCFGEN << RCC_SYSCFGEN_bit	) | \
-								(RCC_SPI1EN << RCC_SPI1EN_bit		) | \
-								(RCC_SPI4EN << RCC_SPI4EN_bit		) | \
-								(RCC_SDIOEN << RCC_SDIOEN_bit		) | \
-								(RCC_ADC1EN << RCC_ADC1EN_bit		) | \
-								(RCC_USART1EN << RCC_USART1EN_bit	) | \
-								(RCC_USART6EN << RCC_USART6EN_bit	) | \
-								(RCC_TIM1EN << RCC_TIM1EN_bit		)	\
-																	)
+								(RCC_TIM9EN 	<< RCC_TIM9EN_bit		) | \
+								(RCC_TIM10EN 	<< RCC_TIM10EN_bit		) | \
+								(RCC_TIM11EN 	<< RCC_TIM11EN_bit		) | \
+								(RCC_SYSCFGEN 	<< RCC_SYSCFGEN_bit		) | \
+								(RCC_SPI1EN 	<< RCC_SPI1EN_bit		) | \
+								(RCC_SPI4EN 	<< RCC_SPI4EN_bit		) | \
+								(RCC_SDIOEN 	<< RCC_SDIOEN_bit		) | \
+								(RCC_ADC1EN 	<< RCC_ADC1EN_bit		) | \
+								(RCC_USART1EN	<< RCC_USART1EN_bit		) | \
+								(RCC_USART6EN	<< RCC_USART6EN_bit		) | \
+								(RCC_TIM1EN 	<< RCC_TIM1EN_bit		)	\
+																		)
 
 	
 #endif /* RCC_CONFIG_H_ */

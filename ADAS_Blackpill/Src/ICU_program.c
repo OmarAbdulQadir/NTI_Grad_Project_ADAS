@@ -9,6 +9,9 @@
 /*--------------------------------------------------------------------------------*/
 /*							Global variables									  */
 static u8 ICU_Init = TIM_NOT_Init;
+static u32 ICU_CaptureCompareDataTIM2[4];
+static u32 ICU_CaptureCompareDataTIM5[4];
+static u32 ICU_CaptureCompareDataTIM10;
 
 /*--------------------------------------------------------------------------------*/
 /*					Global functions implementation								  */
@@ -37,7 +40,7 @@ STD_ReturnType ICU_u8Init( u8 copy_u8TIM_ID )
 			break;
 		case TIMER5ID: // Case of timer 5 is selected
 			// Configure the registers
-			//Enable Timer capture interrupt and implement the IRQ
+			TIM5_DIER_ADR = TIM_DIER_CONFIG;
 			TIM5_CCMR1_ADR = TIM_CCMR1_CONFIG;
 			TIM5_CCMR2_ADR = TIM_CCMR2_CONFIG;
 			TIM5_CCER_ADR = TIM_CCER_CONFIG;
@@ -138,6 +141,8 @@ STD_ReturnType ICU_u8StartCh(  u8 copy_u8TIM_ID , u8 copy_u8CH_ID )
 			case TIMER5ID: // Case of timer 5 is selected
 				// Enable the selected channel
 				set_bit( TIM5_CCER_ADR , TIMx_CH1EN );
+				// Reset timer counter
+				TIM5_CNT_ADR = TIM_RESET_VALUE;
 				break;
 			case TIMER10ID: // Case of timer 5 is selected
 				// Enable the selected channel
@@ -158,6 +163,8 @@ STD_ReturnType ICU_u8StartCh(  u8 copy_u8TIM_ID , u8 copy_u8CH_ID )
 			case TIMER5ID: // Case of timer 5 is selected
 				// Enable the selected channel
 				set_bit( TIM5_CCER_ADR , TIMx_CH2EN );
+				// Reset timer counter
+				TIM5_CNT_ADR = TIM_RESET_VALUE;
 				break;
 			case TIMER10ID: // Case of timer 10 is selected
 				// Enable the selected channel
@@ -178,6 +185,8 @@ STD_ReturnType ICU_u8StartCh(  u8 copy_u8TIM_ID , u8 copy_u8CH_ID )
 			case TIMER5ID: // Case of timer 5 is selected
 				// Enable the selected channel
 				set_bit( TIM5_CCER_ADR , TIMx_CH3EN );
+				// Reset timer counter
+				TIM5_CNT_ADR = TIM_RESET_VALUE;
 				break;
 			case TIMER10ID: // Case of timer 10 is selected
 				// Enable the selected channel
@@ -197,6 +206,8 @@ STD_ReturnType ICU_u8StartCh(  u8 copy_u8TIM_ID , u8 copy_u8CH_ID )
 			case TIMER5ID: // Case of timer 5 is selected
 				// Enable the selected channel
 				set_bit( TIM5_CCER_ADR , TIMx_CH4EN );
+				// Reset timer counter
+				TIM5_CNT_ADR = TIM_RESET_VALUE;
 				break;
 			case TIMER10ID: // Case of timer 10 is selected
 				// Enable the selected channel
@@ -489,7 +500,74 @@ STD_ReturnType ICU_u8SetCallback( u8 copy_u8TIM_ID ,  u8 copy_u8CH_ID ,  void  (
 /* Return value: void												*/
 void TIM5_IRQHandler( void )
 {
-
+	TIM5_CNT_ADR = TIM_RESET_VALUE;
+	static u8 CurrentState = ICU_MODE_LOW;
+	if(CurrentState == ICU_MODE_LOW)
+	{
+		if(get_bit( TIM5_SR_ADR , TIMx_CH1IF ) == ICU_CH_EN)
+		{
+			ICU_CaptureCompareDataTIM5[CH1ID] = TIM5_CRR1_ADR;
+			CurrentState = ICU_MODE_HIGH;
+		}
+		else if(get_bit( TIM5_SR_ADR , TIMx_CH2IF ) == ICU_CH_EN)
+		{
+			ICU_CaptureCompareDataTIM5[CH2ID] = TIM5_CRR2_ADR;
+			CurrentState = ICU_MODE_HIGH;
+		}
+		else if(get_bit( TIM5_SR_ADR , TIMx_CH3IF ) == ICU_CH_EN)
+		{
+			ICU_CaptureCompareDataTIM5[CH3ID] = TIM5_CRR2_ADR;
+			CurrentState = ICU_MODE_HIGH;
+		}
+		else if(get_bit( TIM5_SR_ADR , TIMx_CH4IF ) == ICU_CH_EN)
+		{
+			ICU_CaptureCompareDataTIM5[CH4ID] = TIM5_CRR2_ADR;
+			CurrentState = ICU_MODE_HIGH;
+		}
+		else
+		{
+			// Do nothing
+		}
+	}
+	else if(CurrentState == ICU_MODE_HIGH)
+	{
+		if(get_bit( TIM5_SR_ADR , TIMx_CH1IF ) == ICU_CH_EN)
+		{
+			ICU_CaptureCompareDataTIM5[CH1ID] = TIM5_CRR1_ADR;
+			ICU_u8StopCh(TIMER5ID, CH1ID);
+			ICU_u8StopTim(TIMER5ID);
+			CurrentState = ICU_MODE_LOW;
+		}
+		else if(get_bit( TIM5_SR_ADR , TIMx_CH2IF ) == ICU_CH_EN)
+		{
+			ICU_CaptureCompareDataTIM5[CH2ID] = TIM5_CRR2_ADR;
+			ICU_u8StopCh(TIMER5ID, CH2ID);
+			ICU_u8StopTim(TIMER5ID);
+			CurrentState = ICU_MODE_LOW;
+		}
+		else if(get_bit( TIM5_SR_ADR , TIMx_CH3IF ) == ICU_CH_EN)
+		{
+			ICU_CaptureCompareDataTIM5[CH3ID] = TIM5_CRR2_ADR;
+			ICU_u8StopCh(TIMER5ID, CH3ID);
+			ICU_u8StopTim(TIMER5ID);
+			CurrentState = ICU_MODE_LOW;
+		}
+		else if(get_bit( TIM5_SR_ADR , TIMx_CH4IF ) == ICU_CH_EN)
+		{
+			ICU_CaptureCompareDataTIM5[CH4ID] = TIM5_CRR2_ADR;
+			ICU_u8StopCh(TIMER5ID, CH4ID);
+			ICU_u8StopTim(TIMER5ID);
+			CurrentState = ICU_MODE_LOW;
+		}
+		else
+		{
+			// Do nothing
+		}
+	}
+	else
+	{
+		// Do nothing
+	}
 }
 
 

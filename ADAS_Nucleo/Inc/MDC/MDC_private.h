@@ -16,11 +16,15 @@ typedef struct
 	u8 MDC_IN1_PINID	:	4;
 	u8 MDC_IN2_PORTID 	:	4;
 	u8 MDC_IN2_PINID	:	4;
+	u8 MDC_EN_PORTID	:	4;
+	u8 MDC_EN_PINID		:	4;
 	u8 MDC_EN_TIMID		:	4;
-	u8 MDC_EN_CHID		:	4;
 }MotorChannel_t;
 
-#define	E_OK				1
-#define E_NOT_OK			0
+#define MDC_CH_NOT_INIT			0
+#define MDC_CH1_INIT			0x0F
+#define MDC_CH2_INIT			0xF0
+
+#define MDC_MOTTION_CH_AFT		0x02u
 
 #endif /* MDC_PRIVATE_H_ */
