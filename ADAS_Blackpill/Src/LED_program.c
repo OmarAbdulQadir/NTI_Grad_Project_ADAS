@@ -15,7 +15,7 @@
  **********************************************************************************/
 #include "../Inc/GPIO/GPIO_private.h"
 
-/*
+
 // Define 
 #define STD_TRUE 1
 #define STD_FALSE 0
@@ -79,4 +79,4 @@ STD_ReturnType LED_u8Off(u8 user_u8PORT, u8 user_u8PIN)
     }
     return STD_FALSE; // LED turn off failed
 }
-*/
+
