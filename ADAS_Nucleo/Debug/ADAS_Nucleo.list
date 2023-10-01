@@ -41,7 +41,7 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  18 .debug_line   00000812  00000000  00000000  0002142d  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    00005801  00000000  00000000  00021c3f  2**0
+ 19 .debug_str    00005800  00000000  00000000  00021c3f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  20 .debug_frame  000002bc  00000000  00000000  00027440  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -416,7 +416,7 @@ u8 PWM_u8Init(u8 timerID) {
 
 				TIM3_PSC = PRESCALER;
  80003fc:	4b32      	ldr	r3, [pc, #200]	; (80004c8 <PWM_u8Init+0x15c>)
- 80003fe:	f240 623f 	movw	r2, #1599	; 0x63f
+ 80003fe:	f240 321f 	movw	r2, #799	; 0x31f
  8000402:	601a      	str	r2, [r3, #0]
 				TIM3_ARR = AUTO_RELOAD_VAL;
  8000404:	4b31      	ldr	r3, [pc, #196]	; (80004cc <PWM_u8Init+0x160>)
@@ -531,7 +531,7 @@ u8 PWM_u8Init(u8 timerID) {
 
 				TIM4_PSC = PRESCALER;
  8000482:	4b18      	ldr	r3, [pc, #96]	; (80004e4 <PWM_u8Init+0x178>)
- 8000484:	f240 623f 	movw	r2, #1599	; 0x63f
+ 8000484:	f240 321f 	movw	r2, #799	; 0x31f
  8000488:	601a      	str	r2, [r3, #0]
 				TIM4_ARR = AUTO_RELOAD_VAL;
  800048a:	4b17      	ldr	r3, [pc, #92]	; (80004e8 <PWM_u8Init+0x17c>)
@@ -624,7 +624,7 @@ u8 PWM_u8Start(u8 timerID, u8 duty) {
  8000518:	79bb      	ldrb	r3, [r7, #6]
  800051a:	2b64      	cmp	r3, #100	; 0x64
  800051c:	d809      	bhi.n	8000532 <PWM_u8Start+0x42>
-				TIM3_CCR4 = ((u16) 255 * duty) / 100;
+				TIM3_CCR4 = ((u16) AUTO_RELOAD_VAL * duty) / 100;
  800051e:	79ba      	ldrb	r2, [r7, #6]
  8000520:	4613      	mov	r3, r2
  8000522:	021b      	lsls	r3, r3, #8
@@ -668,7 +668,7 @@ u8 PWM_u8Start(u8 timerID, u8 duty) {
  800054e:	79bb      	ldrb	r3, [r7, #6]
  8000550:	2b64      	cmp	r3, #100	; 0x64
  8000552:	d809      	bhi.n	8000568 <PWM_u8Start+0x78>
-				TIM4_CCR4 = ((u16) 255 * duty) / 100;
+				TIM4_CCR4 = ((u16) AUTO_RELOAD_VAL * duty) / 100;
  8000554:	79ba      	ldrb	r2, [r7, #6]
  8000556:	4613      	mov	r3, r2
  8000558:	021b      	lsls	r3, r3, #8

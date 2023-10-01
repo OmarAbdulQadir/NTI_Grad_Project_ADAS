@@ -183,7 +183,7 @@ u8 PWM_u8Start(u8 timerID, u8 duty) {
 		case TIM3_ID:
 			/* map duty from 0-100 to 0-255*/
 			if ((duty >= 0) && (duty <= 100)) {
-				TIM3_CCR4 = ((u16) 255 * duty) / 100;
+				TIM3_CCR4 = ((u16) AUTO_RELOAD_VAL * duty) / 100;
 			} else {
 
 			}
@@ -211,7 +211,7 @@ u8 PWM_u8Start(u8 timerID, u8 duty) {
 			break;
 		case TIM4_ID:
 			if ((duty >= 0) && (duty <= 100)) {
-				TIM4_CCR4 = ((u16) 255 * duty) / 100;
+				TIM4_CCR4 = ((u16) AUTO_RELOAD_VAL * duty) / 100;
 			} else {
 
 			}

@@ -1241,6 +1241,7 @@ LOAD C:/ST/STM32CubeIDE_1.13.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_line    0x000000000000062e      0x169 ./Src/main.o
  .debug_line    0x0000000000000797       0x7b ./Startup/startup_stm32f401retx.o
 
+<<<<<<< Updated upstream
 .debug_str      0x0000000000000000     0x5801
  .debug_str     0x0000000000000000     0x3b3e ./Src/GPIO_program.o
                                        0x3ba5 (size before relaxing)
@@ -1252,6 +1253,19 @@ LOAD C:/ST/STM32CubeIDE_1.13.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
                                        0x3628 (size before relaxing)
  .debug_str     0x00000000000057d2       0x2f ./Startup/startup_stm32f401retx.o
                                          0x7b (size before relaxing)
+=======
+.debug_str      0x0000000000000000     0x5800
+ .debug_str     0x0000000000000000     0x3b3f ./Src/GPIO_program.o
+                                       0x3ba6 (size before relaxing)
+ .debug_str     0x0000000000003b3f      0xc3b ./Src/PWM_program.o
+                                       0x3bd3 (size before relaxing)
+ .debug_str     0x000000000000477a     0x1044 ./Src/RCC_program.o
+                                       0x3fd6 (size before relaxing)
+ .debug_str     0x00000000000057be       0x13 ./Src/main.o
+                                       0x3628 (size before relaxing)
+ .debug_str     0x00000000000057d1       0x2f ./Startup/startup_stm32f401retx.o
+                                         0x7c (size before relaxing)
+>>>>>>> Stashed changes
 
 .debug_frame    0x0000000000000000      0x2bc
  .debug_frame   0x0000000000000000      0x158 ./Src/GPIO_program.o
