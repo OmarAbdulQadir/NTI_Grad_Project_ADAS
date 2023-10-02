@@ -5,47 +5,47 @@ Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
   0 .isr_vector   00000194  08000000  08000000  00010000  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  1 .text         00000db4  08000194  08000194  00010194  2**2
+  1 .text         00000948  08000194  08000194  00010194  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       00000000  08000f48  08000f48  00020020  2**0
+  2 .rodata       00000000  08000adc  08000adc  00020024  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  3 .ARM.extab    00000000  08000f48  08000f48  00020020  2**0
+  3 .ARM.extab    00000000  08000adc  08000adc  00020024  2**0
                   CONTENTS
-  4 .ARM          00000000  08000f48  08000f48  00020020  2**0
+  4 .ARM          00000000  08000adc  08000adc  00020024  2**0
                   CONTENTS
-  5 .preinit_array 00000000  08000f48  08000f48  00020020  2**0
+  5 .preinit_array 00000000  08000adc  08000adc  00020024  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  08000f48  08000f48  00010f48  2**2
+  6 .init_array   00000004  08000adc  08000adc  00010adc  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  7 .fini_array   00000004  08000f4c  08000f4c  00010f4c  2**2
+  7 .fini_array   00000004  08000ae0  08000ae0  00010ae0  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  8 .data         00000020  20000000  08000f50  00020000  2**2
+  8 .data         00000024  20000000  08000ae4  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          00000034  20000020  08000f70  00020020  2**2
+  9 .bss          00000044  20000024  08000b08  00020024  2**2
                   ALLOC
- 10 ._user_heap_stack 00000604  20000054  08000f70  00020054  2**0
+ 10 ._user_heap_stack 00000600  20000068  08000b08  00020068  2**0
                   ALLOC
- 11 .ARM.attributes 00000030  00000000  00000000  00020020  2**0
+ 11 .ARM.attributes 00000030  00000000  00000000  00020024  2**0
                   CONTENTS, READONLY
- 12 .comment      00000043  00000000  00000000  00020050  2**0
+ 12 .comment      00000043  00000000  00000000  00020054  2**0
                   CONTENTS, READONLY
- 13 .debug_info   00000cab  00000000  00000000  00020093  2**0
+ 13 .debug_info   00000e13  00000000  00000000  00020097  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 00000655  00000000  00000000  00020d3e  2**0
+ 14 .debug_abbrev 0000060c  00000000  00000000  00020eaa  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_aranges 000001b8  00000000  00000000  00021398  2**3
+ 15 .debug_aranges 000001e0  00000000  00000000  000214b8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_rnglists 00000126  00000000  00000000  00021550  2**0
+ 16 .debug_rnglists 00000152  00000000  00000000  00021698  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  00000c16  00000000  00000000  00021676  2**0
+ 17 .debug_macro  00000a8f  00000000  00000000  000217ea  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   000011e4  00000000  00000000  0002228c  2**0
+ 18 .debug_line   00000f41  00000000  00000000  00022279  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000065fa  00000000  00000000  00023470  2**0
+ 19 .debug_str    00005fd5  00000000  00000000  000231ba  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  000004e0  00000000  00000000  00029a6c  2**2
+ 20 .debug_frame  00000618  00000000  00000000  00029190  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000072  00000000  00000000  00029f4c  2**0
+ 21 .debug_line_str 00000072  00000000  00000000  000297a8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -62,9 +62,9 @@ Disassembly of section .text:
  80001a6:	2301      	movs	r3, #1
  80001a8:	7023      	strb	r3, [r4, #0]
  80001aa:	bd10      	pop	{r4, pc}
- 80001ac:	20000020 	.word	0x20000020
+ 80001ac:	20000024 	.word	0x20000024
  80001b0:	00000000 	.word	0x00000000
- 80001b4:	08000f30 	.word	0x08000f30
+ 80001b4:	08000ac4 	.word	0x08000ac4
 
 080001b8 <frame_dummy>:
  80001b8:	b508      	push	{r3, lr}
@@ -75,8 +75,8 @@ Disassembly of section .text:
  80001c2:	f3af 8000 	nop.w
  80001c6:	bd08      	pop	{r3, pc}
  80001c8:	00000000 	.word	0x00000000
- 80001cc:	20000024 	.word	0x20000024
- 80001d0:	08000f30 	.word	0x08000f30
+ 80001cc:	20000028 	.word	0x20000028
+ 80001d0:	08000ac4 	.word	0x08000ac4
 
 080001d4 <GPIO_voidSetPinMode>:
 									MODE_ALTF
@@ -147,2173 +147,1526 @@ void GPIO_voidSetPinMode(u8 copy_u8PORT, u8 copy_u8PIN, u8 copy_u8MODE)
  8000242:	4770      	bx	lr
  8000244:	20000000 	.word	0x20000000
 
-08000248 <GPIO_voidWriteData>:
-			* Function To Write Data At ODR	Value :
-									 high 
-									 low	
-*/
-void GPIO_voidWriteData(u8 copy_u8PORT ,u8 copy_u8PIN , u8 copy_u8Value )
- {
- 8000248:	b480      	push	{r7}
- 800024a:	b083      	sub	sp, #12
- 800024c:	af00      	add	r7, sp, #0
- 800024e:	4603      	mov	r3, r0
- 8000250:	71fb      	strb	r3, [r7, #7]
- 8000252:	460b      	mov	r3, r1
- 8000254:	71bb      	strb	r3, [r7, #6]
- 8000256:	4613      	mov	r3, r2
- 8000258:	717b      	strb	r3, [r7, #5]
-	 if((copy_u8PORT <= GPIOH_PORT) && (copy_u8PIN <= PIN15)){
- 800025a:	79fb      	ldrb	r3, [r7, #7]
- 800025c:	2b05      	cmp	r3, #5
- 800025e:	d820      	bhi.n	80002a2 <GPIO_voidWriteData+0x5a>
- 8000260:	79bb      	ldrb	r3, [r7, #6]
- 8000262:	2b0f      	cmp	r3, #15
- 8000264:	d81d      	bhi.n	80002a2 <GPIO_voidWriteData+0x5a>
-		GPIO_bases[copy_u8PORT] -> ODR &= GPIO_ODR_MASK( copy_u8PIN );
- 8000266:	79fb      	ldrb	r3, [r7, #7]
- 8000268:	4a11      	ldr	r2, [pc, #68]	; (80002b0 <GPIO_voidWriteData+0x68>)
- 800026a:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
- 800026e:	6959      	ldr	r1, [r3, #20]
- 8000270:	79bb      	ldrb	r3, [r7, #6]
- 8000272:	2201      	movs	r2, #1
- 8000274:	fa02 f303 	lsl.w	r3, r2, r3
- 8000278:	43da      	mvns	r2, r3
- 800027a:	79fb      	ldrb	r3, [r7, #7]
- 800027c:	480c      	ldr	r0, [pc, #48]	; (80002b0 <GPIO_voidWriteData+0x68>)
- 800027e:	f850 3023 	ldr.w	r3, [r0, r3, lsl #2]
- 8000282:	400a      	ands	r2, r1
- 8000284:	615a      	str	r2, [r3, #20]
-		GPIO_bases[copy_u8PORT] -> ODR |= ( ( ( u32 ) copy_u8Value ) << copy_u8PIN );
- 8000286:	79fb      	ldrb	r3, [r7, #7]
- 8000288:	4a09      	ldr	r2, [pc, #36]	; (80002b0 <GPIO_voidWriteData+0x68>)
- 800028a:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
- 800028e:	6959      	ldr	r1, [r3, #20]
- 8000290:	797a      	ldrb	r2, [r7, #5]
- 8000292:	79bb      	ldrb	r3, [r7, #6]
- 8000294:	409a      	lsls	r2, r3
- 8000296:	79fb      	ldrb	r3, [r7, #7]
- 8000298:	4805      	ldr	r0, [pc, #20]	; (80002b0 <GPIO_voidWriteData+0x68>)
- 800029a:	f850 3023 	ldr.w	r3, [r0, r3, lsl #2]
- 800029e:	430a      	orrs	r2, r1
- 80002a0:	615a      	str	r2, [r3, #20]
-	 }
-	 else{
-	 }
-}
- 80002a2:	bf00      	nop
- 80002a4:	370c      	adds	r7, #12
- 80002a6:	46bd      	mov	sp, r7
- 80002a8:	f85d 7b04 	ldr.w	r7, [sp], #4
- 80002ac:	4770      	bx	lr
- 80002ae:	bf00      	nop
- 80002b0:	20000000 	.word	0x20000000
-
-080002b4 <GPIO_voidPinSetAltFn>:
+08000248 <GPIO_voidPinSetAltFn>:
  **********************************************************************************/  
 /*
 			Function Set The AltFn		: Every Pin Need 4 Bits SO We Have High AND Low
 */
 void GPIO_voidPinSetAltFn(u8 copy_u8PORT, u8 copy_u8PIN, u8 copy_u8AlT)
 {
- 80002b4:	e92d 03f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9}
- 80002b8:	b082      	sub	sp, #8
- 80002ba:	af00      	add	r7, sp, #0
- 80002bc:	4603      	mov	r3, r0
- 80002be:	71fb      	strb	r3, [r7, #7]
- 80002c0:	460b      	mov	r3, r1
- 80002c2:	71bb      	strb	r3, [r7, #6]
- 80002c4:	4613      	mov	r3, r2
- 80002c6:	717b      	strb	r3, [r7, #5]
+ 8000248:	e92d 03f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9}
+ 800024c:	b082      	sub	sp, #8
+ 800024e:	af00      	add	r7, sp, #0
+ 8000250:	4603      	mov	r3, r0
+ 8000252:	71fb      	strb	r3, [r7, #7]
+ 8000254:	460b      	mov	r3, r1
+ 8000256:	71bb      	strb	r3, [r7, #6]
+ 8000258:	4613      	mov	r3, r2
+ 800025a:	717b      	strb	r3, [r7, #5]
 	if((copy_u8PORT <= GPIOH_PORT) && (copy_u8PIN <= PIN15) && (copy_u8AlT <= GPIO_AFR_MAX)){
- 80002c8:	79fb      	ldrb	r3, [r7, #7]
- 80002ca:	2b05      	cmp	r3, #5
- 80002cc:	d873      	bhi.n	80003b6 <GPIO_voidPinSetAltFn+0x102>
- 80002ce:	79bb      	ldrb	r3, [r7, #6]
- 80002d0:	2b0f      	cmp	r3, #15
- 80002d2:	d870      	bhi.n	80003b6 <GPIO_voidPinSetAltFn+0x102>
- 80002d4:	797b      	ldrb	r3, [r7, #5]
- 80002d6:	2b0f      	cmp	r3, #15
- 80002d8:	d86d      	bhi.n	80003b6 <GPIO_voidPinSetAltFn+0x102>
+ 800025c:	79fb      	ldrb	r3, [r7, #7]
+ 800025e:	2b05      	cmp	r3, #5
+ 8000260:	d873      	bhi.n	800034a <GPIO_voidPinSetAltFn+0x102>
+ 8000262:	79bb      	ldrb	r3, [r7, #6]
+ 8000264:	2b0f      	cmp	r3, #15
+ 8000266:	d870      	bhi.n	800034a <GPIO_voidPinSetAltFn+0x102>
+ 8000268:	797b      	ldrb	r3, [r7, #5]
+ 800026a:	2b0f      	cmp	r3, #15
+ 800026c:	d86d      	bhi.n	800034a <GPIO_voidPinSetAltFn+0x102>
 		if(copy_u8PIN <= PIN7)
- 80002da:	79bb      	ldrb	r3, [r7, #6]
- 80002dc:	2b07      	cmp	r3, #7
- 80002de:	d833      	bhi.n	8000348 <GPIO_voidPinSetAltFn+0x94>
+ 800026e:	79bb      	ldrb	r3, [r7, #6]
+ 8000270:	2b07      	cmp	r3, #7
+ 8000272:	d833      	bhi.n	80002dc <GPIO_voidPinSetAltFn+0x94>
 		{
 			GPIO_bases[copy_u8PORT] -> AFRL &= GPIO_AFR_MASK( copy_u8PIN * 4 );
- 80002e0:	79fb      	ldrb	r3, [r7, #7]
- 80002e2:	4a38      	ldr	r2, [pc, #224]	; (80003c4 <GPIO_voidPinSetAltFn+0x110>)
- 80002e4:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
- 80002e8:	6a1b      	ldr	r3, [r3, #32]
- 80002ea:	603b      	str	r3, [r7, #0]
- 80002ec:	79bb      	ldrb	r3, [r7, #6]
- 80002ee:	0099      	lsls	r1, r3, #2
- 80002f0:	f04f 020f 	mov.w	r2, #15
- 80002f4:	f04f 0300 	mov.w	r3, #0
- 80002f8:	f1a1 0620 	sub.w	r6, r1, #32
- 80002fc:	f1c1 0020 	rsb	r0, r1, #32
- 8000300:	fa03 f901 	lsl.w	r9, r3, r1
- 8000304:	fa02 f606 	lsl.w	r6, r2, r6
- 8000308:	ea49 0906 	orr.w	r9, r9, r6
- 800030c:	fa22 f000 	lsr.w	r0, r2, r0
- 8000310:	ea49 0900 	orr.w	r9, r9, r0
- 8000314:	fa02 f801 	lsl.w	r8, r2, r1
- 8000318:	4643      	mov	r3, r8
+ 8000274:	79fb      	ldrb	r3, [r7, #7]
+ 8000276:	4a38      	ldr	r2, [pc, #224]	; (8000358 <GPIO_voidPinSetAltFn+0x110>)
+ 8000278:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
+ 800027c:	6a1b      	ldr	r3, [r3, #32]
+ 800027e:	603b      	str	r3, [r7, #0]
+ 8000280:	79bb      	ldrb	r3, [r7, #6]
+ 8000282:	0099      	lsls	r1, r3, #2
+ 8000284:	f04f 020f 	mov.w	r2, #15
+ 8000288:	f04f 0300 	mov.w	r3, #0
+ 800028c:	f1a1 0620 	sub.w	r6, r1, #32
+ 8000290:	f1c1 0020 	rsb	r0, r1, #32
+ 8000294:	fa03 f901 	lsl.w	r9, r3, r1
+ 8000298:	fa02 f606 	lsl.w	r6, r2, r6
+ 800029c:	ea49 0906 	orr.w	r9, r9, r6
+ 80002a0:	fa22 f000 	lsr.w	r0, r2, r0
+ 80002a4:	ea49 0900 	orr.w	r9, r9, r0
+ 80002a8:	fa02 f801 	lsl.w	r8, r2, r1
+ 80002ac:	4643      	mov	r3, r8
+ 80002ae:	43da      	mvns	r2, r3
+ 80002b0:	79fb      	ldrb	r3, [r7, #7]
+ 80002b2:	4929      	ldr	r1, [pc, #164]	; (8000358 <GPIO_voidPinSetAltFn+0x110>)
+ 80002b4:	f851 3023 	ldr.w	r3, [r1, r3, lsl #2]
+ 80002b8:	6839      	ldr	r1, [r7, #0]
+ 80002ba:	400a      	ands	r2, r1
+ 80002bc:	621a      	str	r2, [r3, #32]
+			GPIO_bases[copy_u8PORT] -> AFRL |= ( ( ( u32 ) copy_u8AlT ) << copy_u8PIN * 4 );
+ 80002be:	79fb      	ldrb	r3, [r7, #7]
+ 80002c0:	4a25      	ldr	r2, [pc, #148]	; (8000358 <GPIO_voidPinSetAltFn+0x110>)
+ 80002c2:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
+ 80002c6:	6a19      	ldr	r1, [r3, #32]
+ 80002c8:	797a      	ldrb	r2, [r7, #5]
+ 80002ca:	79bb      	ldrb	r3, [r7, #6]
+ 80002cc:	009b      	lsls	r3, r3, #2
+ 80002ce:	409a      	lsls	r2, r3
+ 80002d0:	79fb      	ldrb	r3, [r7, #7]
+ 80002d2:	4821      	ldr	r0, [pc, #132]	; (8000358 <GPIO_voidPinSetAltFn+0x110>)
+ 80002d4:	f850 3023 	ldr.w	r3, [r0, r3, lsl #2]
+ 80002d8:	430a      	orrs	r2, r1
+ 80002da:	621a      	str	r2, [r3, #32]
+		}
+		if(copy_u8PIN > PIN7)
+ 80002dc:	79bb      	ldrb	r3, [r7, #6]
+ 80002de:	2b07      	cmp	r3, #7
+ 80002e0:	d933      	bls.n	800034a <GPIO_voidPinSetAltFn+0x102>
+		{
+			GPIO_bases[copy_u8PORT] -> AFRH &= GPIO_AFR_MASK( ( copy_u8PIN - PIN8 ) * 4 );
+ 80002e2:	79fb      	ldrb	r3, [r7, #7]
+ 80002e4:	4a1c      	ldr	r2, [pc, #112]	; (8000358 <GPIO_voidPinSetAltFn+0x110>)
+ 80002e6:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
+ 80002ea:	6a5b      	ldr	r3, [r3, #36]	; 0x24
+ 80002ec:	603b      	str	r3, [r7, #0]
+ 80002ee:	79bb      	ldrb	r3, [r7, #6]
+ 80002f0:	3b08      	subs	r3, #8
+ 80002f2:	0099      	lsls	r1, r3, #2
+ 80002f4:	f04f 020f 	mov.w	r2, #15
+ 80002f8:	f04f 0300 	mov.w	r3, #0
+ 80002fc:	f1a1 0620 	sub.w	r6, r1, #32
+ 8000300:	f1c1 0020 	rsb	r0, r1, #32
+ 8000304:	fa03 f501 	lsl.w	r5, r3, r1
+ 8000308:	fa02 f606 	lsl.w	r6, r2, r6
+ 800030c:	4335      	orrs	r5, r6
+ 800030e:	fa22 f000 	lsr.w	r0, r2, r0
+ 8000312:	4305      	orrs	r5, r0
+ 8000314:	fa02 f401 	lsl.w	r4, r2, r1
+ 8000318:	4623      	mov	r3, r4
  800031a:	43da      	mvns	r2, r3
  800031c:	79fb      	ldrb	r3, [r7, #7]
- 800031e:	4929      	ldr	r1, [pc, #164]	; (80003c4 <GPIO_voidPinSetAltFn+0x110>)
+ 800031e:	490e      	ldr	r1, [pc, #56]	; (8000358 <GPIO_voidPinSetAltFn+0x110>)
  8000320:	f851 3023 	ldr.w	r3, [r1, r3, lsl #2]
  8000324:	6839      	ldr	r1, [r7, #0]
  8000326:	400a      	ands	r2, r1
- 8000328:	621a      	str	r2, [r3, #32]
-			GPIO_bases[copy_u8PORT] -> AFRL |= ( ( ( u32 ) copy_u8AlT ) << copy_u8PIN * 4 );
+ 8000328:	625a      	str	r2, [r3, #36]	; 0x24
+			GPIO_bases[copy_u8PORT] -> AFRH |= ( ( ( u32 ) copy_u8AlT ) << ( copy_u8PIN - PIN8 ) * 4 );
  800032a:	79fb      	ldrb	r3, [r7, #7]
- 800032c:	4a25      	ldr	r2, [pc, #148]	; (80003c4 <GPIO_voidPinSetAltFn+0x110>)
+ 800032c:	4a0a      	ldr	r2, [pc, #40]	; (8000358 <GPIO_voidPinSetAltFn+0x110>)
  800032e:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
- 8000332:	6a19      	ldr	r1, [r3, #32]
+ 8000332:	6a59      	ldr	r1, [r3, #36]	; 0x24
  8000334:	797a      	ldrb	r2, [r7, #5]
  8000336:	79bb      	ldrb	r3, [r7, #6]
- 8000338:	009b      	lsls	r3, r3, #2
- 800033a:	409a      	lsls	r2, r3
- 800033c:	79fb      	ldrb	r3, [r7, #7]
- 800033e:	4821      	ldr	r0, [pc, #132]	; (80003c4 <GPIO_voidPinSetAltFn+0x110>)
- 8000340:	f850 3023 	ldr.w	r3, [r0, r3, lsl #2]
- 8000344:	430a      	orrs	r2, r1
- 8000346:	621a      	str	r2, [r3, #32]
-		}
-		if(copy_u8PIN > PIN7)
- 8000348:	79bb      	ldrb	r3, [r7, #6]
- 800034a:	2b07      	cmp	r3, #7
- 800034c:	d933      	bls.n	80003b6 <GPIO_voidPinSetAltFn+0x102>
-		{
-			GPIO_bases[copy_u8PORT] -> AFRH &= GPIO_AFR_MASK( ( copy_u8PIN - PIN8 ) * 4 );
- 800034e:	79fb      	ldrb	r3, [r7, #7]
- 8000350:	4a1c      	ldr	r2, [pc, #112]	; (80003c4 <GPIO_voidPinSetAltFn+0x110>)
- 8000352:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
- 8000356:	6a5b      	ldr	r3, [r3, #36]	; 0x24
- 8000358:	603b      	str	r3, [r7, #0]
- 800035a:	79bb      	ldrb	r3, [r7, #6]
- 800035c:	3b08      	subs	r3, #8
- 800035e:	0099      	lsls	r1, r3, #2
- 8000360:	f04f 020f 	mov.w	r2, #15
- 8000364:	f04f 0300 	mov.w	r3, #0
- 8000368:	f1a1 0620 	sub.w	r6, r1, #32
- 800036c:	f1c1 0020 	rsb	r0, r1, #32
- 8000370:	fa03 f501 	lsl.w	r5, r3, r1
- 8000374:	fa02 f606 	lsl.w	r6, r2, r6
- 8000378:	4335      	orrs	r5, r6
- 800037a:	fa22 f000 	lsr.w	r0, r2, r0
- 800037e:	4305      	orrs	r5, r0
- 8000380:	fa02 f401 	lsl.w	r4, r2, r1
- 8000384:	4623      	mov	r3, r4
- 8000386:	43da      	mvns	r2, r3
- 8000388:	79fb      	ldrb	r3, [r7, #7]
- 800038a:	490e      	ldr	r1, [pc, #56]	; (80003c4 <GPIO_voidPinSetAltFn+0x110>)
- 800038c:	f851 3023 	ldr.w	r3, [r1, r3, lsl #2]
- 8000390:	6839      	ldr	r1, [r7, #0]
- 8000392:	400a      	ands	r2, r1
- 8000394:	625a      	str	r2, [r3, #36]	; 0x24
-			GPIO_bases[copy_u8PORT] -> AFRH |= ( ( ( u32 ) copy_u8AlT ) << ( copy_u8PIN - PIN8 ) * 4 );
- 8000396:	79fb      	ldrb	r3, [r7, #7]
- 8000398:	4a0a      	ldr	r2, [pc, #40]	; (80003c4 <GPIO_voidPinSetAltFn+0x110>)
- 800039a:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
- 800039e:	6a59      	ldr	r1, [r3, #36]	; 0x24
- 80003a0:	797a      	ldrb	r2, [r7, #5]
- 80003a2:	79bb      	ldrb	r3, [r7, #6]
- 80003a4:	3b08      	subs	r3, #8
- 80003a6:	009b      	lsls	r3, r3, #2
- 80003a8:	409a      	lsls	r2, r3
- 80003aa:	79fb      	ldrb	r3, [r7, #7]
- 80003ac:	4805      	ldr	r0, [pc, #20]	; (80003c4 <GPIO_voidPinSetAltFn+0x110>)
- 80003ae:	f850 3023 	ldr.w	r3, [r0, r3, lsl #2]
- 80003b2:	430a      	orrs	r2, r1
- 80003b4:	625a      	str	r2, [r3, #36]	; 0x24
+ 8000338:	3b08      	subs	r3, #8
+ 800033a:	009b      	lsls	r3, r3, #2
+ 800033c:	409a      	lsls	r2, r3
+ 800033e:	79fb      	ldrb	r3, [r7, #7]
+ 8000340:	4805      	ldr	r0, [pc, #20]	; (8000358 <GPIO_voidPinSetAltFn+0x110>)
+ 8000342:	f850 3023 	ldr.w	r3, [r0, r3, lsl #2]
+ 8000346:	430a      	orrs	r2, r1
+ 8000348:	625a      	str	r2, [r3, #36]	; 0x24
 		}
 	}
 }
- 80003b6:	bf00      	nop
- 80003b8:	3708      	adds	r7, #8
- 80003ba:	46bd      	mov	sp, r7
- 80003bc:	e8bd 03f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9}
- 80003c0:	4770      	bx	lr
- 80003c2:	bf00      	nop
- 80003c4:	20000000 	.word	0x20000000
+ 800034a:	bf00      	nop
+ 800034c:	3708      	adds	r7, #8
+ 800034e:	46bd      	mov	sp, r7
+ 8000350:	e8bd 03f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9}
+ 8000354:	4770      	bx	lr
+ 8000356:	bf00      	nop
+ 8000358:	20000000 	.word	0x20000000
 
-080003c8 <ICU_u8StopCh>:
+0800035c <ICU_u8StopCh>:
 /*--------------------------------------------------------------------------------*/
 /* Stop ICU detection and counting									*/
 /* Input Parameters: TIMER Peripheral ID, Input channel ID			*/
 /* Return value: STD_TRUE -> Success, STD_FALSE -> Failed			*/
 STD_ReturnType ICU_u8StopCh( u8 copy_u8TIM_ID ,  u8 copy_u8CH_ID )
 {
- 80003c8:	b480      	push	{r7}
- 80003ca:	b083      	sub	sp, #12
- 80003cc:	af00      	add	r7, sp, #0
- 80003ce:	4603      	mov	r3, r0
- 80003d0:	460a      	mov	r2, r1
- 80003d2:	71fb      	strb	r3, [r7, #7]
- 80003d4:	4613      	mov	r3, r2
- 80003d6:	71bb      	strb	r3, [r7, #6]
+ 800035c:	b480      	push	{r7}
+ 800035e:	b083      	sub	sp, #12
+ 8000360:	af00      	add	r7, sp, #0
+ 8000362:	4603      	mov	r3, r0
+ 8000364:	460a      	mov	r2, r1
+ 8000366:	71fb      	strb	r3, [r7, #7]
+ 8000368:	4613      	mov	r3, r2
+ 800036a:	71bb      	strb	r3, [r7, #6]
 	// Check data validity
 	if( ( ( ( ( ICU_Init & TIM2_Init  ) == TIM2_Init   ) && ( copy_u8TIM_ID == TIMER2ID  ) ) ||
- 80003d8:	4b57      	ldr	r3, [pc, #348]	; (8000538 <ICU_u8StopCh+0x170>)
- 80003da:	781b      	ldrb	r3, [r3, #0]
- 80003dc:	f003 0303 	and.w	r3, r3, #3
- 80003e0:	2b03      	cmp	r3, #3
- 80003e2:	d102      	bne.n	80003ea <ICU_u8StopCh+0x22>
- 80003e4:	79fb      	ldrb	r3, [r7, #7]
- 80003e6:	2b00      	cmp	r3, #0
- 80003e8:	d013      	beq.n	8000412 <ICU_u8StopCh+0x4a>
+ 800036c:	4b57      	ldr	r3, [pc, #348]	; (80004cc <ICU_u8StopCh+0x170>)
+ 800036e:	781b      	ldrb	r3, [r3, #0]
+ 8000370:	f003 0303 	and.w	r3, r3, #3
+ 8000374:	2b03      	cmp	r3, #3
+ 8000376:	d102      	bne.n	800037e <ICU_u8StopCh+0x22>
+ 8000378:	79fb      	ldrb	r3, [r7, #7]
+ 800037a:	2b00      	cmp	r3, #0
+ 800037c:	d013      	beq.n	80003a6 <ICU_u8StopCh+0x4a>
 		  ( ( ( ICU_Init & TIM5_Init  ) == TIM5_Init   ) && ( copy_u8TIM_ID == TIMER5ID  ) ) ||
- 80003ea:	4b53      	ldr	r3, [pc, #332]	; (8000538 <ICU_u8StopCh+0x170>)
- 80003ec:	781b      	ldrb	r3, [r3, #0]
- 80003ee:	f003 030c 	and.w	r3, r3, #12
+ 800037e:	4b53      	ldr	r3, [pc, #332]	; (80004cc <ICU_u8StopCh+0x170>)
+ 8000380:	781b      	ldrb	r3, [r3, #0]
+ 8000382:	f003 030c 	and.w	r3, r3, #12
 	if( ( ( ( ( ICU_Init & TIM2_Init  ) == TIM2_Init   ) && ( copy_u8TIM_ID == TIMER2ID  ) ) ||
- 80003f2:	2b0c      	cmp	r3, #12
- 80003f4:	d102      	bne.n	80003fc <ICU_u8StopCh+0x34>
+ 8000386:	2b0c      	cmp	r3, #12
+ 8000388:	d102      	bne.n	8000390 <ICU_u8StopCh+0x34>
 		  ( ( ( ICU_Init & TIM5_Init  ) == TIM5_Init   ) && ( copy_u8TIM_ID == TIMER5ID  ) ) ||
- 80003f6:	79fb      	ldrb	r3, [r7, #7]
- 80003f8:	2b01      	cmp	r3, #1
- 80003fa:	d00a      	beq.n	8000412 <ICU_u8StopCh+0x4a>
+ 800038a:	79fb      	ldrb	r3, [r7, #7]
+ 800038c:	2b01      	cmp	r3, #1
+ 800038e:	d00a      	beq.n	80003a6 <ICU_u8StopCh+0x4a>
 		  ( ( ( ICU_Init & TIM10_Init ) == TIM10_Init  ) && ( copy_u8TIM_ID == TIMER10ID ) ) ) &&
- 80003fc:	4b4e      	ldr	r3, [pc, #312]	; (8000538 <ICU_u8StopCh+0x170>)
- 80003fe:	781b      	ldrb	r3, [r3, #0]
- 8000400:	f003 0330 	and.w	r3, r3, #48	; 0x30
+ 8000390:	4b4e      	ldr	r3, [pc, #312]	; (80004cc <ICU_u8StopCh+0x170>)
+ 8000392:	781b      	ldrb	r3, [r3, #0]
+ 8000394:	f003 0330 	and.w	r3, r3, #48	; 0x30
 		  ( ( ( ICU_Init & TIM5_Init  ) == TIM5_Init   ) && ( copy_u8TIM_ID == TIMER5ID  ) ) ||
- 8000404:	2b30      	cmp	r3, #48	; 0x30
- 8000406:	f040 8090 	bne.w	800052a <ICU_u8StopCh+0x162>
+ 8000398:	2b30      	cmp	r3, #48	; 0x30
+ 800039a:	f040 8090 	bne.w	80004be <ICU_u8StopCh+0x162>
 		  ( ( ( ICU_Init & TIM10_Init ) == TIM10_Init  ) && ( copy_u8TIM_ID == TIMER10ID ) ) ) &&
- 800040a:	79fb      	ldrb	r3, [r7, #7]
- 800040c:	2b02      	cmp	r3, #2
- 800040e:	f040 808c 	bne.w	800052a <ICU_u8StopCh+0x162>
- 8000412:	79bb      	ldrb	r3, [r7, #6]
- 8000414:	2b03      	cmp	r3, #3
- 8000416:	f200 8088 	bhi.w	800052a <ICU_u8StopCh+0x162>
+ 800039e:	79fb      	ldrb	r3, [r7, #7]
+ 80003a0:	2b02      	cmp	r3, #2
+ 80003a2:	f040 808c 	bne.w	80004be <ICU_u8StopCh+0x162>
+ 80003a6:	79bb      	ldrb	r3, [r7, #6]
+ 80003a8:	2b03      	cmp	r3, #3
+ 80003aa:	f200 8088 	bhi.w	80004be <ICU_u8StopCh+0x162>
 		  ( copy_u8CH_ID <= CH4ID ) )
 	{
 		// Check which channel is selected
 		switch( copy_u8CH_ID )
- 800041a:	79bb      	ldrb	r3, [r7, #6]
- 800041c:	2b03      	cmp	r3, #3
- 800041e:	f200 8080 	bhi.w	8000522 <ICU_u8StopCh+0x15a>
- 8000422:	a201      	add	r2, pc, #4	; (adr r2, 8000428 <ICU_u8StopCh+0x60>)
- 8000424:	f852 f023 	ldr.w	pc, [r2, r3, lsl #2]
- 8000428:	08000439 	.word	0x08000439
- 800042c:	0800047b 	.word	0x0800047b
- 8000430:	080004b3 	.word	0x080004b3
- 8000434:	080004eb 	.word	0x080004eb
+ 80003ae:	79bb      	ldrb	r3, [r7, #6]
+ 80003b0:	2b03      	cmp	r3, #3
+ 80003b2:	f200 8080 	bhi.w	80004b6 <ICU_u8StopCh+0x15a>
+ 80003b6:	a201      	add	r2, pc, #4	; (adr r2, 80003bc <ICU_u8StopCh+0x60>)
+ 80003b8:	f852 f023 	ldr.w	pc, [r2, r3, lsl #2]
+ 80003bc:	080003cd 	.word	0x080003cd
+ 80003c0:	0800040f 	.word	0x0800040f
+ 80003c4:	08000447 	.word	0x08000447
+ 80003c8:	0800047f 	.word	0x0800047f
 		{
 		case CH1ID: // Case of Channel 1 is selected
 			// Check which timer is selected
 			switch( copy_u8TIM_ID )
- 8000438:	79fb      	ldrb	r3, [r7, #7]
- 800043a:	2b02      	cmp	r3, #2
- 800043c:	d014      	beq.n	8000468 <ICU_u8StopCh+0xa0>
- 800043e:	2b02      	cmp	r3, #2
- 8000440:	dc19      	bgt.n	8000476 <ICU_u8StopCh+0xae>
- 8000442:	2b00      	cmp	r3, #0
- 8000444:	d002      	beq.n	800044c <ICU_u8StopCh+0x84>
- 8000446:	2b01      	cmp	r3, #1
- 8000448:	d007      	beq.n	800045a <ICU_u8StopCh+0x92>
+ 80003cc:	79fb      	ldrb	r3, [r7, #7]
+ 80003ce:	2b02      	cmp	r3, #2
+ 80003d0:	d014      	beq.n	80003fc <ICU_u8StopCh+0xa0>
+ 80003d2:	2b02      	cmp	r3, #2
+ 80003d4:	dc19      	bgt.n	800040a <ICU_u8StopCh+0xae>
+ 80003d6:	2b00      	cmp	r3, #0
+ 80003d8:	d002      	beq.n	80003e0 <ICU_u8StopCh+0x84>
+ 80003da:	2b01      	cmp	r3, #1
+ 80003dc:	d007      	beq.n	80003ee <ICU_u8StopCh+0x92>
 			case TIMER10ID: // Case of timer 10 is selected
 				// Enable the selected channel
 				clr_bit( TIM10_CCER_ADR , TIMx_CH1EN );
 				break;
 			default: // Case of wrong timer selection
 				break;
- 800044a:	e014      	b.n	8000476 <ICU_u8StopCh+0xae>
+ 80003de:	e014      	b.n	800040a <ICU_u8StopCh+0xae>
 				clr_bit( TIM2_CCER_ADR , TIMx_CH1EN );
- 800044c:	4b3b      	ldr	r3, [pc, #236]	; (800053c <ICU_u8StopCh+0x174>)
- 800044e:	681b      	ldr	r3, [r3, #0]
- 8000450:	4a3a      	ldr	r2, [pc, #232]	; (800053c <ICU_u8StopCh+0x174>)
- 8000452:	f023 0301 	bic.w	r3, r3, #1
- 8000456:	6013      	str	r3, [r2, #0]
+ 80003e0:	4b3b      	ldr	r3, [pc, #236]	; (80004d0 <ICU_u8StopCh+0x174>)
+ 80003e2:	681b      	ldr	r3, [r3, #0]
+ 80003e4:	4a3a      	ldr	r2, [pc, #232]	; (80004d0 <ICU_u8StopCh+0x174>)
+ 80003e6:	f023 0301 	bic.w	r3, r3, #1
+ 80003ea:	6013      	str	r3, [r2, #0]
 				break;
- 8000458:	e00e      	b.n	8000478 <ICU_u8StopCh+0xb0>
+ 80003ec:	e00e      	b.n	800040c <ICU_u8StopCh+0xb0>
 				clr_bit( TIM5_CCER_ADR , TIMx_CH1EN );
- 800045a:	4b39      	ldr	r3, [pc, #228]	; (8000540 <ICU_u8StopCh+0x178>)
- 800045c:	681b      	ldr	r3, [r3, #0]
- 800045e:	4a38      	ldr	r2, [pc, #224]	; (8000540 <ICU_u8StopCh+0x178>)
- 8000460:	f023 0301 	bic.w	r3, r3, #1
- 8000464:	6013      	str	r3, [r2, #0]
+ 80003ee:	4b39      	ldr	r3, [pc, #228]	; (80004d4 <ICU_u8StopCh+0x178>)
+ 80003f0:	681b      	ldr	r3, [r3, #0]
+ 80003f2:	4a38      	ldr	r2, [pc, #224]	; (80004d4 <ICU_u8StopCh+0x178>)
+ 80003f4:	f023 0301 	bic.w	r3, r3, #1
+ 80003f8:	6013      	str	r3, [r2, #0]
 				break;
- 8000466:	e007      	b.n	8000478 <ICU_u8StopCh+0xb0>
+ 80003fa:	e007      	b.n	800040c <ICU_u8StopCh+0xb0>
 				clr_bit( TIM10_CCER_ADR , TIMx_CH1EN );
- 8000468:	4b35      	ldr	r3, [pc, #212]	; (8000540 <ICU_u8StopCh+0x178>)
- 800046a:	681b      	ldr	r3, [r3, #0]
- 800046c:	4a34      	ldr	r2, [pc, #208]	; (8000540 <ICU_u8StopCh+0x178>)
- 800046e:	f023 0301 	bic.w	r3, r3, #1
- 8000472:	6013      	str	r3, [r2, #0]
+ 80003fc:	4b35      	ldr	r3, [pc, #212]	; (80004d4 <ICU_u8StopCh+0x178>)
+ 80003fe:	681b      	ldr	r3, [r3, #0]
+ 8000400:	4a34      	ldr	r2, [pc, #208]	; (80004d4 <ICU_u8StopCh+0x178>)
+ 8000402:	f023 0301 	bic.w	r3, r3, #1
+ 8000406:	6013      	str	r3, [r2, #0]
 				break;
- 8000474:	e000      	b.n	8000478 <ICU_u8StopCh+0xb0>
+ 8000408:	e000      	b.n	800040c <ICU_u8StopCh+0xb0>
 				break;
- 8000476:	bf00      	nop
+ 800040a:	bf00      	nop
 			}
 			break;
- 8000478:	e055      	b.n	8000526 <ICU_u8StopCh+0x15e>
+ 800040c:	e055      	b.n	80004ba <ICU_u8StopCh+0x15e>
 		case CH2ID: // Case of Channel 2 is selected
 			// Check which timer is selected
 			switch( copy_u8TIM_ID )
- 800047a:	79fb      	ldrb	r3, [r7, #7]
- 800047c:	2b02      	cmp	r3, #2
- 800047e:	d014      	beq.n	80004aa <ICU_u8StopCh+0xe2>
- 8000480:	2b02      	cmp	r3, #2
- 8000482:	dc14      	bgt.n	80004ae <ICU_u8StopCh+0xe6>
- 8000484:	2b00      	cmp	r3, #0
- 8000486:	d002      	beq.n	800048e <ICU_u8StopCh+0xc6>
- 8000488:	2b01      	cmp	r3, #1
- 800048a:	d007      	beq.n	800049c <ICU_u8StopCh+0xd4>
+ 800040e:	79fb      	ldrb	r3, [r7, #7]
+ 8000410:	2b02      	cmp	r3, #2
+ 8000412:	d014      	beq.n	800043e <ICU_u8StopCh+0xe2>
+ 8000414:	2b02      	cmp	r3, #2
+ 8000416:	dc14      	bgt.n	8000442 <ICU_u8StopCh+0xe6>
+ 8000418:	2b00      	cmp	r3, #0
+ 800041a:	d002      	beq.n	8000422 <ICU_u8StopCh+0xc6>
+ 800041c:	2b01      	cmp	r3, #1
+ 800041e:	d007      	beq.n	8000430 <ICU_u8StopCh+0xd4>
 				break;
 			case TIMER10ID: // Case of timer 10 is selected
 				// Enable the selected channel
 				return STD_FALSE;
 			default: // Case of wrong timer selection
 				break;
- 800048c:	e00f      	b.n	80004ae <ICU_u8StopCh+0xe6>
+ 8000420:	e00f      	b.n	8000442 <ICU_u8StopCh+0xe6>
 				clr_bit( TIM2_CCER_ADR , TIMx_CH2EN );
- 800048e:	4b2b      	ldr	r3, [pc, #172]	; (800053c <ICU_u8StopCh+0x174>)
- 8000490:	681b      	ldr	r3, [r3, #0]
- 8000492:	4a2a      	ldr	r2, [pc, #168]	; (800053c <ICU_u8StopCh+0x174>)
- 8000494:	f023 0310 	bic.w	r3, r3, #16
- 8000498:	6013      	str	r3, [r2, #0]
+ 8000422:	4b2b      	ldr	r3, [pc, #172]	; (80004d0 <ICU_u8StopCh+0x174>)
+ 8000424:	681b      	ldr	r3, [r3, #0]
+ 8000426:	4a2a      	ldr	r2, [pc, #168]	; (80004d0 <ICU_u8StopCh+0x174>)
+ 8000428:	f023 0310 	bic.w	r3, r3, #16
+ 800042c:	6013      	str	r3, [r2, #0]
 				break;
- 800049a:	e009      	b.n	80004b0 <ICU_u8StopCh+0xe8>
+ 800042e:	e009      	b.n	8000444 <ICU_u8StopCh+0xe8>
 				clr_bit( TIM5_CCER_ADR , TIMx_CH2EN );
- 800049c:	4b28      	ldr	r3, [pc, #160]	; (8000540 <ICU_u8StopCh+0x178>)
- 800049e:	681b      	ldr	r3, [r3, #0]
- 80004a0:	4a27      	ldr	r2, [pc, #156]	; (8000540 <ICU_u8StopCh+0x178>)
- 80004a2:	f023 0310 	bic.w	r3, r3, #16
- 80004a6:	6013      	str	r3, [r2, #0]
+ 8000430:	4b28      	ldr	r3, [pc, #160]	; (80004d4 <ICU_u8StopCh+0x178>)
+ 8000432:	681b      	ldr	r3, [r3, #0]
+ 8000434:	4a27      	ldr	r2, [pc, #156]	; (80004d4 <ICU_u8StopCh+0x178>)
+ 8000436:	f023 0310 	bic.w	r3, r3, #16
+ 800043a:	6013      	str	r3, [r2, #0]
 				break;
- 80004a8:	e002      	b.n	80004b0 <ICU_u8StopCh+0xe8>
+ 800043c:	e002      	b.n	8000444 <ICU_u8StopCh+0xe8>
 				return STD_FALSE;
- 80004aa:	2300      	movs	r3, #0
- 80004ac:	e03e      	b.n	800052c <ICU_u8StopCh+0x164>
+ 800043e:	2300      	movs	r3, #0
+ 8000440:	e03e      	b.n	80004c0 <ICU_u8StopCh+0x164>
 				break;
- 80004ae:	bf00      	nop
+ 8000442:	bf00      	nop
 			}
 			break;
- 80004b0:	e039      	b.n	8000526 <ICU_u8StopCh+0x15e>
+ 8000444:	e039      	b.n	80004ba <ICU_u8StopCh+0x15e>
 		case CH3ID: // Case of Channel 3 is selected
 			// Check which timer is selected
 			switch( copy_u8TIM_ID )
- 80004b2:	79fb      	ldrb	r3, [r7, #7]
- 80004b4:	2b02      	cmp	r3, #2
- 80004b6:	d014      	beq.n	80004e2 <ICU_u8StopCh+0x11a>
- 80004b8:	2b02      	cmp	r3, #2
- 80004ba:	dc14      	bgt.n	80004e6 <ICU_u8StopCh+0x11e>
- 80004bc:	2b00      	cmp	r3, #0
- 80004be:	d002      	beq.n	80004c6 <ICU_u8StopCh+0xfe>
- 80004c0:	2b01      	cmp	r3, #1
- 80004c2:	d007      	beq.n	80004d4 <ICU_u8StopCh+0x10c>
+ 8000446:	79fb      	ldrb	r3, [r7, #7]
+ 8000448:	2b02      	cmp	r3, #2
+ 800044a:	d014      	beq.n	8000476 <ICU_u8StopCh+0x11a>
+ 800044c:	2b02      	cmp	r3, #2
+ 800044e:	dc14      	bgt.n	800047a <ICU_u8StopCh+0x11e>
+ 8000450:	2b00      	cmp	r3, #0
+ 8000452:	d002      	beq.n	800045a <ICU_u8StopCh+0xfe>
+ 8000454:	2b01      	cmp	r3, #1
+ 8000456:	d007      	beq.n	8000468 <ICU_u8StopCh+0x10c>
 				break;
 			case TIMER10ID: // Case of timer 10 is selected
 				// Enable the selected channel
 				return STD_FALSE;
 			default: // Case of wrong timer selection
 				break;
- 80004c4:	e00f      	b.n	80004e6 <ICU_u8StopCh+0x11e>
+ 8000458:	e00f      	b.n	800047a <ICU_u8StopCh+0x11e>
 				clr_bit( TIM2_CCER_ADR , TIMx_CH3EN );
- 80004c6:	4b1d      	ldr	r3, [pc, #116]	; (800053c <ICU_u8StopCh+0x174>)
- 80004c8:	681b      	ldr	r3, [r3, #0]
- 80004ca:	4a1c      	ldr	r2, [pc, #112]	; (800053c <ICU_u8StopCh+0x174>)
- 80004cc:	f423 7380 	bic.w	r3, r3, #256	; 0x100
- 80004d0:	6013      	str	r3, [r2, #0]
+ 800045a:	4b1d      	ldr	r3, [pc, #116]	; (80004d0 <ICU_u8StopCh+0x174>)
+ 800045c:	681b      	ldr	r3, [r3, #0]
+ 800045e:	4a1c      	ldr	r2, [pc, #112]	; (80004d0 <ICU_u8StopCh+0x174>)
+ 8000460:	f423 7380 	bic.w	r3, r3, #256	; 0x100
+ 8000464:	6013      	str	r3, [r2, #0]
 				break;
- 80004d2:	e009      	b.n	80004e8 <ICU_u8StopCh+0x120>
+ 8000466:	e009      	b.n	800047c <ICU_u8StopCh+0x120>
 				clr_bit( TIM5_CCER_ADR , TIMx_CH3EN );
- 80004d4:	4b1a      	ldr	r3, [pc, #104]	; (8000540 <ICU_u8StopCh+0x178>)
- 80004d6:	681b      	ldr	r3, [r3, #0]
- 80004d8:	4a19      	ldr	r2, [pc, #100]	; (8000540 <ICU_u8StopCh+0x178>)
- 80004da:	f423 7380 	bic.w	r3, r3, #256	; 0x100
- 80004de:	6013      	str	r3, [r2, #0]
+ 8000468:	4b1a      	ldr	r3, [pc, #104]	; (80004d4 <ICU_u8StopCh+0x178>)
+ 800046a:	681b      	ldr	r3, [r3, #0]
+ 800046c:	4a19      	ldr	r2, [pc, #100]	; (80004d4 <ICU_u8StopCh+0x178>)
+ 800046e:	f423 7380 	bic.w	r3, r3, #256	; 0x100
+ 8000472:	6013      	str	r3, [r2, #0]
 				break;
- 80004e0:	e002      	b.n	80004e8 <ICU_u8StopCh+0x120>
+ 8000474:	e002      	b.n	800047c <ICU_u8StopCh+0x120>
 				return STD_FALSE;
- 80004e2:	2300      	movs	r3, #0
- 80004e4:	e022      	b.n	800052c <ICU_u8StopCh+0x164>
+ 8000476:	2300      	movs	r3, #0
+ 8000478:	e022      	b.n	80004c0 <ICU_u8StopCh+0x164>
 				break;
- 80004e6:	bf00      	nop
+ 800047a:	bf00      	nop
 			}
 			break;
- 80004e8:	e01d      	b.n	8000526 <ICU_u8StopCh+0x15e>
+ 800047c:	e01d      	b.n	80004ba <ICU_u8StopCh+0x15e>
 		case CH4ID: // Case of Channel 4 is selected
 			// Check which timer is selected
 			switch( copy_u8TIM_ID )
- 80004ea:	79fb      	ldrb	r3, [r7, #7]
- 80004ec:	2b02      	cmp	r3, #2
- 80004ee:	d014      	beq.n	800051a <ICU_u8StopCh+0x152>
- 80004f0:	2b02      	cmp	r3, #2
- 80004f2:	dc14      	bgt.n	800051e <ICU_u8StopCh+0x156>
- 80004f4:	2b00      	cmp	r3, #0
- 80004f6:	d002      	beq.n	80004fe <ICU_u8StopCh+0x136>
- 80004f8:	2b01      	cmp	r3, #1
- 80004fa:	d007      	beq.n	800050c <ICU_u8StopCh+0x144>
+ 800047e:	79fb      	ldrb	r3, [r7, #7]
+ 8000480:	2b02      	cmp	r3, #2
+ 8000482:	d014      	beq.n	80004ae <ICU_u8StopCh+0x152>
+ 8000484:	2b02      	cmp	r3, #2
+ 8000486:	dc14      	bgt.n	80004b2 <ICU_u8StopCh+0x156>
+ 8000488:	2b00      	cmp	r3, #0
+ 800048a:	d002      	beq.n	8000492 <ICU_u8StopCh+0x136>
+ 800048c:	2b01      	cmp	r3, #1
+ 800048e:	d007      	beq.n	80004a0 <ICU_u8StopCh+0x144>
 				break;
 			case TIMER10ID: // Case of timer 10 is selected
 				// Enable the selected channel
 				return STD_FALSE;
 			default: // Case of wrong timer selection
 				break;
- 80004fc:	e00f      	b.n	800051e <ICU_u8StopCh+0x156>
+ 8000490:	e00f      	b.n	80004b2 <ICU_u8StopCh+0x156>
 				clr_bit( TIM2_CCER_ADR , TIMx_CH4EN );
- 80004fe:	4b0f      	ldr	r3, [pc, #60]	; (800053c <ICU_u8StopCh+0x174>)
- 8000500:	681b      	ldr	r3, [r3, #0]
- 8000502:	4a0e      	ldr	r2, [pc, #56]	; (800053c <ICU_u8StopCh+0x174>)
- 8000504:	f423 5380 	bic.w	r3, r3, #4096	; 0x1000
- 8000508:	6013      	str	r3, [r2, #0]
+ 8000492:	4b0f      	ldr	r3, [pc, #60]	; (80004d0 <ICU_u8StopCh+0x174>)
+ 8000494:	681b      	ldr	r3, [r3, #0]
+ 8000496:	4a0e      	ldr	r2, [pc, #56]	; (80004d0 <ICU_u8StopCh+0x174>)
+ 8000498:	f423 5380 	bic.w	r3, r3, #4096	; 0x1000
+ 800049c:	6013      	str	r3, [r2, #0]
 				break;
- 800050a:	e009      	b.n	8000520 <ICU_u8StopCh+0x158>
+ 800049e:	e009      	b.n	80004b4 <ICU_u8StopCh+0x158>
 				clr_bit( TIM5_CCER_ADR , TIMx_CH4EN );
- 800050c:	4b0c      	ldr	r3, [pc, #48]	; (8000540 <ICU_u8StopCh+0x178>)
- 800050e:	681b      	ldr	r3, [r3, #0]
- 8000510:	4a0b      	ldr	r2, [pc, #44]	; (8000540 <ICU_u8StopCh+0x178>)
- 8000512:	f423 5380 	bic.w	r3, r3, #4096	; 0x1000
- 8000516:	6013      	str	r3, [r2, #0]
+ 80004a0:	4b0c      	ldr	r3, [pc, #48]	; (80004d4 <ICU_u8StopCh+0x178>)
+ 80004a2:	681b      	ldr	r3, [r3, #0]
+ 80004a4:	4a0b      	ldr	r2, [pc, #44]	; (80004d4 <ICU_u8StopCh+0x178>)
+ 80004a6:	f423 5380 	bic.w	r3, r3, #4096	; 0x1000
+ 80004aa:	6013      	str	r3, [r2, #0]
 				break;
- 8000518:	e002      	b.n	8000520 <ICU_u8StopCh+0x158>
+ 80004ac:	e002      	b.n	80004b4 <ICU_u8StopCh+0x158>
 				return STD_FALSE;
- 800051a:	2300      	movs	r3, #0
- 800051c:	e006      	b.n	800052c <ICU_u8StopCh+0x164>
+ 80004ae:	2300      	movs	r3, #0
+ 80004b0:	e006      	b.n	80004c0 <ICU_u8StopCh+0x164>
 				break;
- 800051e:	bf00      	nop
+ 80004b2:	bf00      	nop
 			}
 			break;
- 8000520:	e001      	b.n	8000526 <ICU_u8StopCh+0x15e>
+ 80004b4:	e001      	b.n	80004ba <ICU_u8StopCh+0x15e>
 		default: // Case of wrong channel selection
 			// Return false
 			return STD_FALSE;
- 8000522:	2300      	movs	r3, #0
- 8000524:	e002      	b.n	800052c <ICU_u8StopCh+0x164>
+ 80004b6:	2300      	movs	r3, #0
+ 80004b8:	e002      	b.n	80004c0 <ICU_u8StopCh+0x164>
 			break;
 		}
 		return STD_TRUE;
- 8000526:	2301      	movs	r3, #1
- 8000528:	e000      	b.n	800052c <ICU_u8StopCh+0x164>
+ 80004ba:	2301      	movs	r3, #1
+ 80004bc:	e000      	b.n	80004c0 <ICU_u8StopCh+0x164>
 	}
 	else
 	{// In case of in valid data or re-init
 		// Return false
 		return STD_FALSE;
- 800052a:	2300      	movs	r3, #0
+ 80004be:	2300      	movs	r3, #0
 	}
 }
- 800052c:	4618      	mov	r0, r3
- 800052e:	370c      	adds	r7, #12
- 8000530:	46bd      	mov	sp, r7
- 8000532:	f85d 7b04 	ldr.w	r7, [sp], #4
- 8000536:	4770      	bx	lr
- 8000538:	2000003c 	.word	0x2000003c
- 800053c:	40000020 	.word	0x40000020
- 8000540:	40000c20 	.word	0x40000c20
+ 80004c0:	4618      	mov	r0, r3
+ 80004c2:	370c      	adds	r7, #12
+ 80004c4:	46bd      	mov	sp, r7
+ 80004c6:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 80004ca:	4770      	bx	lr
+ 80004cc:	20000040 	.word	0x20000040
+ 80004d0:	40000020 	.word	0x40000020
+ 80004d4:	40000c20 	.word	0x40000c20
 
-08000544 <ICU_u8StopTim>:
+080004d8 <ICU_u8StopTim>:
 /*--------------------------------------------------------------------------------*/
 /* Disable the timer and stop counting								*/
 /* Input Parameters: TIMER Peripheral ID							*/
 /* Return value: STD_TRUE -> Success, STD_FALSE -> Failed			*/
 STD_ReturnType ICU_u8StopTim( u8 copy_u8TIM_ID )
 {
- 8000544:	b480      	push	{r7}
- 8000546:	b083      	sub	sp, #12
- 8000548:	af00      	add	r7, sp, #0
- 800054a:	4603      	mov	r3, r0
- 800054c:	71fb      	strb	r3, [r7, #7]
+ 80004d8:	b480      	push	{r7}
+ 80004da:	b083      	sub	sp, #12
+ 80004dc:	af00      	add	r7, sp, #0
+ 80004de:	4603      	mov	r3, r0
+ 80004e0:	71fb      	strb	r3, [r7, #7]
 	// Check data validity
 	if( ( ( ICU_Init == TIM2_Init ) && ( copy_u8TIM_ID == TIMER2ID ) ) ||
- 800054e:	4b1d      	ldr	r3, [pc, #116]	; (80005c4 <ICU_u8StopTim+0x80>)
- 8000550:	781b      	ldrb	r3, [r3, #0]
- 8000552:	2b03      	cmp	r3, #3
- 8000554:	d102      	bne.n	800055c <ICU_u8StopTim+0x18>
- 8000556:	79fb      	ldrb	r3, [r7, #7]
- 8000558:	2b00      	cmp	r3, #0
- 800055a:	d006      	beq.n	800056a <ICU_u8StopTim+0x26>
+ 80004e2:	4b1d      	ldr	r3, [pc, #116]	; (8000558 <ICU_u8StopTim+0x80>)
+ 80004e4:	781b      	ldrb	r3, [r3, #0]
+ 80004e6:	2b03      	cmp	r3, #3
+ 80004e8:	d102      	bne.n	80004f0 <ICU_u8StopTim+0x18>
+ 80004ea:	79fb      	ldrb	r3, [r7, #7]
+ 80004ec:	2b00      	cmp	r3, #0
+ 80004ee:	d006      	beq.n	80004fe <ICU_u8StopTim+0x26>
 		( ( ICU_Init == TIM5_Init ) && ( copy_u8TIM_ID == TIMER5ID ) ) )
- 800055c:	4b19      	ldr	r3, [pc, #100]	; (80005c4 <ICU_u8StopTim+0x80>)
- 800055e:	781b      	ldrb	r3, [r3, #0]
+ 80004f0:	4b19      	ldr	r3, [pc, #100]	; (8000558 <ICU_u8StopTim+0x80>)
+ 80004f2:	781b      	ldrb	r3, [r3, #0]
 	if( ( ( ICU_Init == TIM2_Init ) && ( copy_u8TIM_ID == TIMER2ID ) ) ||
- 8000560:	2b0c      	cmp	r3, #12
- 8000562:	d127      	bne.n	80005b4 <ICU_u8StopTim+0x70>
+ 80004f4:	2b0c      	cmp	r3, #12
+ 80004f6:	d127      	bne.n	8000548 <ICU_u8StopTim+0x70>
 		( ( ICU_Init == TIM5_Init ) && ( copy_u8TIM_ID == TIMER5ID ) ) )
- 8000564:	79fb      	ldrb	r3, [r7, #7]
- 8000566:	2b01      	cmp	r3, #1
- 8000568:	d124      	bne.n	80005b4 <ICU_u8StopTim+0x70>
+ 80004f8:	79fb      	ldrb	r3, [r7, #7]
+ 80004fa:	2b01      	cmp	r3, #1
+ 80004fc:	d124      	bne.n	8000548 <ICU_u8StopTim+0x70>
 	{
 		// Check which timer is selected to be initiated
 		switch( copy_u8TIM_ID )
- 800056a:	79fb      	ldrb	r3, [r7, #7]
- 800056c:	2b02      	cmp	r3, #2
- 800056e:	d016      	beq.n	800059e <ICU_u8StopTim+0x5a>
- 8000570:	2b02      	cmp	r3, #2
- 8000572:	dc1b      	bgt.n	80005ac <ICU_u8StopTim+0x68>
- 8000574:	2b00      	cmp	r3, #0
- 8000576:	d002      	beq.n	800057e <ICU_u8StopTim+0x3a>
- 8000578:	2b01      	cmp	r3, #1
- 800057a:	d009      	beq.n	8000590 <ICU_u8StopTim+0x4c>
- 800057c:	e016      	b.n	80005ac <ICU_u8StopTim+0x68>
+ 80004fe:	79fb      	ldrb	r3, [r7, #7]
+ 8000500:	2b02      	cmp	r3, #2
+ 8000502:	d016      	beq.n	8000532 <ICU_u8StopTim+0x5a>
+ 8000504:	2b02      	cmp	r3, #2
+ 8000506:	dc1b      	bgt.n	8000540 <ICU_u8StopTim+0x68>
+ 8000508:	2b00      	cmp	r3, #0
+ 800050a:	d002      	beq.n	8000512 <ICU_u8StopTim+0x3a>
+ 800050c:	2b01      	cmp	r3, #1
+ 800050e:	d009      	beq.n	8000524 <ICU_u8StopTim+0x4c>
+ 8000510:	e016      	b.n	8000540 <ICU_u8StopTim+0x68>
 		{
 		case TIMER2ID:// Case of timer 2 is selected
 			// Disable timer 2
 			clr_bit( TIM2_CR1_ADR , TIMx_EN );
- 800057e:	f04f 4380 	mov.w	r3, #1073741824	; 0x40000000
- 8000582:	681b      	ldr	r3, [r3, #0]
- 8000584:	f04f 4280 	mov.w	r2, #1073741824	; 0x40000000
- 8000588:	f023 0301 	bic.w	r3, r3, #1
- 800058c:	6013      	str	r3, [r2, #0]
+ 8000512:	f04f 4380 	mov.w	r3, #1073741824	; 0x40000000
+ 8000516:	681b      	ldr	r3, [r3, #0]
+ 8000518:	f04f 4280 	mov.w	r2, #1073741824	; 0x40000000
+ 800051c:	f023 0301 	bic.w	r3, r3, #1
+ 8000520:	6013      	str	r3, [r2, #0]
 			break;
- 800058e:	e00f      	b.n	80005b0 <ICU_u8StopTim+0x6c>
+ 8000522:	e00f      	b.n	8000544 <ICU_u8StopTim+0x6c>
 		case TIMER5ID: // Case of timer 5 is selected
 			// Disable timer 5
 			clr_bit( TIM5_CR1_ADR , TIMx_EN );
- 8000590:	4b0d      	ldr	r3, [pc, #52]	; (80005c8 <ICU_u8StopTim+0x84>)
- 8000592:	681b      	ldr	r3, [r3, #0]
- 8000594:	4a0c      	ldr	r2, [pc, #48]	; (80005c8 <ICU_u8StopTim+0x84>)
- 8000596:	f023 0301 	bic.w	r3, r3, #1
- 800059a:	6013      	str	r3, [r2, #0]
+ 8000524:	4b0d      	ldr	r3, [pc, #52]	; (800055c <ICU_u8StopTim+0x84>)
+ 8000526:	681b      	ldr	r3, [r3, #0]
+ 8000528:	4a0c      	ldr	r2, [pc, #48]	; (800055c <ICU_u8StopTim+0x84>)
+ 800052a:	f023 0301 	bic.w	r3, r3, #1
+ 800052e:	6013      	str	r3, [r2, #0]
 			break;
- 800059c:	e008      	b.n	80005b0 <ICU_u8StopTim+0x6c>
+ 8000530:	e008      	b.n	8000544 <ICU_u8StopTim+0x6c>
 		case TIMER10ID: // Case of timer 10 is selected
 			// Disable timer 10
 			clr_bit( TIM10_CR1_ADR , TIMx_EN );
- 800059e:	4b0a      	ldr	r3, [pc, #40]	; (80005c8 <ICU_u8StopTim+0x84>)
- 80005a0:	681b      	ldr	r3, [r3, #0]
- 80005a2:	4a09      	ldr	r2, [pc, #36]	; (80005c8 <ICU_u8StopTim+0x84>)
- 80005a4:	f023 0301 	bic.w	r3, r3, #1
- 80005a8:	6013      	str	r3, [r2, #0]
+ 8000532:	4b0a      	ldr	r3, [pc, #40]	; (800055c <ICU_u8StopTim+0x84>)
+ 8000534:	681b      	ldr	r3, [r3, #0]
+ 8000536:	4a09      	ldr	r2, [pc, #36]	; (800055c <ICU_u8StopTim+0x84>)
+ 8000538:	f023 0301 	bic.w	r3, r3, #1
+ 800053c:	6013      	str	r3, [r2, #0]
 			break;
- 80005aa:	e001      	b.n	80005b0 <ICU_u8StopTim+0x6c>
+ 800053e:	e001      	b.n	8000544 <ICU_u8StopTim+0x6c>
 		default: // Case of wrong selection
 			// Return false
 			return STD_FALSE;
- 80005ac:	2300      	movs	r3, #0
- 80005ae:	e002      	b.n	80005b6 <ICU_u8StopTim+0x72>
+ 8000540:	2300      	movs	r3, #0
+ 8000542:	e002      	b.n	800054a <ICU_u8StopTim+0x72>
 			break;
 		}
 		// Return true
 		return STD_TRUE;
- 80005b0:	2301      	movs	r3, #1
- 80005b2:	e000      	b.n	80005b6 <ICU_u8StopTim+0x72>
+ 8000544:	2301      	movs	r3, #1
+ 8000546:	e000      	b.n	800054a <ICU_u8StopTim+0x72>
 	}
 	else
 	{// In case of in valid data or re-init
 		// Return false
 		return STD_FALSE;
- 80005b4:	2300      	movs	r3, #0
+ 8000548:	2300      	movs	r3, #0
 	}
 }
- 80005b6:	4618      	mov	r0, r3
- 80005b8:	370c      	adds	r7, #12
- 80005ba:	46bd      	mov	sp, r7
- 80005bc:	f85d 7b04 	ldr.w	r7, [sp], #4
- 80005c0:	4770      	bx	lr
- 80005c2:	bf00      	nop
- 80005c4:	2000003c 	.word	0x2000003c
- 80005c8:	40000c00 	.word	0x40000c00
+ 800054a:	4618      	mov	r0, r3
+ 800054c:	370c      	adds	r7, #12
+ 800054e:	46bd      	mov	sp, r7
+ 8000550:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 8000554:	4770      	bx	lr
+ 8000556:	bf00      	nop
+ 8000558:	20000040 	.word	0x20000040
+ 800055c:	40000c00 	.word	0x40000c00
 
-080005cc <TIM5_IRQHandler>:
+08000560 <TIM5_IRQHandler>:
 /*--------------------------------------------------------------------------------*/
 /* Timer 5 Interrupt request handler								*/
 /* Input Parameters: void											*/
 /* Return value: void												*/
 void TIM5_IRQHandler( void )
 {
- 80005cc:	b580      	push	{r7, lr}
- 80005ce:	af00      	add	r7, sp, #0
+ 8000560:	b580      	push	{r7, lr}
+ 8000562:	af00      	add	r7, sp, #0
 	TIM5_CNT_ADR = TIM_RESET_VALUE;
- 80005d0:	4b4f      	ldr	r3, [pc, #316]	; (8000710 <TIM5_IRQHandler+0x144>)
- 80005d2:	2200      	movs	r2, #0
- 80005d4:	601a      	str	r2, [r3, #0]
+ 8000564:	4b4f      	ldr	r3, [pc, #316]	; (80006a4 <TIM5_IRQHandler+0x144>)
+ 8000566:	2200      	movs	r2, #0
+ 8000568:	601a      	str	r2, [r3, #0]
 	static u8 CurrentState = ICU_MODE_LOW;
 	if(CurrentState == ICU_MODE_LOW)
- 80005d6:	4b4f      	ldr	r3, [pc, #316]	; (8000714 <TIM5_IRQHandler+0x148>)
- 80005d8:	781b      	ldrb	r3, [r3, #0]
- 80005da:	2b00      	cmp	r3, #0
- 80005dc:	d13b      	bne.n	8000656 <TIM5_IRQHandler+0x8a>
+ 800056a:	4b4f      	ldr	r3, [pc, #316]	; (80006a8 <TIM5_IRQHandler+0x148>)
+ 800056c:	781b      	ldrb	r3, [r3, #0]
+ 800056e:	2b00      	cmp	r3, #0
+ 8000570:	d13b      	bne.n	80005ea <TIM5_IRQHandler+0x8a>
 	{
 		if(get_bit( TIM5_SR_ADR , TIMx_CH1IF ) == ICU_CH_EN)
- 80005de:	4b4e      	ldr	r3, [pc, #312]	; (8000718 <TIM5_IRQHandler+0x14c>)
- 80005e0:	681b      	ldr	r3, [r3, #0]
- 80005e2:	085b      	lsrs	r3, r3, #1
- 80005e4:	f003 0301 	and.w	r3, r3, #1
- 80005e8:	2b01      	cmp	r3, #1
- 80005ea:	d107      	bne.n	80005fc <TIM5_IRQHandler+0x30>
+ 8000572:	4b4e      	ldr	r3, [pc, #312]	; (80006ac <TIM5_IRQHandler+0x14c>)
+ 8000574:	681b      	ldr	r3, [r3, #0]
+ 8000576:	085b      	lsrs	r3, r3, #1
+ 8000578:	f003 0301 	and.w	r3, r3, #1
+ 800057c:	2b01      	cmp	r3, #1
+ 800057e:	d107      	bne.n	8000590 <TIM5_IRQHandler+0x30>
 		{
 			ICU_CaptureCompareDataTIM5[CH1ID] = TIM5_CRR1_ADR;
- 80005ec:	4b4b      	ldr	r3, [pc, #300]	; (800071c <TIM5_IRQHandler+0x150>)
- 80005ee:	681b      	ldr	r3, [r3, #0]
- 80005f0:	4a4b      	ldr	r2, [pc, #300]	; (8000720 <TIM5_IRQHandler+0x154>)
- 80005f2:	6013      	str	r3, [r2, #0]
+ 8000580:	4b4b      	ldr	r3, [pc, #300]	; (80006b0 <TIM5_IRQHandler+0x150>)
+ 8000582:	681b      	ldr	r3, [r3, #0]
+ 8000584:	4a4b      	ldr	r2, [pc, #300]	; (80006b4 <TIM5_IRQHandler+0x154>)
+ 8000586:	6013      	str	r3, [r2, #0]
 			CurrentState = ICU_MODE_HIGH;
- 80005f4:	4b47      	ldr	r3, [pc, #284]	; (8000714 <TIM5_IRQHandler+0x148>)
- 80005f6:	2201      	movs	r2, #1
- 80005f8:	701a      	strb	r2, [r3, #0]
+ 8000588:	4b47      	ldr	r3, [pc, #284]	; (80006a8 <TIM5_IRQHandler+0x148>)
+ 800058a:	2201      	movs	r2, #1
+ 800058c:	701a      	strb	r2, [r3, #0]
 	}
 	else
 	{
 		// Do nothing
 	}
 }
- 80005fa:	e087      	b.n	800070c <TIM5_IRQHandler+0x140>
+ 800058e:	e087      	b.n	80006a0 <TIM5_IRQHandler+0x140>
 		else if(get_bit( TIM5_SR_ADR , TIMx_CH2IF ) == ICU_CH_EN)
- 80005fc:	4b46      	ldr	r3, [pc, #280]	; (8000718 <TIM5_IRQHandler+0x14c>)
- 80005fe:	681b      	ldr	r3, [r3, #0]
- 8000600:	089b      	lsrs	r3, r3, #2
- 8000602:	f003 0301 	and.w	r3, r3, #1
- 8000606:	2b01      	cmp	r3, #1
- 8000608:	d107      	bne.n	800061a <TIM5_IRQHandler+0x4e>
+ 8000590:	4b46      	ldr	r3, [pc, #280]	; (80006ac <TIM5_IRQHandler+0x14c>)
+ 8000592:	681b      	ldr	r3, [r3, #0]
+ 8000594:	089b      	lsrs	r3, r3, #2
+ 8000596:	f003 0301 	and.w	r3, r3, #1
+ 800059a:	2b01      	cmp	r3, #1
+ 800059c:	d107      	bne.n	80005ae <TIM5_IRQHandler+0x4e>
 			ICU_CaptureCompareDataTIM5[CH2ID] = TIM5_CRR2_ADR;
- 800060a:	4b46      	ldr	r3, [pc, #280]	; (8000724 <TIM5_IRQHandler+0x158>)
- 800060c:	681b      	ldr	r3, [r3, #0]
- 800060e:	4a44      	ldr	r2, [pc, #272]	; (8000720 <TIM5_IRQHandler+0x154>)
- 8000610:	6053      	str	r3, [r2, #4]
+ 800059e:	4b46      	ldr	r3, [pc, #280]	; (80006b8 <TIM5_IRQHandler+0x158>)
+ 80005a0:	681b      	ldr	r3, [r3, #0]
+ 80005a2:	4a44      	ldr	r2, [pc, #272]	; (80006b4 <TIM5_IRQHandler+0x154>)
+ 80005a4:	6053      	str	r3, [r2, #4]
 			CurrentState = ICU_MODE_HIGH;
- 8000612:	4b40      	ldr	r3, [pc, #256]	; (8000714 <TIM5_IRQHandler+0x148>)
- 8000614:	2201      	movs	r2, #1
- 8000616:	701a      	strb	r2, [r3, #0]
+ 80005a6:	4b40      	ldr	r3, [pc, #256]	; (80006a8 <TIM5_IRQHandler+0x148>)
+ 80005a8:	2201      	movs	r2, #1
+ 80005aa:	701a      	strb	r2, [r3, #0]
 }
- 8000618:	e078      	b.n	800070c <TIM5_IRQHandler+0x140>
+ 80005ac:	e078      	b.n	80006a0 <TIM5_IRQHandler+0x140>
 		else if(get_bit( TIM5_SR_ADR , TIMx_CH3IF ) == ICU_CH_EN)
- 800061a:	4b3f      	ldr	r3, [pc, #252]	; (8000718 <TIM5_IRQHandler+0x14c>)
- 800061c:	681b      	ldr	r3, [r3, #0]
- 800061e:	08db      	lsrs	r3, r3, #3
- 8000620:	f003 0301 	and.w	r3, r3, #1
- 8000624:	2b01      	cmp	r3, #1
- 8000626:	d107      	bne.n	8000638 <TIM5_IRQHandler+0x6c>
+ 80005ae:	4b3f      	ldr	r3, [pc, #252]	; (80006ac <TIM5_IRQHandler+0x14c>)
+ 80005b0:	681b      	ldr	r3, [r3, #0]
+ 80005b2:	08db      	lsrs	r3, r3, #3
+ 80005b4:	f003 0301 	and.w	r3, r3, #1
+ 80005b8:	2b01      	cmp	r3, #1
+ 80005ba:	d107      	bne.n	80005cc <TIM5_IRQHandler+0x6c>
 			ICU_CaptureCompareDataTIM5[CH3ID] = TIM5_CRR2_ADR;
- 8000628:	4b3e      	ldr	r3, [pc, #248]	; (8000724 <TIM5_IRQHandler+0x158>)
- 800062a:	681b      	ldr	r3, [r3, #0]
- 800062c:	4a3c      	ldr	r2, [pc, #240]	; (8000720 <TIM5_IRQHandler+0x154>)
- 800062e:	6093      	str	r3, [r2, #8]
+ 80005bc:	4b3e      	ldr	r3, [pc, #248]	; (80006b8 <TIM5_IRQHandler+0x158>)
+ 80005be:	681b      	ldr	r3, [r3, #0]
+ 80005c0:	4a3c      	ldr	r2, [pc, #240]	; (80006b4 <TIM5_IRQHandler+0x154>)
+ 80005c2:	6093      	str	r3, [r2, #8]
 			CurrentState = ICU_MODE_HIGH;
- 8000630:	4b38      	ldr	r3, [pc, #224]	; (8000714 <TIM5_IRQHandler+0x148>)
- 8000632:	2201      	movs	r2, #1
- 8000634:	701a      	strb	r2, [r3, #0]
+ 80005c4:	4b38      	ldr	r3, [pc, #224]	; (80006a8 <TIM5_IRQHandler+0x148>)
+ 80005c6:	2201      	movs	r2, #1
+ 80005c8:	701a      	strb	r2, [r3, #0]
 }
- 8000636:	e069      	b.n	800070c <TIM5_IRQHandler+0x140>
+ 80005ca:	e069      	b.n	80006a0 <TIM5_IRQHandler+0x140>
 		else if(get_bit( TIM5_SR_ADR , TIMx_CH4IF ) == ICU_CH_EN)
- 8000638:	4b37      	ldr	r3, [pc, #220]	; (8000718 <TIM5_IRQHandler+0x14c>)
- 800063a:	681b      	ldr	r3, [r3, #0]
- 800063c:	091b      	lsrs	r3, r3, #4
- 800063e:	f003 0301 	and.w	r3, r3, #1
- 8000642:	2b01      	cmp	r3, #1
- 8000644:	d162      	bne.n	800070c <TIM5_IRQHandler+0x140>
+ 80005cc:	4b37      	ldr	r3, [pc, #220]	; (80006ac <TIM5_IRQHandler+0x14c>)
+ 80005ce:	681b      	ldr	r3, [r3, #0]
+ 80005d0:	091b      	lsrs	r3, r3, #4
+ 80005d2:	f003 0301 	and.w	r3, r3, #1
+ 80005d6:	2b01      	cmp	r3, #1
+ 80005d8:	d162      	bne.n	80006a0 <TIM5_IRQHandler+0x140>
 			ICU_CaptureCompareDataTIM5[CH4ID] = TIM5_CRR2_ADR;
- 8000646:	4b37      	ldr	r3, [pc, #220]	; (8000724 <TIM5_IRQHandler+0x158>)
- 8000648:	681b      	ldr	r3, [r3, #0]
- 800064a:	4a35      	ldr	r2, [pc, #212]	; (8000720 <TIM5_IRQHandler+0x154>)
- 800064c:	60d3      	str	r3, [r2, #12]
+ 80005da:	4b37      	ldr	r3, [pc, #220]	; (80006b8 <TIM5_IRQHandler+0x158>)
+ 80005dc:	681b      	ldr	r3, [r3, #0]
+ 80005de:	4a35      	ldr	r2, [pc, #212]	; (80006b4 <TIM5_IRQHandler+0x154>)
+ 80005e0:	60d3      	str	r3, [r2, #12]
 			CurrentState = ICU_MODE_HIGH;
- 800064e:	4b31      	ldr	r3, [pc, #196]	; (8000714 <TIM5_IRQHandler+0x148>)
- 8000650:	2201      	movs	r2, #1
- 8000652:	701a      	strb	r2, [r3, #0]
+ 80005e2:	4b31      	ldr	r3, [pc, #196]	; (80006a8 <TIM5_IRQHandler+0x148>)
+ 80005e4:	2201      	movs	r2, #1
+ 80005e6:	701a      	strb	r2, [r3, #0]
 }
- 8000654:	e05a      	b.n	800070c <TIM5_IRQHandler+0x140>
+ 80005e8:	e05a      	b.n	80006a0 <TIM5_IRQHandler+0x140>
 	else if(CurrentState == ICU_MODE_HIGH)
- 8000656:	4b2f      	ldr	r3, [pc, #188]	; (8000714 <TIM5_IRQHandler+0x148>)
- 8000658:	781b      	ldrb	r3, [r3, #0]
- 800065a:	2b01      	cmp	r3, #1
- 800065c:	d156      	bne.n	800070c <TIM5_IRQHandler+0x140>
+ 80005ea:	4b2f      	ldr	r3, [pc, #188]	; (80006a8 <TIM5_IRQHandler+0x148>)
+ 80005ec:	781b      	ldrb	r3, [r3, #0]
+ 80005ee:	2b01      	cmp	r3, #1
+ 80005f0:	d156      	bne.n	80006a0 <TIM5_IRQHandler+0x140>
 		if(get_bit( TIM5_SR_ADR , TIMx_CH1IF ) == ICU_CH_EN)
- 800065e:	4b2e      	ldr	r3, [pc, #184]	; (8000718 <TIM5_IRQHandler+0x14c>)
- 8000660:	681b      	ldr	r3, [r3, #0]
- 8000662:	085b      	lsrs	r3, r3, #1
- 8000664:	f003 0301 	and.w	r3, r3, #1
- 8000668:	2b01      	cmp	r3, #1
- 800066a:	d10e      	bne.n	800068a <TIM5_IRQHandler+0xbe>
+ 80005f2:	4b2e      	ldr	r3, [pc, #184]	; (80006ac <TIM5_IRQHandler+0x14c>)
+ 80005f4:	681b      	ldr	r3, [r3, #0]
+ 80005f6:	085b      	lsrs	r3, r3, #1
+ 80005f8:	f003 0301 	and.w	r3, r3, #1
+ 80005fc:	2b01      	cmp	r3, #1
+ 80005fe:	d10e      	bne.n	800061e <TIM5_IRQHandler+0xbe>
 			ICU_CaptureCompareDataTIM5[CH1ID] = TIM5_CRR1_ADR;
- 800066c:	4b2b      	ldr	r3, [pc, #172]	; (800071c <TIM5_IRQHandler+0x150>)
- 800066e:	681b      	ldr	r3, [r3, #0]
- 8000670:	4a2b      	ldr	r2, [pc, #172]	; (8000720 <TIM5_IRQHandler+0x154>)
- 8000672:	6013      	str	r3, [r2, #0]
+ 8000600:	4b2b      	ldr	r3, [pc, #172]	; (80006b0 <TIM5_IRQHandler+0x150>)
+ 8000602:	681b      	ldr	r3, [r3, #0]
+ 8000604:	4a2b      	ldr	r2, [pc, #172]	; (80006b4 <TIM5_IRQHandler+0x154>)
+ 8000606:	6013      	str	r3, [r2, #0]
 			ICU_u8StopCh(TIMER5ID, CH1ID);
- 8000674:	2100      	movs	r1, #0
- 8000676:	2001      	movs	r0, #1
- 8000678:	f7ff fea6 	bl	80003c8 <ICU_u8StopCh>
+ 8000608:	2100      	movs	r1, #0
+ 800060a:	2001      	movs	r0, #1
+ 800060c:	f7ff fea6 	bl	800035c <ICU_u8StopCh>
 			ICU_u8StopTim(TIMER5ID);
- 800067c:	2001      	movs	r0, #1
- 800067e:	f7ff ff61 	bl	8000544 <ICU_u8StopTim>
+ 8000610:	2001      	movs	r0, #1
+ 8000612:	f7ff ff61 	bl	80004d8 <ICU_u8StopTim>
 			CurrentState = ICU_MODE_LOW;
- 8000682:	4b24      	ldr	r3, [pc, #144]	; (8000714 <TIM5_IRQHandler+0x148>)
- 8000684:	2200      	movs	r2, #0
- 8000686:	701a      	strb	r2, [r3, #0]
+ 8000616:	4b24      	ldr	r3, [pc, #144]	; (80006a8 <TIM5_IRQHandler+0x148>)
+ 8000618:	2200      	movs	r2, #0
+ 800061a:	701a      	strb	r2, [r3, #0]
 }
- 8000688:	e040      	b.n	800070c <TIM5_IRQHandler+0x140>
+ 800061c:	e040      	b.n	80006a0 <TIM5_IRQHandler+0x140>
 		else if(get_bit( TIM5_SR_ADR , TIMx_CH2IF ) == ICU_CH_EN)
- 800068a:	4b23      	ldr	r3, [pc, #140]	; (8000718 <TIM5_IRQHandler+0x14c>)
- 800068c:	681b      	ldr	r3, [r3, #0]
- 800068e:	089b      	lsrs	r3, r3, #2
- 8000690:	f003 0301 	and.w	r3, r3, #1
- 8000694:	2b01      	cmp	r3, #1
- 8000696:	d10e      	bne.n	80006b6 <TIM5_IRQHandler+0xea>
+ 800061e:	4b23      	ldr	r3, [pc, #140]	; (80006ac <TIM5_IRQHandler+0x14c>)
+ 8000620:	681b      	ldr	r3, [r3, #0]
+ 8000622:	089b      	lsrs	r3, r3, #2
+ 8000624:	f003 0301 	and.w	r3, r3, #1
+ 8000628:	2b01      	cmp	r3, #1
+ 800062a:	d10e      	bne.n	800064a <TIM5_IRQHandler+0xea>
 			ICU_CaptureCompareDataTIM5[CH2ID] = TIM5_CRR2_ADR;
- 8000698:	4b22      	ldr	r3, [pc, #136]	; (8000724 <TIM5_IRQHandler+0x158>)
- 800069a:	681b      	ldr	r3, [r3, #0]
- 800069c:	4a20      	ldr	r2, [pc, #128]	; (8000720 <TIM5_IRQHandler+0x154>)
- 800069e:	6053      	str	r3, [r2, #4]
+ 800062c:	4b22      	ldr	r3, [pc, #136]	; (80006b8 <TIM5_IRQHandler+0x158>)
+ 800062e:	681b      	ldr	r3, [r3, #0]
+ 8000630:	4a20      	ldr	r2, [pc, #128]	; (80006b4 <TIM5_IRQHandler+0x154>)
+ 8000632:	6053      	str	r3, [r2, #4]
 			ICU_u8StopCh(TIMER5ID, CH2ID);
- 80006a0:	2101      	movs	r1, #1
- 80006a2:	2001      	movs	r0, #1
- 80006a4:	f7ff fe90 	bl	80003c8 <ICU_u8StopCh>
+ 8000634:	2101      	movs	r1, #1
+ 8000636:	2001      	movs	r0, #1
+ 8000638:	f7ff fe90 	bl	800035c <ICU_u8StopCh>
 			ICU_u8StopTim(TIMER5ID);
- 80006a8:	2001      	movs	r0, #1
- 80006aa:	f7ff ff4b 	bl	8000544 <ICU_u8StopTim>
+ 800063c:	2001      	movs	r0, #1
+ 800063e:	f7ff ff4b 	bl	80004d8 <ICU_u8StopTim>
 			CurrentState = ICU_MODE_LOW;
- 80006ae:	4b19      	ldr	r3, [pc, #100]	; (8000714 <TIM5_IRQHandler+0x148>)
- 80006b0:	2200      	movs	r2, #0
- 80006b2:	701a      	strb	r2, [r3, #0]
+ 8000642:	4b19      	ldr	r3, [pc, #100]	; (80006a8 <TIM5_IRQHandler+0x148>)
+ 8000644:	2200      	movs	r2, #0
+ 8000646:	701a      	strb	r2, [r3, #0]
 }
- 80006b4:	e02a      	b.n	800070c <TIM5_IRQHandler+0x140>
+ 8000648:	e02a      	b.n	80006a0 <TIM5_IRQHandler+0x140>
 		else if(get_bit( TIM5_SR_ADR , TIMx_CH3IF ) == ICU_CH_EN)
- 80006b6:	4b18      	ldr	r3, [pc, #96]	; (8000718 <TIM5_IRQHandler+0x14c>)
- 80006b8:	681b      	ldr	r3, [r3, #0]
- 80006ba:	08db      	lsrs	r3, r3, #3
- 80006bc:	f003 0301 	and.w	r3, r3, #1
- 80006c0:	2b01      	cmp	r3, #1
- 80006c2:	d10e      	bne.n	80006e2 <TIM5_IRQHandler+0x116>
+ 800064a:	4b18      	ldr	r3, [pc, #96]	; (80006ac <TIM5_IRQHandler+0x14c>)
+ 800064c:	681b      	ldr	r3, [r3, #0]
+ 800064e:	08db      	lsrs	r3, r3, #3
+ 8000650:	f003 0301 	and.w	r3, r3, #1
+ 8000654:	2b01      	cmp	r3, #1
+ 8000656:	d10e      	bne.n	8000676 <TIM5_IRQHandler+0x116>
 			ICU_CaptureCompareDataTIM5[CH3ID] = TIM5_CRR2_ADR;
- 80006c4:	4b17      	ldr	r3, [pc, #92]	; (8000724 <TIM5_IRQHandler+0x158>)
- 80006c6:	681b      	ldr	r3, [r3, #0]
- 80006c8:	4a15      	ldr	r2, [pc, #84]	; (8000720 <TIM5_IRQHandler+0x154>)
- 80006ca:	6093      	str	r3, [r2, #8]
+ 8000658:	4b17      	ldr	r3, [pc, #92]	; (80006b8 <TIM5_IRQHandler+0x158>)
+ 800065a:	681b      	ldr	r3, [r3, #0]
+ 800065c:	4a15      	ldr	r2, [pc, #84]	; (80006b4 <TIM5_IRQHandler+0x154>)
+ 800065e:	6093      	str	r3, [r2, #8]
 			ICU_u8StopCh(TIMER5ID, CH3ID);
- 80006cc:	2102      	movs	r1, #2
- 80006ce:	2001      	movs	r0, #1
- 80006d0:	f7ff fe7a 	bl	80003c8 <ICU_u8StopCh>
+ 8000660:	2102      	movs	r1, #2
+ 8000662:	2001      	movs	r0, #1
+ 8000664:	f7ff fe7a 	bl	800035c <ICU_u8StopCh>
 			ICU_u8StopTim(TIMER5ID);
- 80006d4:	2001      	movs	r0, #1
- 80006d6:	f7ff ff35 	bl	8000544 <ICU_u8StopTim>
+ 8000668:	2001      	movs	r0, #1
+ 800066a:	f7ff ff35 	bl	80004d8 <ICU_u8StopTim>
 			CurrentState = ICU_MODE_LOW;
- 80006da:	4b0e      	ldr	r3, [pc, #56]	; (8000714 <TIM5_IRQHandler+0x148>)
- 80006dc:	2200      	movs	r2, #0
- 80006de:	701a      	strb	r2, [r3, #0]
+ 800066e:	4b0e      	ldr	r3, [pc, #56]	; (80006a8 <TIM5_IRQHandler+0x148>)
+ 8000670:	2200      	movs	r2, #0
+ 8000672:	701a      	strb	r2, [r3, #0]
 }
- 80006e0:	e014      	b.n	800070c <TIM5_IRQHandler+0x140>
+ 8000674:	e014      	b.n	80006a0 <TIM5_IRQHandler+0x140>
 		else if(get_bit( TIM5_SR_ADR , TIMx_CH4IF ) == ICU_CH_EN)
- 80006e2:	4b0d      	ldr	r3, [pc, #52]	; (8000718 <TIM5_IRQHandler+0x14c>)
- 80006e4:	681b      	ldr	r3, [r3, #0]
- 80006e6:	091b      	lsrs	r3, r3, #4
- 80006e8:	f003 0301 	and.w	r3, r3, #1
- 80006ec:	2b01      	cmp	r3, #1
- 80006ee:	d10d      	bne.n	800070c <TIM5_IRQHandler+0x140>
+ 8000676:	4b0d      	ldr	r3, [pc, #52]	; (80006ac <TIM5_IRQHandler+0x14c>)
+ 8000678:	681b      	ldr	r3, [r3, #0]
+ 800067a:	091b      	lsrs	r3, r3, #4
+ 800067c:	f003 0301 	and.w	r3, r3, #1
+ 8000680:	2b01      	cmp	r3, #1
+ 8000682:	d10d      	bne.n	80006a0 <TIM5_IRQHandler+0x140>
 			ICU_CaptureCompareDataTIM5[CH4ID] = TIM5_CRR2_ADR;
- 80006f0:	4b0c      	ldr	r3, [pc, #48]	; (8000724 <TIM5_IRQHandler+0x158>)
- 80006f2:	681b      	ldr	r3, [r3, #0]
- 80006f4:	4a0a      	ldr	r2, [pc, #40]	; (8000720 <TIM5_IRQHandler+0x154>)
- 80006f6:	60d3      	str	r3, [r2, #12]
+ 8000684:	4b0c      	ldr	r3, [pc, #48]	; (80006b8 <TIM5_IRQHandler+0x158>)
+ 8000686:	681b      	ldr	r3, [r3, #0]
+ 8000688:	4a0a      	ldr	r2, [pc, #40]	; (80006b4 <TIM5_IRQHandler+0x154>)
+ 800068a:	60d3      	str	r3, [r2, #12]
 			ICU_u8StopCh(TIMER5ID, CH4ID);
- 80006f8:	2103      	movs	r1, #3
- 80006fa:	2001      	movs	r0, #1
- 80006fc:	f7ff fe64 	bl	80003c8 <ICU_u8StopCh>
+ 800068c:	2103      	movs	r1, #3
+ 800068e:	2001      	movs	r0, #1
+ 8000690:	f7ff fe64 	bl	800035c <ICU_u8StopCh>
 			ICU_u8StopTim(TIMER5ID);
- 8000700:	2001      	movs	r0, #1
- 8000702:	f7ff ff1f 	bl	8000544 <ICU_u8StopTim>
+ 8000694:	2001      	movs	r0, #1
+ 8000696:	f7ff ff1f 	bl	80004d8 <ICU_u8StopTim>
 			CurrentState = ICU_MODE_LOW;
- 8000706:	4b03      	ldr	r3, [pc, #12]	; (8000714 <TIM5_IRQHandler+0x148>)
- 8000708:	2200      	movs	r2, #0
- 800070a:	701a      	strb	r2, [r3, #0]
+ 800069a:	4b03      	ldr	r3, [pc, #12]	; (80006a8 <TIM5_IRQHandler+0x148>)
+ 800069c:	2200      	movs	r2, #0
+ 800069e:	701a      	strb	r2, [r3, #0]
 }
- 800070c:	bf00      	nop
- 800070e:	bd80      	pop	{r7, pc}
- 8000710:	40000c24 	.word	0x40000c24
- 8000714:	20000050 	.word	0x20000050
- 8000718:	40000c10 	.word	0x40000c10
- 800071c:	40000c34 	.word	0x40000c34
- 8000720:	20000040 	.word	0x20000040
- 8000724:	40000c38 	.word	0x40000c38
+ 80006a0:	bf00      	nop
+ 80006a2:	bd80      	pop	{r7, pc}
+ 80006a4:	40000c24 	.word	0x40000c24
+ 80006a8:	20000054 	.word	0x20000054
+ 80006ac:	40000c10 	.word	0x40000c10
+ 80006b0:	40000c34 	.word	0x40000c34
+ 80006b4:	20000044 	.word	0x20000044
+ 80006b8:	40000c38 	.word	0x40000c38
 
-08000728 <TIM2_IRQHandler>:
+080006bc <TIM2_IRQHandler>:
 /*--------------------------------------------------------------------------------*/
 /* Timer 2 Interrupt request handler								*/
 /* Input Parameters: void											*/
 /* Return value: void												*/
 void TIM2_IRQHandler( void )
 {
- 8000728:	b480      	push	{r7}
- 800072a:	af00      	add	r7, sp, #0
+ 80006bc:	b480      	push	{r7}
+ 80006be:	af00      	add	r7, sp, #0
 
 }
- 800072c:	bf00      	nop
- 800072e:	46bd      	mov	sp, r7
- 8000730:	f85d 7b04 	ldr.w	r7, [sp], #4
- 8000734:	4770      	bx	lr
+ 80006c0:	bf00      	nop
+ 80006c2:	46bd      	mov	sp, r7
+ 80006c4:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 80006c8:	4770      	bx	lr
 
-08000736 <TIM1_UP_TIM10_IRQHandler>:
+080006ca <TIM1_UP_TIM10_IRQHandler>:
 /*--------------------------------------------------------------------------------*/
 /* Timer 2 Interrupt request handler								*/
 /* Input Parameters: void											*/
 /* Return value: void												*/
 void TIM1_UP_TIM10_IRQHandler( void )
 {
- 8000736:	b480      	push	{r7}
- 8000738:	af00      	add	r7, sp, #0
+ 80006ca:	b480      	push	{r7}
+ 80006cc:	af00      	add	r7, sp, #0
 
 }
- 800073a:	bf00      	nop
- 800073c:	46bd      	mov	sp, r7
- 800073e:	f85d 7b04 	ldr.w	r7, [sp], #4
- 8000742:	4770      	bx	lr
+ 80006ce:	bf00      	nop
+ 80006d0:	46bd      	mov	sp, r7
+ 80006d2:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 80006d6:	4770      	bx	lr
 
-08000744 <MDC_u8Init>:
+080006d8 <NVIC_u8EnableIRQ>:
 
-/*--------------------------------------------------------------------------------*/
-/* Global functions implementation */
-
-/* Initialize the motor driver for a specific channel */
-STD_ReturnType MDC_u8Init(u8 copy_u8MDC_ID) {
- 8000744:	b580      	push	{r7, lr}
- 8000746:	b082      	sub	sp, #8
- 8000748:	af00      	add	r7, sp, #0
- 800074a:	4603      	mov	r3, r0
- 800074c:	71fb      	strb	r3, [r7, #7]
-    // Check if the specified motor channel is valid
-    if( ( ( ( Channel_Flag & MDC_CH1_INIT ) == MDC_CH_NOT_INIT ) && ( copy_u8MDC_ID == MDC_MOTION_CHANNEL   ) ) ||
- 800074e:	4b5c      	ldr	r3, [pc, #368]	; (80008c0 <MDC_u8Init+0x17c>)
- 8000750:	781b      	ldrb	r3, [r3, #0]
- 8000752:	f003 030f 	and.w	r3, r3, #15
- 8000756:	2b00      	cmp	r3, #0
- 8000758:	d102      	bne.n	8000760 <MDC_u8Init+0x1c>
- 800075a:	79fb      	ldrb	r3, [r7, #7]
- 800075c:	2b00      	cmp	r3, #0
- 800075e:	d00a      	beq.n	8000776 <MDC_u8Init+0x32>
-    	( ( ( Channel_Flag & MDC_CH2_INIT ) == MDC_CH_NOT_INIT ) && ( copy_u8MDC_ID == MDC_STEERING_CHANNEL ) ) )
- 8000760:	4b57      	ldr	r3, [pc, #348]	; (80008c0 <MDC_u8Init+0x17c>)
- 8000762:	781b      	ldrb	r3, [r3, #0]
- 8000764:	f003 03f0 	and.w	r3, r3, #240	; 0xf0
-    if( ( ( ( Channel_Flag & MDC_CH1_INIT ) == MDC_CH_NOT_INIT ) && ( copy_u8MDC_ID == MDC_MOTION_CHANNEL   ) ) ||
- 8000768:	2b00      	cmp	r3, #0
- 800076a:	f040 80a3 	bne.w	80008b4 <MDC_u8Init+0x170>
-    	( ( ( Channel_Flag & MDC_CH2_INIT ) == MDC_CH_NOT_INIT ) && ( copy_u8MDC_ID == MDC_STEERING_CHANNEL ) ) )
- 800076e:	79fb      	ldrb	r3, [r7, #7]
- 8000770:	2b01      	cmp	r3, #1
- 8000772:	f040 809f 	bne.w	80008b4 <MDC_u8Init+0x170>
-    {// If data is valid
-    	// Check which motor to initiate
-    	switch(copy_u8MDC_ID)
- 8000776:	79fb      	ldrb	r3, [r7, #7]
- 8000778:	2b00      	cmp	r3, #0
- 800077a:	d002      	beq.n	8000782 <MDC_u8Init+0x3e>
- 800077c:	2b01      	cmp	r3, #1
- 800077e:	d008      	beq.n	8000792 <MDC_u8Init+0x4e>
- 8000780:	e00f      	b.n	80007a2 <MDC_u8Init+0x5e>
-    	{
-    	case MDC_MOTION_CHANNEL: // Case motion motor
-    		// Activate init flag for motion channel
-    		Channel_Flag |= MDC_CH1_INIT;
- 8000782:	4b4f      	ldr	r3, [pc, #316]	; (80008c0 <MDC_u8Init+0x17c>)
- 8000784:	781b      	ldrb	r3, [r3, #0]
- 8000786:	f043 030f 	orr.w	r3, r3, #15
- 800078a:	b2da      	uxtb	r2, r3
- 800078c:	4b4c      	ldr	r3, [pc, #304]	; (80008c0 <MDC_u8Init+0x17c>)
- 800078e:	701a      	strb	r2, [r3, #0]
-    		break;
- 8000790:	e009      	b.n	80007a6 <MDC_u8Init+0x62>
-    	case MDC_STEERING_CHANNEL: // Case steering motor
-    		// Activate init flag for steering channel
-    		Channel_Flag |= MDC_CH2_INIT;
- 8000792:	4b4b      	ldr	r3, [pc, #300]	; (80008c0 <MDC_u8Init+0x17c>)
- 8000794:	781b      	ldrb	r3, [r3, #0]
- 8000796:	f063 030f 	orn	r3, r3, #15
- 800079a:	b2da      	uxtb	r2, r3
- 800079c:	4b48      	ldr	r3, [pc, #288]	; (80008c0 <MDC_u8Init+0x17c>)
- 800079e:	701a      	strb	r2, [r3, #0]
-    		break;
- 80007a0:	e001      	b.n	80007a6 <MDC_u8Init+0x62>
-    	default: // Wrong input case
-    		// Return failed
-    		return STD_FALSE;
- 80007a2:	2300      	movs	r3, #0
- 80007a4:	e087      	b.n	80008b6 <MDC_u8Init+0x172>
-    		break;
-    	}
-		// Set GPIO pins' mode and initial value
-		GPIO_voidSetPinMode(MDC_MotorChannels[copy_u8MDC_ID].MDC_IN1_PORTID,
- 80007a6:	79fb      	ldrb	r3, [r7, #7]
- 80007a8:	4a46      	ldr	r2, [pc, #280]	; (80008c4 <MDC_u8Init+0x180>)
- 80007aa:	f812 3023 	ldrb.w	r3, [r2, r3, lsl #2]
- 80007ae:	f3c3 0303 	ubfx	r3, r3, #0, #4
- 80007b2:	b2db      	uxtb	r3, r3
- 80007b4:	4618      	mov	r0, r3
-							MDC_MotorChannels[copy_u8MDC_ID].MDC_IN1_PINID,
- 80007b6:	79fb      	ldrb	r3, [r7, #7]
- 80007b8:	4a42      	ldr	r2, [pc, #264]	; (80008c4 <MDC_u8Init+0x180>)
- 80007ba:	f812 3023 	ldrb.w	r3, [r2, r3, lsl #2]
- 80007be:	f3c3 1303 	ubfx	r3, r3, #4, #4
- 80007c2:	b2db      	uxtb	r3, r3
-		GPIO_voidSetPinMode(MDC_MotorChannels[copy_u8MDC_ID].MDC_IN1_PORTID,
- 80007c4:	2201      	movs	r2, #1
- 80007c6:	4619      	mov	r1, r3
- 80007c8:	f7ff fd04 	bl	80001d4 <GPIO_voidSetPinMode>
-							MODE_OUTPUT);
-		GPIO_voidWriteData(MDC_MotorChannels[copy_u8MDC_ID].MDC_IN1_PORTID,
- 80007cc:	79fb      	ldrb	r3, [r7, #7]
- 80007ce:	4a3d      	ldr	r2, [pc, #244]	; (80008c4 <MDC_u8Init+0x180>)
- 80007d0:	f812 3023 	ldrb.w	r3, [r2, r3, lsl #2]
- 80007d4:	f3c3 0303 	ubfx	r3, r3, #0, #4
- 80007d8:	b2db      	uxtb	r3, r3
- 80007da:	4618      	mov	r0, r3
-						   MDC_MotorChannels[copy_u8MDC_ID].MDC_IN1_PINID,
- 80007dc:	79fb      	ldrb	r3, [r7, #7]
- 80007de:	4a39      	ldr	r2, [pc, #228]	; (80008c4 <MDC_u8Init+0x180>)
- 80007e0:	f812 3023 	ldrb.w	r3, [r2, r3, lsl #2]
- 80007e4:	f3c3 1303 	ubfx	r3, r3, #4, #4
- 80007e8:	b2db      	uxtb	r3, r3
-		GPIO_voidWriteData(MDC_MotorChannels[copy_u8MDC_ID].MDC_IN1_PORTID,
- 80007ea:	2200      	movs	r2, #0
- 80007ec:	4619      	mov	r1, r3
- 80007ee:	f7ff fd2b 	bl	8000248 <GPIO_voidWriteData>
-						   LOW);
-		GPIO_voidSetPinMode(MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PORTID,
- 80007f2:	79fb      	ldrb	r3, [r7, #7]
- 80007f4:	4a33      	ldr	r2, [pc, #204]	; (80008c4 <MDC_u8Init+0x180>)
- 80007f6:	009b      	lsls	r3, r3, #2
- 80007f8:	4413      	add	r3, r2
- 80007fa:	785b      	ldrb	r3, [r3, #1]
- 80007fc:	f3c3 0303 	ubfx	r3, r3, #0, #4
- 8000800:	b2db      	uxtb	r3, r3
- 8000802:	4618      	mov	r0, r3
-							MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PINID,
- 8000804:	79fb      	ldrb	r3, [r7, #7]
- 8000806:	4a2f      	ldr	r2, [pc, #188]	; (80008c4 <MDC_u8Init+0x180>)
- 8000808:	009b      	lsls	r3, r3, #2
- 800080a:	4413      	add	r3, r2
- 800080c:	785b      	ldrb	r3, [r3, #1]
- 800080e:	f3c3 1303 	ubfx	r3, r3, #4, #4
- 8000812:	b2db      	uxtb	r3, r3
-		GPIO_voidSetPinMode(MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PORTID,
- 8000814:	2201      	movs	r2, #1
- 8000816:	4619      	mov	r1, r3
- 8000818:	f7ff fcdc 	bl	80001d4 <GPIO_voidSetPinMode>
-							MODE_OUTPUT);
-		GPIO_voidWriteData(MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PORTID,
- 800081c:	79fb      	ldrb	r3, [r7, #7]
- 800081e:	4a29      	ldr	r2, [pc, #164]	; (80008c4 <MDC_u8Init+0x180>)
- 8000820:	009b      	lsls	r3, r3, #2
- 8000822:	4413      	add	r3, r2
- 8000824:	785b      	ldrb	r3, [r3, #1]
- 8000826:	f3c3 0303 	ubfx	r3, r3, #0, #4
- 800082a:	b2db      	uxtb	r3, r3
- 800082c:	4618      	mov	r0, r3
-						   MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PINID,
- 800082e:	79fb      	ldrb	r3, [r7, #7]
- 8000830:	4a24      	ldr	r2, [pc, #144]	; (80008c4 <MDC_u8Init+0x180>)
- 8000832:	009b      	lsls	r3, r3, #2
- 8000834:	4413      	add	r3, r2
- 8000836:	785b      	ldrb	r3, [r3, #1]
- 8000838:	f3c3 1303 	ubfx	r3, r3, #4, #4
- 800083c:	b2db      	uxtb	r3, r3
-		GPIO_voidWriteData(MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PORTID,
- 800083e:	2200      	movs	r2, #0
- 8000840:	4619      	mov	r1, r3
- 8000842:	f7ff fd01 	bl	8000248 <GPIO_voidWriteData>
-						   LOW);
-		GPIO_voidSetPinMode(MDC_MotorChannels[copy_u8MDC_ID].MDC_EN_PORTID,
- 8000846:	79fb      	ldrb	r3, [r7, #7]
- 8000848:	4a1e      	ldr	r2, [pc, #120]	; (80008c4 <MDC_u8Init+0x180>)
- 800084a:	009b      	lsls	r3, r3, #2
- 800084c:	4413      	add	r3, r2
- 800084e:	789b      	ldrb	r3, [r3, #2]
- 8000850:	f3c3 0303 	ubfx	r3, r3, #0, #4
- 8000854:	b2db      	uxtb	r3, r3
- 8000856:	4618      	mov	r0, r3
-							MDC_MotorChannels[copy_u8MDC_ID].MDC_EN_PINID,
- 8000858:	79fb      	ldrb	r3, [r7, #7]
- 800085a:	4a1a      	ldr	r2, [pc, #104]	; (80008c4 <MDC_u8Init+0x180>)
- 800085c:	009b      	lsls	r3, r3, #2
- 800085e:	4413      	add	r3, r2
- 8000860:	789b      	ldrb	r3, [r3, #2]
- 8000862:	f3c3 1303 	ubfx	r3, r3, #4, #4
- 8000866:	b2db      	uxtb	r3, r3
-		GPIO_voidSetPinMode(MDC_MotorChannels[copy_u8MDC_ID].MDC_EN_PORTID,
- 8000868:	2202      	movs	r2, #2
- 800086a:	4619      	mov	r1, r3
- 800086c:	f7ff fcb2 	bl	80001d4 <GPIO_voidSetPinMode>
-							MODE_ALTF);
-		GPIO_voidPinSetAltFn(MDC_MotorChannels[copy_u8MDC_ID].MDC_EN_PORTID,
- 8000870:	79fb      	ldrb	r3, [r7, #7]
- 8000872:	4a14      	ldr	r2, [pc, #80]	; (80008c4 <MDC_u8Init+0x180>)
- 8000874:	009b      	lsls	r3, r3, #2
- 8000876:	4413      	add	r3, r2
- 8000878:	789b      	ldrb	r3, [r3, #2]
- 800087a:	f3c3 0303 	ubfx	r3, r3, #0, #4
- 800087e:	b2db      	uxtb	r3, r3
- 8000880:	4618      	mov	r0, r3
-							 MDC_MotorChannels[copy_u8MDC_ID].MDC_EN_PINID,
- 8000882:	79fb      	ldrb	r3, [r7, #7]
- 8000884:	4a0f      	ldr	r2, [pc, #60]	; (80008c4 <MDC_u8Init+0x180>)
- 8000886:	009b      	lsls	r3, r3, #2
- 8000888:	4413      	add	r3, r2
- 800088a:	789b      	ldrb	r3, [r3, #2]
- 800088c:	f3c3 1303 	ubfx	r3, r3, #4, #4
- 8000890:	b2db      	uxtb	r3, r3
-		GPIO_voidPinSetAltFn(MDC_MotorChannels[copy_u8MDC_ID].MDC_EN_PORTID,
- 8000892:	2202      	movs	r2, #2
- 8000894:	4619      	mov	r1, r3
- 8000896:	f7ff fd0d 	bl	80002b4 <GPIO_voidPinSetAltFn>
-							 MDC_MOTTION_CH_AFT);
-		// Initiate PWM
-		PWM_u8Init(MDC_MotorChannels[copy_u8MDC_ID].MDC_EN_TIMID);
- 800089a:	79fb      	ldrb	r3, [r7, #7]
- 800089c:	4a09      	ldr	r2, [pc, #36]	; (80008c4 <MDC_u8Init+0x180>)
- 800089e:	009b      	lsls	r3, r3, #2
- 80008a0:	4413      	add	r3, r2
- 80008a2:	78db      	ldrb	r3, [r3, #3]
- 80008a4:	f3c3 0303 	ubfx	r3, r3, #0, #4
- 80008a8:	b2db      	uxtb	r3, r3
- 80008aa:	4618      	mov	r0, r3
- 80008ac:	f000 f91a 	bl	8000ae4 <PWM_u8Init>
-
-		// Return success status
-        return STD_TRUE;
- 80008b0:	2301      	movs	r3, #1
- 80008b2:	e000      	b.n	80008b6 <MDC_u8Init+0x172>
-    }
-    else
-    {// if Data is not valid
-    	// Return failed
-    	return STD_FALSE;
- 80008b4:	2300      	movs	r3, #0
-    }
-
-}
- 80008b6:	4618      	mov	r0, r3
- 80008b8:	3708      	adds	r7, #8
- 80008ba:	46bd      	mov	sp, r7
- 80008bc:	bd80      	pop	{r7, pc}
- 80008be:	bf00      	nop
- 80008c0:	20000051 	.word	0x20000051
- 80008c4:	20000018 	.word	0x20000018
-
-080008c8 <MDC_u8StartCW>:
-
-/* Start motor in clockwise direction with specific speed */
-STD_ReturnType MDC_u8StartCW(u8 copy_u8MDC_ID, u8 copy_u8MotorSpeed) {
- 80008c8:	b580      	push	{r7, lr}
- 80008ca:	b082      	sub	sp, #8
- 80008cc:	af00      	add	r7, sp, #0
- 80008ce:	4603      	mov	r3, r0
- 80008d0:	460a      	mov	r2, r1
- 80008d2:	71fb      	strb	r3, [r7, #7]
- 80008d4:	4613      	mov	r3, r2
- 80008d6:	71bb      	strb	r3, [r7, #6]
-    // Check if the specified motor channel is valid
-    if( ( ( ( Channel_Flag & MDC_CH1_INIT ) == MDC_CH1_INIT ) && ( copy_u8MDC_ID == MDC_MOTION_CHANNEL   ) ) ||
- 80008d8:	4b27      	ldr	r3, [pc, #156]	; (8000978 <MDC_u8StartCW+0xb0>)
- 80008da:	781b      	ldrb	r3, [r3, #0]
- 80008dc:	f003 030f 	and.w	r3, r3, #15
- 80008e0:	2b0f      	cmp	r3, #15
- 80008e2:	d102      	bne.n	80008ea <MDC_u8StartCW+0x22>
- 80008e4:	79fb      	ldrb	r3, [r7, #7]
- 80008e6:	2b00      	cmp	r3, #0
- 80008e8:	d008      	beq.n	80008fc <MDC_u8StartCW+0x34>
-        ( ( ( Channel_Flag & MDC_CH2_INIT ) == MDC_CH2_INIT ) && ( copy_u8MDC_ID == MDC_STEERING_CHANNEL ) ) )
- 80008ea:	4b23      	ldr	r3, [pc, #140]	; (8000978 <MDC_u8StartCW+0xb0>)
- 80008ec:	781b      	ldrb	r3, [r3, #0]
- 80008ee:	f003 03f0 	and.w	r3, r3, #240	; 0xf0
-    if( ( ( ( Channel_Flag & MDC_CH1_INIT ) == MDC_CH1_INIT ) && ( copy_u8MDC_ID == MDC_MOTION_CHANNEL   ) ) ||
- 80008f2:	2bf0      	cmp	r3, #240	; 0xf0
- 80008f4:	d13a      	bne.n	800096c <MDC_u8StartCW+0xa4>
-        ( ( ( Channel_Flag & MDC_CH2_INIT ) == MDC_CH2_INIT ) && ( copy_u8MDC_ID == MDC_STEERING_CHANNEL ) ) )
- 80008f6:	79fb      	ldrb	r3, [r7, #7]
- 80008f8:	2b01      	cmp	r3, #1
- 80008fa:	d137      	bne.n	800096c <MDC_u8StartCW+0xa4>
-    {
-        // Set motor direction (clockwise)
-        GPIO_voidWriteData(MDC_MotorChannels[copy_u8MDC_ID].MDC_IN1_PORTID, MDC_MotorChannels[copy_u8MDC_ID].MDC_IN1_PINID, HIGH);
- 80008fc:	79fb      	ldrb	r3, [r7, #7]
- 80008fe:	4a1f      	ldr	r2, [pc, #124]	; (800097c <MDC_u8StartCW+0xb4>)
- 8000900:	f812 3023 	ldrb.w	r3, [r2, r3, lsl #2]
- 8000904:	f3c3 0303 	ubfx	r3, r3, #0, #4
- 8000908:	b2db      	uxtb	r3, r3
- 800090a:	4618      	mov	r0, r3
- 800090c:	79fb      	ldrb	r3, [r7, #7]
- 800090e:	4a1b      	ldr	r2, [pc, #108]	; (800097c <MDC_u8StartCW+0xb4>)
- 8000910:	f812 3023 	ldrb.w	r3, [r2, r3, lsl #2]
- 8000914:	f3c3 1303 	ubfx	r3, r3, #4, #4
- 8000918:	b2db      	uxtb	r3, r3
- 800091a:	2201      	movs	r2, #1
- 800091c:	4619      	mov	r1, r3
- 800091e:	f7ff fc93 	bl	8000248 <GPIO_voidWriteData>
-        GPIO_voidWriteData(MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PORTID, MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PINID, LOW);
- 8000922:	79fb      	ldrb	r3, [r7, #7]
- 8000924:	4a15      	ldr	r2, [pc, #84]	; (800097c <MDC_u8StartCW+0xb4>)
- 8000926:	009b      	lsls	r3, r3, #2
- 8000928:	4413      	add	r3, r2
- 800092a:	785b      	ldrb	r3, [r3, #1]
- 800092c:	f3c3 0303 	ubfx	r3, r3, #0, #4
- 8000930:	b2db      	uxtb	r3, r3
- 8000932:	4618      	mov	r0, r3
- 8000934:	79fb      	ldrb	r3, [r7, #7]
- 8000936:	4a11      	ldr	r2, [pc, #68]	; (800097c <MDC_u8StartCW+0xb4>)
- 8000938:	009b      	lsls	r3, r3, #2
- 800093a:	4413      	add	r3, r2
- 800093c:	785b      	ldrb	r3, [r3, #1]
- 800093e:	f3c3 1303 	ubfx	r3, r3, #4, #4
- 8000942:	b2db      	uxtb	r3, r3
- 8000944:	2200      	movs	r2, #0
- 8000946:	4619      	mov	r1, r3
- 8000948:	f7ff fc7e 	bl	8000248 <GPIO_voidWriteData>
-
-        // Start PWM
-        PWM_u8Start( MDC_MotorChannels[copy_u8MDC_ID].MDC_EN_TIMID , copy_u8MotorSpeed );
- 800094c:	79fb      	ldrb	r3, [r7, #7]
- 800094e:	4a0b      	ldr	r2, [pc, #44]	; (800097c <MDC_u8StartCW+0xb4>)
- 8000950:	009b      	lsls	r3, r3, #2
- 8000952:	4413      	add	r3, r2
- 8000954:	78db      	ldrb	r3, [r3, #3]
- 8000956:	f3c3 0303 	ubfx	r3, r3, #0, #4
- 800095a:	b2db      	uxtb	r3, r3
- 800095c:	461a      	mov	r2, r3
- 800095e:	79bb      	ldrb	r3, [r7, #6]
- 8000960:	4619      	mov	r1, r3
- 8000962:	4610      	mov	r0, r2
- 8000964:	f000 f980 	bl	8000c68 <PWM_u8Start>
-
-        // Return success status
-        return STD_TRUE;
- 8000968:	2301      	movs	r3, #1
- 800096a:	e000      	b.n	800096e <MDC_u8StartCW+0xa6>
-    }
-    else
-    {// If Data is not valid
-        // Return failed
-        return STD_FALSE;
- 800096c:	2300      	movs	r3, #0
-    }
-}
- 800096e:	4618      	mov	r0, r3
- 8000970:	3708      	adds	r7, #8
- 8000972:	46bd      	mov	sp, r7
- 8000974:	bd80      	pop	{r7, pc}
- 8000976:	bf00      	nop
- 8000978:	20000051 	.word	0x20000051
- 800097c:	20000018 	.word	0x20000018
-
-08000980 <MDC_u8StartCCW>:
-
-/* Start motor in counterclockwise direction with specific speed */
-STD_ReturnType MDC_u8StartCCW(u8 copy_u8MDC_ID, u8 copy_u8MotorSpeed) {
- 8000980:	b580      	push	{r7, lr}
- 8000982:	b082      	sub	sp, #8
- 8000984:	af00      	add	r7, sp, #0
- 8000986:	4603      	mov	r3, r0
- 8000988:	460a      	mov	r2, r1
- 800098a:	71fb      	strb	r3, [r7, #7]
- 800098c:	4613      	mov	r3, r2
- 800098e:	71bb      	strb	r3, [r7, #6]
-
-    // Check if the specified motor channel is valid
-	if( ( ( ( Channel_Flag & MDC_CH1_INIT ) == MDC_CH1_INIT ) && ( copy_u8MDC_ID == MDC_MOTION_CHANNEL   ) ) ||
- 8000990:	4b27      	ldr	r3, [pc, #156]	; (8000a30 <MDC_u8StartCCW+0xb0>)
- 8000992:	781b      	ldrb	r3, [r3, #0]
- 8000994:	f003 030f 	and.w	r3, r3, #15
- 8000998:	2b0f      	cmp	r3, #15
- 800099a:	d102      	bne.n	80009a2 <MDC_u8StartCCW+0x22>
- 800099c:	79fb      	ldrb	r3, [r7, #7]
- 800099e:	2b00      	cmp	r3, #0
- 80009a0:	d008      	beq.n	80009b4 <MDC_u8StartCCW+0x34>
-	    ( ( ( Channel_Flag & MDC_CH2_INIT ) == MDC_CH2_INIT ) && ( copy_u8MDC_ID == MDC_STEERING_CHANNEL ) ) )
- 80009a2:	4b23      	ldr	r3, [pc, #140]	; (8000a30 <MDC_u8StartCCW+0xb0>)
- 80009a4:	781b      	ldrb	r3, [r3, #0]
- 80009a6:	f003 03f0 	and.w	r3, r3, #240	; 0xf0
-	if( ( ( ( Channel_Flag & MDC_CH1_INIT ) == MDC_CH1_INIT ) && ( copy_u8MDC_ID == MDC_MOTION_CHANNEL   ) ) ||
- 80009aa:	2bf0      	cmp	r3, #240	; 0xf0
- 80009ac:	d13a      	bne.n	8000a24 <MDC_u8StartCCW+0xa4>
-	    ( ( ( Channel_Flag & MDC_CH2_INIT ) == MDC_CH2_INIT ) && ( copy_u8MDC_ID == MDC_STEERING_CHANNEL ) ) )
- 80009ae:	79fb      	ldrb	r3, [r7, #7]
- 80009b0:	2b01      	cmp	r3, #1
- 80009b2:	d137      	bne.n	8000a24 <MDC_u8StartCCW+0xa4>
-	{
-        // Set motor direction (counterclockwise)
-        GPIO_voidWriteData(MDC_MotorChannels[copy_u8MDC_ID].MDC_IN1_PORTID, MDC_MotorChannels[copy_u8MDC_ID].MDC_IN1_PINID, LOW);
- 80009b4:	79fb      	ldrb	r3, [r7, #7]
- 80009b6:	4a1f      	ldr	r2, [pc, #124]	; (8000a34 <MDC_u8StartCCW+0xb4>)
- 80009b8:	f812 3023 	ldrb.w	r3, [r2, r3, lsl #2]
- 80009bc:	f3c3 0303 	ubfx	r3, r3, #0, #4
- 80009c0:	b2db      	uxtb	r3, r3
- 80009c2:	4618      	mov	r0, r3
- 80009c4:	79fb      	ldrb	r3, [r7, #7]
- 80009c6:	4a1b      	ldr	r2, [pc, #108]	; (8000a34 <MDC_u8StartCCW+0xb4>)
- 80009c8:	f812 3023 	ldrb.w	r3, [r2, r3, lsl #2]
- 80009cc:	f3c3 1303 	ubfx	r3, r3, #4, #4
- 80009d0:	b2db      	uxtb	r3, r3
- 80009d2:	2200      	movs	r2, #0
- 80009d4:	4619      	mov	r1, r3
- 80009d6:	f7ff fc37 	bl	8000248 <GPIO_voidWriteData>
-        GPIO_voidWriteData(MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PORTID, MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PINID, HIGH);
- 80009da:	79fb      	ldrb	r3, [r7, #7]
- 80009dc:	4a15      	ldr	r2, [pc, #84]	; (8000a34 <MDC_u8StartCCW+0xb4>)
- 80009de:	009b      	lsls	r3, r3, #2
- 80009e0:	4413      	add	r3, r2
- 80009e2:	785b      	ldrb	r3, [r3, #1]
- 80009e4:	f3c3 0303 	ubfx	r3, r3, #0, #4
- 80009e8:	b2db      	uxtb	r3, r3
- 80009ea:	4618      	mov	r0, r3
- 80009ec:	79fb      	ldrb	r3, [r7, #7]
- 80009ee:	4a11      	ldr	r2, [pc, #68]	; (8000a34 <MDC_u8StartCCW+0xb4>)
- 80009f0:	009b      	lsls	r3, r3, #2
- 80009f2:	4413      	add	r3, r2
- 80009f4:	785b      	ldrb	r3, [r3, #1]
- 80009f6:	f3c3 1303 	ubfx	r3, r3, #4, #4
- 80009fa:	b2db      	uxtb	r3, r3
- 80009fc:	2201      	movs	r2, #1
- 80009fe:	4619      	mov	r1, r3
- 8000a00:	f7ff fc22 	bl	8000248 <GPIO_voidWriteData>
-
-        // Start PWM
-        PWM_u8Start( MDC_MotorChannels[copy_u8MDC_ID].MDC_EN_TIMID , copy_u8MotorSpeed );
- 8000a04:	79fb      	ldrb	r3, [r7, #7]
- 8000a06:	4a0b      	ldr	r2, [pc, #44]	; (8000a34 <MDC_u8StartCCW+0xb4>)
- 8000a08:	009b      	lsls	r3, r3, #2
- 8000a0a:	4413      	add	r3, r2
- 8000a0c:	78db      	ldrb	r3, [r3, #3]
- 8000a0e:	f3c3 0303 	ubfx	r3, r3, #0, #4
- 8000a12:	b2db      	uxtb	r3, r3
- 8000a14:	461a      	mov	r2, r3
- 8000a16:	79bb      	ldrb	r3, [r7, #6]
- 8000a18:	4619      	mov	r1, r3
- 8000a1a:	4610      	mov	r0, r2
- 8000a1c:	f000 f924 	bl	8000c68 <PWM_u8Start>
-
-        // Return success status
-        return STD_TRUE;
- 8000a20:	2301      	movs	r3, #1
- 8000a22:	e000      	b.n	8000a26 <MDC_u8StartCCW+0xa6>
-    } else {
-        // Invalid motor channel ID
-        return STD_FALSE;
- 8000a24:	2300      	movs	r3, #0
-    }
-}
- 8000a26:	4618      	mov	r0, r3
- 8000a28:	3708      	adds	r7, #8
- 8000a2a:	46bd      	mov	sp, r7
- 8000a2c:	bd80      	pop	{r7, pc}
- 8000a2e:	bf00      	nop
- 8000a30:	20000051 	.word	0x20000051
- 8000a34:	20000018 	.word	0x20000018
-
-08000a38 <MDC_u8Stop>:
-
-/* Stop motor */
-STD_ReturnType MDC_u8Stop(u8 copy_u8MDC_ID) {
- 8000a38:	b580      	push	{r7, lr}
- 8000a3a:	b082      	sub	sp, #8
- 8000a3c:	af00      	add	r7, sp, #0
- 8000a3e:	4603      	mov	r3, r0
- 8000a40:	71fb      	strb	r3, [r7, #7]
-    // Check if the specified motor channel is valid
-	if( ( ( ( Channel_Flag & MDC_CH1_INIT ) == MDC_CH1_INIT ) && ( copy_u8MDC_ID == MDC_MOTION_CHANNEL   ) ) ||
- 8000a42:	4b26      	ldr	r3, [pc, #152]	; (8000adc <MDC_u8Stop+0xa4>)
- 8000a44:	781b      	ldrb	r3, [r3, #0]
- 8000a46:	f003 030f 	and.w	r3, r3, #15
- 8000a4a:	2b0f      	cmp	r3, #15
- 8000a4c:	d102      	bne.n	8000a54 <MDC_u8Stop+0x1c>
- 8000a4e:	79fb      	ldrb	r3, [r7, #7]
- 8000a50:	2b00      	cmp	r3, #0
- 8000a52:	d008      	beq.n	8000a66 <MDC_u8Stop+0x2e>
-	    ( ( ( Channel_Flag & MDC_CH2_INIT ) == MDC_CH2_INIT ) && ( copy_u8MDC_ID == MDC_STEERING_CHANNEL ) ) )
- 8000a54:	4b21      	ldr	r3, [pc, #132]	; (8000adc <MDC_u8Stop+0xa4>)
- 8000a56:	781b      	ldrb	r3, [r3, #0]
- 8000a58:	f003 03f0 	and.w	r3, r3, #240	; 0xf0
-	if( ( ( ( Channel_Flag & MDC_CH1_INIT ) == MDC_CH1_INIT ) && ( copy_u8MDC_ID == MDC_MOTION_CHANNEL   ) ) ||
- 8000a5c:	2bf0      	cmp	r3, #240	; 0xf0
- 8000a5e:	d137      	bne.n	8000ad0 <MDC_u8Stop+0x98>
-	    ( ( ( Channel_Flag & MDC_CH2_INIT ) == MDC_CH2_INIT ) && ( copy_u8MDC_ID == MDC_STEERING_CHANNEL ) ) )
- 8000a60:	79fb      	ldrb	r3, [r7, #7]
- 8000a62:	2b01      	cmp	r3, #1
- 8000a64:	d134      	bne.n	8000ad0 <MDC_u8Stop+0x98>
-	{// If data is valid
-		// Stabilize both motor inputs
-        GPIO_voidWriteData(MDC_MotorChannels[copy_u8MDC_ID].MDC_IN1_PORTID, MDC_MotorChannels[copy_u8MDC_ID].MDC_IN1_PINID, LOW);
- 8000a66:	79fb      	ldrb	r3, [r7, #7]
- 8000a68:	4a1d      	ldr	r2, [pc, #116]	; (8000ae0 <MDC_u8Stop+0xa8>)
- 8000a6a:	f812 3023 	ldrb.w	r3, [r2, r3, lsl #2]
- 8000a6e:	f3c3 0303 	ubfx	r3, r3, #0, #4
- 8000a72:	b2db      	uxtb	r3, r3
- 8000a74:	4618      	mov	r0, r3
- 8000a76:	79fb      	ldrb	r3, [r7, #7]
- 8000a78:	4a19      	ldr	r2, [pc, #100]	; (8000ae0 <MDC_u8Stop+0xa8>)
- 8000a7a:	f812 3023 	ldrb.w	r3, [r2, r3, lsl #2]
- 8000a7e:	f3c3 1303 	ubfx	r3, r3, #4, #4
- 8000a82:	b2db      	uxtb	r3, r3
- 8000a84:	2200      	movs	r2, #0
- 8000a86:	4619      	mov	r1, r3
- 8000a88:	f7ff fbde 	bl	8000248 <GPIO_voidWriteData>
-        GPIO_voidWriteData(MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PORTID, MDC_MotorChannels[copy_u8MDC_ID].MDC_IN2_PINID, LOW);
- 8000a8c:	79fb      	ldrb	r3, [r7, #7]
- 8000a8e:	4a14      	ldr	r2, [pc, #80]	; (8000ae0 <MDC_u8Stop+0xa8>)
- 8000a90:	009b      	lsls	r3, r3, #2
- 8000a92:	4413      	add	r3, r2
- 8000a94:	785b      	ldrb	r3, [r3, #1]
- 8000a96:	f3c3 0303 	ubfx	r3, r3, #0, #4
- 8000a9a:	b2db      	uxtb	r3, r3
- 8000a9c:	4618      	mov	r0, r3
- 8000a9e:	79fb      	ldrb	r3, [r7, #7]
- 8000aa0:	4a0f      	ldr	r2, [pc, #60]	; (8000ae0 <MDC_u8Stop+0xa8>)
- 8000aa2:	009b      	lsls	r3, r3, #2
- 8000aa4:	4413      	add	r3, r2
- 8000aa6:	785b      	ldrb	r3, [r3, #1]
- 8000aa8:	f3c3 1303 	ubfx	r3, r3, #4, #4
- 8000aac:	b2db      	uxtb	r3, r3
- 8000aae:	2200      	movs	r2, #0
- 8000ab0:	4619      	mov	r1, r3
- 8000ab2:	f7ff fbc9 	bl	8000248 <GPIO_voidWriteData>
-
-        // Stop PWM to stop the motor
-        PWM_u8Stop( MDC_MotorChannels[ copy_u8MDC_ID ].MDC_EN_TIMID );
- 8000ab6:	79fb      	ldrb	r3, [r7, #7]
- 8000ab8:	4a09      	ldr	r2, [pc, #36]	; (8000ae0 <MDC_u8Stop+0xa8>)
- 8000aba:	009b      	lsls	r3, r3, #2
- 8000abc:	4413      	add	r3, r2
- 8000abe:	78db      	ldrb	r3, [r3, #3]
- 8000ac0:	f3c3 0303 	ubfx	r3, r3, #0, #4
- 8000ac4:	b2db      	uxtb	r3, r3
- 8000ac6:	4618      	mov	r0, r3
- 8000ac8:	f000 f930 	bl	8000d2c <PWM_u8Stop>
-
-        // Return success status
-        return STD_TRUE;
- 8000acc:	2301      	movs	r3, #1
- 8000ace:	e000      	b.n	8000ad2 <MDC_u8Stop+0x9a>
-    }
+/* Enables the IRQx interrupt										*/
+/* Input Parameters: IRQx ID										*/
+/* Return value: STD_TRUE -> Success, STD_FALSE -> Failed			*/
+STD_ReturnType NVIC_u8EnableIRQ( u8 copy_u8IRQ_ID )
+{
+ 80006d8:	b480      	push	{r7}
+ 80006da:	b085      	sub	sp, #20
+ 80006dc:	af00      	add	r7, sp, #0
+ 80006de:	4603      	mov	r3, r0
+ 80006e0:	71fb      	strb	r3, [r7, #7]
+	// Check data validity and if valid address the IRQ to its register
+	if(copy_u8IRQ_ID <= IRQ_MAX)
+ 80006e2:	79fb      	ldrb	r3, [r7, #7]
+ 80006e4:	2b54      	cmp	r3, #84	; 0x54
+ 80006e6:	d820      	bhi.n	800072a <NVIC_u8EnableIRQ+0x52>
+	{// if ID is valid
+		// Calculate the register ID
+		u8 IRQ_RegID = copy_u8IRQ_ID / REGSC_MAX_IRQ;
+ 80006e8:	79fb      	ldrb	r3, [r7, #7]
+ 80006ea:	095b      	lsrs	r3, r3, #5
+ 80006ec:	73fb      	strb	r3, [r7, #15]
+		// Calculate the bits location for the selected IRQ
+		u8 IRQ_BitLOC = ( ( copy_u8IRQ_ID - ( IRQ_RegID * REGSC_MAX_IRQ ) ) );
+ 80006ee:	7bfb      	ldrb	r3, [r7, #15]
+ 80006f0:	015b      	lsls	r3, r3, #5
+ 80006f2:	b2db      	uxtb	r3, r3
+ 80006f4:	79fa      	ldrb	r2, [r7, #7]
+ 80006f6:	1ad3      	subs	r3, r2, r3
+ 80006f8:	73bb      	strb	r3, [r7, #14]
+		// Set enable IRQ bit
+		set_bit(NVIC_ISERx_ARD(IRQ_RegID), IRQ_BitLOC);
+ 80006fa:	7bfb      	ldrb	r3, [r7, #15]
+ 80006fc:	009b      	lsls	r3, r3, #2
+ 80006fe:	f103 4360 	add.w	r3, r3, #3758096384	; 0xe0000000
+ 8000702:	f503 4361 	add.w	r3, r3, #57600	; 0xe100
+ 8000706:	681a      	ldr	r2, [r3, #0]
+ 8000708:	7bbb      	ldrb	r3, [r7, #14]
+ 800070a:	2101      	movs	r1, #1
+ 800070c:	fa01 f303 	lsl.w	r3, r1, r3
+ 8000710:	4618      	mov	r0, r3
+ 8000712:	7bfb      	ldrb	r3, [r7, #15]
+ 8000714:	009b      	lsls	r3, r3, #2
+ 8000716:	f103 4360 	add.w	r3, r3, #3758096384	; 0xe0000000
+ 800071a:	f503 4361 	add.w	r3, r3, #57600	; 0xe100
+ 800071e:	4619      	mov	r1, r3
+ 8000720:	ea42 0300 	orr.w	r3, r2, r0
+ 8000724:	600b      	str	r3, [r1, #0]
+		// Return success
+		return STD_TRUE;
+ 8000726:	2301      	movs	r3, #1
+ 8000728:	e000      	b.n	800072c <NVIC_u8EnableIRQ+0x54>
+	}
 	else
-	{// If data is not valid
-        // Invalid motor channel ID
-        return STD_FALSE;
- 8000ad0:	2300      	movs	r3, #0
-    }
-}
- 8000ad2:	4618      	mov	r0, r3
- 8000ad4:	3708      	adds	r7, #8
- 8000ad6:	46bd      	mov	sp, r7
- 8000ad8:	bd80      	pop	{r7, pc}
- 8000ada:	bf00      	nop
- 8000adc:	20000051 	.word	0x20000051
- 8000ae0:	20000018 	.word	0x20000018
-
-08000ae4 <PWM_u8Init>:
-/* Initialize timer registers */
-/*< Driver Should contain a static global flag to ensure that init is done before use and do not allow re-init >*/
-static u8 init_Tim3_Is_Done = 0;
-static u8 init_Tim4_Is_Done = 0;
-
-u8 PWM_u8Init(u8 timerID) {
- 8000ae4:	b480      	push	{r7}
- 8000ae6:	b083      	sub	sp, #12
- 8000ae8:	af00      	add	r7, sp, #0
- 8000aea:	4603      	mov	r3, r0
- 8000aec:	71fb      	strb	r3, [r7, #7]
-	if (((timerID == TIM3_ID) || (timerID == TIM4_ID))) {
- 8000aee:	79fb      	ldrb	r3, [r7, #7]
- 8000af0:	2b03      	cmp	r3, #3
- 8000af2:	d003      	beq.n	8000afc <PWM_u8Init+0x18>
- 8000af4:	79fb      	ldrb	r3, [r7, #7]
- 8000af6:	2b04      	cmp	r3, #4
- 8000af8:	f040 8092 	bne.w	8000c20 <PWM_u8Init+0x13c>
-
-		switch (timerID) {
- 8000afc:	79fb      	ldrb	r3, [r7, #7]
- 8000afe:	2b03      	cmp	r3, #3
- 8000b00:	d002      	beq.n	8000b08 <PWM_u8Init+0x24>
- 8000b02:	2b04      	cmp	r3, #4
- 8000b04:	d044      	beq.n	8000b90 <PWM_u8Init+0xac>
- 8000b06:	e089      	b.n	8000c1c <PWM_u8Init+0x138>
-		case TIM3_ID:
-			if (init_Tim3_Is_Done == 0) {
- 8000b08:	4b49      	ldr	r3, [pc, #292]	; (8000c30 <PWM_u8Init+0x14c>)
- 8000b0a:	781b      	ldrb	r3, [r3, #0]
- 8000b0c:	2b00      	cmp	r3, #0
- 8000b0e:	f040 8082 	bne.w	8000c16 <PWM_u8Init+0x132>
-				init_Tim3_Is_Done = 1u;
- 8000b12:	4b47      	ldr	r3, [pc, #284]	; (8000c30 <PWM_u8Init+0x14c>)
- 8000b14:	2201      	movs	r2, #1
- 8000b16:	701a      	strb	r2, [r3, #0]
-				switch (DIRECTION) {
-				case UPCOUNTER:
-					agn_bit(TIM3_CR1, DIR, UPCOUNTER)
- 8000b18:	4b46      	ldr	r3, [pc, #280]	; (8000c34 <PWM_u8Init+0x150>)
- 8000b1a:	681b      	ldr	r3, [r3, #0]
- 8000b1c:	4a45      	ldr	r2, [pc, #276]	; (8000c34 <PWM_u8Init+0x150>)
- 8000b1e:	f023 0310 	bic.w	r3, r3, #16
- 8000b22:	6013      	str	r3, [r2, #0]
-					;
-					break;
- 8000b24:	bf00      	nop
-				}
-
-				/*auto reload preload register*/
-				switch (AUTO_RELOAD_PRELOAD) {
-				case EN_AUTO_RELOAD_PRELOAD:
-					agn_bit(TIM3_CR1, ARPE, EN_AUTO_RELOAD_PRELOAD)
- 8000b26:	4b43      	ldr	r3, [pc, #268]	; (8000c34 <PWM_u8Init+0x150>)
- 8000b28:	681b      	ldr	r3, [r3, #0]
- 8000b2a:	4a42      	ldr	r2, [pc, #264]	; (8000c34 <PWM_u8Init+0x150>)
- 8000b2c:	f043 0380 	orr.w	r3, r3, #128	; 0x80
- 8000b30:	6013      	str	r3, [r2, #0]
-					;
-					break;
- 8000b32:	bf00      	nop
-				}
-
-				/*PWM mode 1*/
-				switch (PWM_MODE) {
-				case PWM_MODE1:
-					clr_bit(TIM3_CCMR2, OC4M0);
- 8000b34:	4b40      	ldr	r3, [pc, #256]	; (8000c38 <PWM_u8Init+0x154>)
- 8000b36:	681b      	ldr	r3, [r3, #0]
- 8000b38:	4a3f      	ldr	r2, [pc, #252]	; (8000c38 <PWM_u8Init+0x154>)
- 8000b3a:	f423 5380 	bic.w	r3, r3, #4096	; 0x1000
- 8000b3e:	6013      	str	r3, [r2, #0]
-					set_bit(TIM3_CCMR2, OC4M1);
- 8000b40:	4b3d      	ldr	r3, [pc, #244]	; (8000c38 <PWM_u8Init+0x154>)
- 8000b42:	681b      	ldr	r3, [r3, #0]
- 8000b44:	4a3c      	ldr	r2, [pc, #240]	; (8000c38 <PWM_u8Init+0x154>)
- 8000b46:	f443 5300 	orr.w	r3, r3, #8192	; 0x2000
- 8000b4a:	6013      	str	r3, [r2, #0]
-					set_bit(TIM3_CCMR2, OC4M2);
- 8000b4c:	4b3a      	ldr	r3, [pc, #232]	; (8000c38 <PWM_u8Init+0x154>)
- 8000b4e:	681b      	ldr	r3, [r3, #0]
- 8000b50:	4a39      	ldr	r2, [pc, #228]	; (8000c38 <PWM_u8Init+0x154>)
- 8000b52:	f443 4380 	orr.w	r3, r3, #16384	; 0x4000
- 8000b56:	6013      	str	r3, [r2, #0]
-					break;
- 8000b58:	bf00      	nop
-					set_bit(TIM3_CCMR2, OC4M2);
-					break;
-				}
-
-				/*enable output compare 1 preload*/
-				set_bit(TIM3_CCMR2, OC4PE);
- 8000b5a:	4b37      	ldr	r3, [pc, #220]	; (8000c38 <PWM_u8Init+0x154>)
- 8000b5c:	681b      	ldr	r3, [r3, #0]
- 8000b5e:	4a36      	ldr	r2, [pc, #216]	; (8000c38 <PWM_u8Init+0x154>)
- 8000b60:	f443 6300 	orr.w	r3, r3, #2048	; 0x800
- 8000b64:	6013      	str	r3, [r2, #0]
-
-				/*Active high polarity*/
-				switch (OUTPUT_POLARITY) {
-				case ACTIVE_HIGH_POL:
-					agn_bit(TIM3_CCER, CC4P, ACTIVE_HIGH_POL)
- 8000b66:	4b35      	ldr	r3, [pc, #212]	; (8000c3c <PWM_u8Init+0x158>)
- 8000b68:	681b      	ldr	r3, [r3, #0]
- 8000b6a:	4a34      	ldr	r2, [pc, #208]	; (8000c3c <PWM_u8Init+0x158>)
- 8000b6c:	f423 5300 	bic.w	r3, r3, #8192	; 0x2000
- 8000b70:	6013      	str	r3, [r2, #0]
-					;
-					break;
- 8000b72:	bf00      	nop
-					agn_bit(TIM3_CCER, CC4P, ACTIVE_LOW_POL)
-					;
-					break;
-				}
-
-				TIM3_PSC = PRESCALER;
- 8000b74:	4b32      	ldr	r3, [pc, #200]	; (8000c40 <PWM_u8Init+0x15c>)
- 8000b76:	f240 623f 	movw	r2, #1599	; 0x63f
- 8000b7a:	601a      	str	r2, [r3, #0]
-				TIM3_ARR = AUTO_RELOAD_VAL;
- 8000b7c:	4b31      	ldr	r3, [pc, #196]	; (8000c44 <PWM_u8Init+0x160>)
- 8000b7e:	22ff      	movs	r2, #255	; 0xff
- 8000b80:	601a      	str	r2, [r3, #0]
-
-				/*initialize all the registers*/
-				set_bit(TIM3_EGR, UG);
- 8000b82:	4b31      	ldr	r3, [pc, #196]	; (8000c48 <PWM_u8Init+0x164>)
- 8000b84:	681b      	ldr	r3, [r3, #0]
- 8000b86:	4a30      	ldr	r2, [pc, #192]	; (8000c48 <PWM_u8Init+0x164>)
- 8000b88:	f043 0301 	orr.w	r3, r3, #1
- 8000b8c:	6013      	str	r3, [r2, #0]
-			}
-			else{
-
-			}
-			break;
- 8000b8e:	e042      	b.n	8000c16 <PWM_u8Init+0x132>
-
-
-
-
-		case TIM4_ID:
-			if (init_Tim4_Is_Done == 0) {
- 8000b90:	4b2e      	ldr	r3, [pc, #184]	; (8000c4c <PWM_u8Init+0x168>)
- 8000b92:	781b      	ldrb	r3, [r3, #0]
- 8000b94:	2b00      	cmp	r3, #0
- 8000b96:	d140      	bne.n	8000c1a <PWM_u8Init+0x136>
-				init_Tim4_Is_Done = 1u;
- 8000b98:	4b2c      	ldr	r3, [pc, #176]	; (8000c4c <PWM_u8Init+0x168>)
- 8000b9a:	2201      	movs	r2, #1
- 8000b9c:	701a      	strb	r2, [r3, #0]
-				switch (DIRECTION) {
-				case UPCOUNTER:
-					agn_bit(TIM4_CR1, DIR, UPCOUNTER)
- 8000b9e:	4b2c      	ldr	r3, [pc, #176]	; (8000c50 <PWM_u8Init+0x16c>)
- 8000ba0:	681b      	ldr	r3, [r3, #0]
- 8000ba2:	4a2b      	ldr	r2, [pc, #172]	; (8000c50 <PWM_u8Init+0x16c>)
- 8000ba4:	f023 0310 	bic.w	r3, r3, #16
- 8000ba8:	6013      	str	r3, [r2, #0]
-					;
-					break;
- 8000baa:	bf00      	nop
-				}
-
-				/*auto reload preload register*/
-				switch (AUTO_RELOAD_PRELOAD) {
-				case EN_AUTO_RELOAD_PRELOAD:
-					agn_bit(TIM4_CR1, ARPE, EN_AUTO_RELOAD_PRELOAD)
- 8000bac:	4b28      	ldr	r3, [pc, #160]	; (8000c50 <PWM_u8Init+0x16c>)
- 8000bae:	681b      	ldr	r3, [r3, #0]
- 8000bb0:	4a27      	ldr	r2, [pc, #156]	; (8000c50 <PWM_u8Init+0x16c>)
- 8000bb2:	f043 0380 	orr.w	r3, r3, #128	; 0x80
- 8000bb6:	6013      	str	r3, [r2, #0]
-					;
-					break;
- 8000bb8:	bf00      	nop
-				}
-
-				/*PWM mode 1*/
-				switch (PWM_MODE) {
-				case PWM_MODE1:
-					clr_bit(TIM4_CCMR2, OC4M0);
- 8000bba:	4b26      	ldr	r3, [pc, #152]	; (8000c54 <PWM_u8Init+0x170>)
- 8000bbc:	681b      	ldr	r3, [r3, #0]
- 8000bbe:	4a25      	ldr	r2, [pc, #148]	; (8000c54 <PWM_u8Init+0x170>)
- 8000bc0:	f423 5380 	bic.w	r3, r3, #4096	; 0x1000
- 8000bc4:	6013      	str	r3, [r2, #0]
-					set_bit(TIM4_CCMR2, OC4M1);
- 8000bc6:	4b23      	ldr	r3, [pc, #140]	; (8000c54 <PWM_u8Init+0x170>)
- 8000bc8:	681b      	ldr	r3, [r3, #0]
- 8000bca:	4a22      	ldr	r2, [pc, #136]	; (8000c54 <PWM_u8Init+0x170>)
- 8000bcc:	f443 5300 	orr.w	r3, r3, #8192	; 0x2000
- 8000bd0:	6013      	str	r3, [r2, #0]
-					set_bit(TIM4_CCMR2, OC4M2);
- 8000bd2:	4b20      	ldr	r3, [pc, #128]	; (8000c54 <PWM_u8Init+0x170>)
- 8000bd4:	681b      	ldr	r3, [r3, #0]
- 8000bd6:	4a1f      	ldr	r2, [pc, #124]	; (8000c54 <PWM_u8Init+0x170>)
- 8000bd8:	f443 4380 	orr.w	r3, r3, #16384	; 0x4000
- 8000bdc:	6013      	str	r3, [r2, #0]
-					break;
- 8000bde:	bf00      	nop
-					set_bit(TIM4_CCMR2, OC4M2);
-					break;
-				}
-
-				/*enable output compare 1 preload*/
-				set_bit(TIM4_CCMR2, OC4PE);
- 8000be0:	4b1c      	ldr	r3, [pc, #112]	; (8000c54 <PWM_u8Init+0x170>)
- 8000be2:	681b      	ldr	r3, [r3, #0]
- 8000be4:	4a1b      	ldr	r2, [pc, #108]	; (8000c54 <PWM_u8Init+0x170>)
- 8000be6:	f443 6300 	orr.w	r3, r3, #2048	; 0x800
- 8000bea:	6013      	str	r3, [r2, #0]
-
-				/*Active high polarity*/
-				switch (OUTPUT_POLARITY) {
-				case ACTIVE_HIGH_POL:
-					agn_bit(TIM4_CCER, CC4P, ACTIVE_HIGH_POL)
- 8000bec:	4b1a      	ldr	r3, [pc, #104]	; (8000c58 <PWM_u8Init+0x174>)
- 8000bee:	681b      	ldr	r3, [r3, #0]
- 8000bf0:	4a19      	ldr	r2, [pc, #100]	; (8000c58 <PWM_u8Init+0x174>)
- 8000bf2:	f423 5300 	bic.w	r3, r3, #8192	; 0x2000
- 8000bf6:	6013      	str	r3, [r2, #0]
-					;
-					break;
- 8000bf8:	bf00      	nop
-					agn_bit(TIM4_CCER, CC4P, ACTIVE_LOW_POL)
-					;
-					break;
-				}
-
-				TIM4_PSC = PRESCALER;
- 8000bfa:	4b18      	ldr	r3, [pc, #96]	; (8000c5c <PWM_u8Init+0x178>)
- 8000bfc:	f240 623f 	movw	r2, #1599	; 0x63f
- 8000c00:	601a      	str	r2, [r3, #0]
-				TIM4_ARR = AUTO_RELOAD_VAL;
- 8000c02:	4b17      	ldr	r3, [pc, #92]	; (8000c60 <PWM_u8Init+0x17c>)
- 8000c04:	22ff      	movs	r2, #255	; 0xff
- 8000c06:	601a      	str	r2, [r3, #0]
-
-				/*initialize all the registers*/
-				set_bit(TIM4_EGR, UG);
- 8000c08:	4b16      	ldr	r3, [pc, #88]	; (8000c64 <PWM_u8Init+0x180>)
- 8000c0a:	681b      	ldr	r3, [r3, #0]
- 8000c0c:	4a15      	ldr	r2, [pc, #84]	; (8000c64 <PWM_u8Init+0x180>)
- 8000c0e:	f043 0301 	orr.w	r3, r3, #1
- 8000c12:	6013      	str	r3, [r2, #0]
-			}
-			else{
-
-			}
-			break;
- 8000c14:	e001      	b.n	8000c1a <PWM_u8Init+0x136>
-			break;
- 8000c16:	bf00      	nop
- 8000c18:	e000      	b.n	8000c1c <PWM_u8Init+0x138>
-			break;
- 8000c1a:	bf00      	nop
-
-		}
-		return STD_TRUE;
- 8000c1c:	2301      	movs	r3, #1
- 8000c1e:	e000      	b.n	8000c22 <PWM_u8Init+0x13e>
-	} else {
+	{// If not valid return failed
+		// Return failed
 		return STD_FALSE;
- 8000c20:	2300      	movs	r3, #0
+ 800072a:	2300      	movs	r3, #0
 	}
-	/*< All IFs should have an else :: Misra C >*/
-
 }
- 8000c22:	4618      	mov	r0, r3
- 8000c24:	370c      	adds	r7, #12
- 8000c26:	46bd      	mov	sp, r7
- 8000c28:	f85d 7b04 	ldr.w	r7, [sp], #4
- 8000c2c:	4770      	bx	lr
- 8000c2e:	bf00      	nop
- 8000c30:	20000052 	.word	0x20000052
- 8000c34:	40000400 	.word	0x40000400
- 8000c38:	4000041c 	.word	0x4000041c
- 8000c3c:	40000420 	.word	0x40000420
- 8000c40:	40000428 	.word	0x40000428
- 8000c44:	4000042c 	.word	0x4000042c
- 8000c48:	40000414 	.word	0x40000414
- 8000c4c:	20000053 	.word	0x20000053
- 8000c50:	40000800 	.word	0x40000800
- 8000c54:	4000081c 	.word	0x4000081c
- 8000c58:	40000820 	.word	0x40000820
- 8000c5c:	40000828 	.word	0x40000828
- 8000c60:	4000082c 	.word	0x4000082c
- 8000c64:	40000814 	.word	0x40000814
+ 800072c:	4618      	mov	r0, r3
+ 800072e:	3714      	adds	r7, #20
+ 8000730:	46bd      	mov	sp, r7
+ 8000732:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 8000736:	4770      	bx	lr
 
-08000c68 <PWM_u8Start>:
-
-
-
-
-
-u8 PWM_u8Start(u8 timerID, u8 duty) {
- 8000c68:	b480      	push	{r7}
- 8000c6a:	b083      	sub	sp, #12
- 8000c6c:	af00      	add	r7, sp, #0
- 8000c6e:	4603      	mov	r3, r0
- 8000c70:	460a      	mov	r2, r1
- 8000c72:	71fb      	strb	r3, [r7, #7]
- 8000c74:	4613      	mov	r3, r2
- 8000c76:	71bb      	strb	r3, [r7, #6]
-	if ((timerID == TIM3_ID) || (timerID == TIM4_ID)) {
- 8000c78:	79fb      	ldrb	r3, [r7, #7]
- 8000c7a:	2b03      	cmp	r3, #3
- 8000c7c:	d002      	beq.n	8000c84 <PWM_u8Start+0x1c>
- 8000c7e:	79fb      	ldrb	r3, [r7, #7]
- 8000c80:	2b04      	cmp	r3, #4
- 8000c82:	d13d      	bne.n	8000d00 <PWM_u8Start+0x98>
-		switch (timerID) {
- 8000c84:	79fb      	ldrb	r3, [r7, #7]
- 8000c86:	2b03      	cmp	r3, #3
- 8000c88:	d002      	beq.n	8000c90 <PWM_u8Start+0x28>
- 8000c8a:	2b04      	cmp	r3, #4
- 8000c8c:	d01b      	beq.n	8000cc6 <PWM_u8Start+0x5e>
- 8000c8e:	e035      	b.n	8000cfc <PWM_u8Start+0x94>
-		case TIM3_ID:
-			/* map duty from 0-100 to 0-255*/
-			if ((duty >= 0) && (duty <= 100)) {
- 8000c90:	79bb      	ldrb	r3, [r7, #6]
- 8000c92:	2b64      	cmp	r3, #100	; 0x64
- 8000c94:	d809      	bhi.n	8000caa <PWM_u8Start+0x42>
-				TIM3_CCR4 = ((u16) 255 * duty) / 100;
- 8000c96:	79ba      	ldrb	r2, [r7, #6]
- 8000c98:	4613      	mov	r3, r2
- 8000c9a:	021b      	lsls	r3, r3, #8
- 8000c9c:	1a9b      	subs	r3, r3, r2
- 8000c9e:	4a1c      	ldr	r2, [pc, #112]	; (8000d10 <PWM_u8Start+0xa8>)
- 8000ca0:	491c      	ldr	r1, [pc, #112]	; (8000d14 <PWM_u8Start+0xac>)
- 8000ca2:	fba1 1303 	umull	r1, r3, r1, r3
- 8000ca6:	095b      	lsrs	r3, r3, #5
- 8000ca8:	6013      	str	r3, [r2, #0]
-			} else {
-
-			}
-
-			/*enable counter*/
-			set_bit(TIM3_CR1, CEN);
- 8000caa:	4b1b      	ldr	r3, [pc, #108]	; (8000d18 <PWM_u8Start+0xb0>)
- 8000cac:	681b      	ldr	r3, [r3, #0]
- 8000cae:	4a1a      	ldr	r2, [pc, #104]	; (8000d18 <PWM_u8Start+0xb0>)
- 8000cb0:	f043 0301 	orr.w	r3, r3, #1
- 8000cb4:	6013      	str	r3, [r2, #0]
-				break;
-			case CHANNEL3_ID:
-				set_bit(TIM3_CCER, CC3E);
-				break;
-			case CHANNEL4_ID:
-				set_bit(TIM3_CCER, CC4E);
- 8000cb6:	4b19      	ldr	r3, [pc, #100]	; (8000d1c <PWM_u8Start+0xb4>)
- 8000cb8:	681b      	ldr	r3, [r3, #0]
- 8000cba:	4a18      	ldr	r2, [pc, #96]	; (8000d1c <PWM_u8Start+0xb4>)
- 8000cbc:	f443 5380 	orr.w	r3, r3, #4096	; 0x1000
- 8000cc0:	6013      	str	r3, [r2, #0]
-				break;
- 8000cc2:	bf00      	nop
-			}
-			/*< Feeding the Compare register with the new values should by done before enable and not vise versa >*/
-
-			break;
- 8000cc4:	e01a      	b.n	8000cfc <PWM_u8Start+0x94>
-		case TIM4_ID:
-			if ((duty >= 0) && (duty <= 100)) {
- 8000cc6:	79bb      	ldrb	r3, [r7, #6]
- 8000cc8:	2b64      	cmp	r3, #100	; 0x64
- 8000cca:	d809      	bhi.n	8000ce0 <PWM_u8Start+0x78>
-				TIM4_CCR4 = ((u16) 255 * duty) / 100;
- 8000ccc:	79ba      	ldrb	r2, [r7, #6]
- 8000cce:	4613      	mov	r3, r2
- 8000cd0:	021b      	lsls	r3, r3, #8
- 8000cd2:	1a9b      	subs	r3, r3, r2
- 8000cd4:	4a12      	ldr	r2, [pc, #72]	; (8000d20 <PWM_u8Start+0xb8>)
- 8000cd6:	490f      	ldr	r1, [pc, #60]	; (8000d14 <PWM_u8Start+0xac>)
- 8000cd8:	fba1 1303 	umull	r1, r3, r1, r3
- 8000cdc:	095b      	lsrs	r3, r3, #5
- 8000cde:	6013      	str	r3, [r2, #0]
-			} else {
-
-			}
-			/*enable counter*/
-			set_bit(TIM4_CR1, CEN);
- 8000ce0:	4b10      	ldr	r3, [pc, #64]	; (8000d24 <PWM_u8Start+0xbc>)
- 8000ce2:	681b      	ldr	r3, [r3, #0]
- 8000ce4:	4a0f      	ldr	r2, [pc, #60]	; (8000d24 <PWM_u8Start+0xbc>)
- 8000ce6:	f043 0301 	orr.w	r3, r3, #1
- 8000cea:	6013      	str	r3, [r2, #0]
-				break;
-			case CHANNEL3_ID:
-				set_bit(TIM4_CCER, CC3E);
-				break;
-			case CHANNEL4_ID:
-				set_bit(TIM4_CCER, CC4E);
- 8000cec:	4b0e      	ldr	r3, [pc, #56]	; (8000d28 <PWM_u8Start+0xc0>)
- 8000cee:	681b      	ldr	r3, [r3, #0]
- 8000cf0:	4a0d      	ldr	r2, [pc, #52]	; (8000d28 <PWM_u8Start+0xc0>)
- 8000cf2:	f443 5380 	orr.w	r3, r3, #4096	; 0x1000
- 8000cf6:	6013      	str	r3, [r2, #0]
-				break;
- 8000cf8:	bf00      	nop
-			}
-			/*< Feeding the Compare register with the new values should by done before enable and not vise versa >*/
-
-			break;
- 8000cfa:	bf00      	nop
-		}
-		return STD_TRUE;
- 8000cfc:	2301      	movs	r3, #1
- 8000cfe:	e000      	b.n	8000d02 <PWM_u8Start+0x9a>
-	} else {
-		return STD_FALSE;
- 8000d00:	2300      	movs	r3, #0
-	}
-	// All IFs should have an else :: Misra C
-
-}
- 8000d02:	4618      	mov	r0, r3
- 8000d04:	370c      	adds	r7, #12
- 8000d06:	46bd      	mov	sp, r7
- 8000d08:	f85d 7b04 	ldr.w	r7, [sp], #4
- 8000d0c:	4770      	bx	lr
- 8000d0e:	bf00      	nop
- 8000d10:	40000440 	.word	0x40000440
- 8000d14:	51eb851f 	.word	0x51eb851f
- 8000d18:	40000400 	.word	0x40000400
- 8000d1c:	40000420 	.word	0x40000420
- 8000d20:	40000840 	.word	0x40000840
- 8000d24:	40000800 	.word	0x40000800
- 8000d28:	40000820 	.word	0x40000820
-
-08000d2c <PWM_u8Stop>:
-
-u8 PWM_u8Stop(u8 timerID) {
- 8000d2c:	b480      	push	{r7}
- 8000d2e:	b083      	sub	sp, #12
- 8000d30:	af00      	add	r7, sp, #0
- 8000d32:	4603      	mov	r3, r0
- 8000d34:	71fb      	strb	r3, [r7, #7]
-	if ((timerID == TIM3_ID) || (timerID == TIM4_ID)) {
- 8000d36:	79fb      	ldrb	r3, [r7, #7]
- 8000d38:	2b03      	cmp	r3, #3
- 8000d3a:	d002      	beq.n	8000d42 <PWM_u8Stop+0x16>
- 8000d3c:	79fb      	ldrb	r3, [r7, #7]
- 8000d3e:	2b04      	cmp	r3, #4
- 8000d40:	d11b      	bne.n	8000d7a <PWM_u8Stop+0x4e>
-
-		switch (timerID) {
- 8000d42:	79fb      	ldrb	r3, [r7, #7]
- 8000d44:	2b03      	cmp	r3, #3
- 8000d46:	d002      	beq.n	8000d4e <PWM_u8Stop+0x22>
- 8000d48:	2b04      	cmp	r3, #4
- 8000d4a:	d00a      	beq.n	8000d62 <PWM_u8Stop+0x36>
- 8000d4c:	e013      	b.n	8000d76 <PWM_u8Stop+0x4a>
-		case TIM3_ID:
-			/* duty = 0 */
-			TIM3_CCR4 = 0;
- 8000d4e:	4b0e      	ldr	r3, [pc, #56]	; (8000d88 <PWM_u8Stop+0x5c>)
- 8000d50:	2200      	movs	r2, #0
- 8000d52:	601a      	str	r2, [r3, #0]
-			/*disable counter*/
-			clr_bit(TIM3_CR1, CEN);
- 8000d54:	4b0d      	ldr	r3, [pc, #52]	; (8000d8c <PWM_u8Stop+0x60>)
- 8000d56:	681b      	ldr	r3, [r3, #0]
- 8000d58:	4a0c      	ldr	r2, [pc, #48]	; (8000d8c <PWM_u8Stop+0x60>)
- 8000d5a:	f023 0301 	bic.w	r3, r3, #1
- 8000d5e:	6013      	str	r3, [r2, #0]
-			break;
- 8000d60:	e009      	b.n	8000d76 <PWM_u8Stop+0x4a>
-		case TIM4_ID:
-			TIM4_CCR4 = 0;
- 8000d62:	4b0b      	ldr	r3, [pc, #44]	; (8000d90 <PWM_u8Stop+0x64>)
- 8000d64:	2200      	movs	r2, #0
- 8000d66:	601a      	str	r2, [r3, #0]
-			/*disable counter*/
-			clr_bit(TIM4_CR1, CEN);
- 8000d68:	4b0a      	ldr	r3, [pc, #40]	; (8000d94 <PWM_u8Stop+0x68>)
- 8000d6a:	681b      	ldr	r3, [r3, #0]
- 8000d6c:	4a09      	ldr	r2, [pc, #36]	; (8000d94 <PWM_u8Stop+0x68>)
- 8000d6e:	f023 0301 	bic.w	r3, r3, #1
- 8000d72:	6013      	str	r3, [r2, #0]
-			break;
- 8000d74:	bf00      	nop
-		}
-		return STD_TRUE;
- 8000d76:	2301      	movs	r3, #1
- 8000d78:	e000      	b.n	8000d7c <PWM_u8Stop+0x50>
-	} else {
-		return STD_FALSE;
- 8000d7a:	2300      	movs	r3, #0
-	}
-	/*< All IFs should have an else :: Misra C */
-
-}
- 8000d7c:	4618      	mov	r0, r3
- 8000d7e:	370c      	adds	r7, #12
- 8000d80:	46bd      	mov	sp, r7
- 8000d82:	f85d 7b04 	ldr.w	r7, [sp], #4
- 8000d86:	4770      	bx	lr
- 8000d88:	40000440 	.word	0x40000440
- 8000d8c:	40000400 	.word	0x40000400
- 8000d90:	40000840 	.word	0x40000840
- 8000d94:	40000800 	.word	0x40000800
-
-08000d98 <RCC_voidInitSysClock>:
+08000738 <RCC_voidInitSysClock>:
 												*( M N P Q )      	: By #define
 
 
 */
 void RCC_voidInitSysClock(void )
 {
- 8000d98:	b480      	push	{r7}
- 8000d9a:	af00      	add	r7, sp, #0
+ 8000738:	b480      	push	{r7}
+ 800073a:	af00      	add	r7, sp, #0
 
 	// Configuring the clock source
 
 #if		RCC_Clk_SRC == RCC_HSI
 	// Set the HSI on bit to enable
 	set_bit(RCC_CR, RCC_HSION_bit);
- 8000d9c:	4b23      	ldr	r3, [pc, #140]	; (8000e2c <RCC_voidInitSysClock+0x94>)
- 8000d9e:	681b      	ldr	r3, [r3, #0]
- 8000da0:	4a22      	ldr	r2, [pc, #136]	; (8000e2c <RCC_voidInitSysClock+0x94>)
- 8000da2:	f043 0301 	orr.w	r3, r3, #1
- 8000da6:	6013      	str	r3, [r2, #0]
+ 800073c:	4b23      	ldr	r3, [pc, #140]	; (80007cc <RCC_voidInitSysClock+0x94>)
+ 800073e:	681b      	ldr	r3, [r3, #0]
+ 8000740:	4a22      	ldr	r2, [pc, #136]	; (80007cc <RCC_voidInitSysClock+0x94>)
+ 8000742:	f043 0301 	orr.w	r3, r3, #1
+ 8000746:	6013      	str	r3, [r2, #0]
 	// Wait till HSI is locked
 	while(get_bit(RCC_CR, RCC_HSIRDY_bit) == 0);
- 8000da8:	bf00      	nop
- 8000daa:	4b20      	ldr	r3, [pc, #128]	; (8000e2c <RCC_voidInitSysClock+0x94>)
- 8000dac:	681b      	ldr	r3, [r3, #0]
- 8000dae:	f003 0302 	and.w	r3, r3, #2
- 8000db2:	2b00      	cmp	r3, #0
- 8000db4:	d0f9      	beq.n	8000daa <RCC_voidInitSysClock+0x12>
+ 8000748:	bf00      	nop
+ 800074a:	4b20      	ldr	r3, [pc, #128]	; (80007cc <RCC_voidInitSysClock+0x94>)
+ 800074c:	681b      	ldr	r3, [r3, #0]
+ 800074e:	f003 0302 	and.w	r3, r3, #2
+ 8000752:	2b00      	cmp	r3, #0
+ 8000754:	d0f9      	beq.n	800074a <RCC_voidInitSysClock+0x12>
 	#endif
 
 #endif
 
 	// Mask the clock configuration register
 	RCC_PLLCFGR &= RCC_CFGR_mask;
- 8000db6:	4b1e      	ldr	r3, [pc, #120]	; (8000e30 <RCC_voidInitSysClock+0x98>)
- 8000db8:	681b      	ldr	r3, [r3, #0]
- 8000dba:	4a1d      	ldr	r2, [pc, #116]	; (8000e30 <RCC_voidInitSysClock+0x98>)
- 8000dbc:	f423 437c 	bic.w	r3, r3, #64512	; 0xfc00
- 8000dc0:	f023 03f3 	bic.w	r3, r3, #243	; 0xf3
- 8000dc4:	6013      	str	r3, [r2, #0]
+ 8000756:	4b1e      	ldr	r3, [pc, #120]	; (80007d0 <RCC_voidInitSysClock+0x98>)
+ 8000758:	681b      	ldr	r3, [r3, #0]
+ 800075a:	4a1d      	ldr	r2, [pc, #116]	; (80007d0 <RCC_voidInitSysClock+0x98>)
+ 800075c:	f423 437c 	bic.w	r3, r3, #64512	; 0xfc00
+ 8000760:	f023 03f3 	bic.w	r3, r3, #243	; 0xf3
+ 8000764:	6013      	str	r3, [r2, #0]
 	while(get_bit(RCC_CR, RCC_PLLRDY_bit) == 0);
 
 #else
 	#if		RCC_Clk_SRC == RCC_HSI
 		// Select the HSI clk source
 		RCC_PLLCFGR |= RCC_HSI_Clk_Src;
- 8000dc6:	4b1a      	ldr	r3, [pc, #104]	; (8000e30 <RCC_voidInitSysClock+0x98>)
- 8000dc8:	4a19      	ldr	r2, [pc, #100]	; (8000e30 <RCC_voidInitSysClock+0x98>)
- 8000dca:	681b      	ldr	r3, [r3, #0]
- 8000dcc:	6013      	str	r3, [r2, #0]
+ 8000766:	4b1a      	ldr	r3, [pc, #104]	; (80007d0 <RCC_voidInitSysClock+0x98>)
+ 8000768:	4a19      	ldr	r2, [pc, #100]	; (80007d0 <RCC_voidInitSysClock+0x98>)
+ 800076a:	681b      	ldr	r3, [r3, #0]
+ 800076c:	6013      	str	r3, [r2, #0]
 
 	#endif
 #endif
 
 	// Setting the AHP pre-scaler
 	RCC_CFGR |= (RCC_HPRE << RCC_PRE_bit);
- 8000dce:	4b19      	ldr	r3, [pc, #100]	; (8000e34 <RCC_voidInitSysClock+0x9c>)
- 8000dd0:	681b      	ldr	r3, [r3, #0]
- 8000dd2:	4a18      	ldr	r2, [pc, #96]	; (8000e34 <RCC_voidInitSysClock+0x9c>)
- 8000dd4:	f043 0380 	orr.w	r3, r3, #128	; 0x80
- 8000dd8:	6013      	str	r3, [r2, #0]
+ 800076e:	4b19      	ldr	r3, [pc, #100]	; (80007d4 <RCC_voidInitSysClock+0x9c>)
+ 8000770:	681b      	ldr	r3, [r3, #0]
+ 8000772:	4a18      	ldr	r2, [pc, #96]	; (80007d4 <RCC_voidInitSysClock+0x9c>)
+ 8000774:	f043 0380 	orr.w	r3, r3, #128	; 0x80
+ 8000778:	6013      	str	r3, [r2, #0]
 	// Setting the APB1 pre-scaler
 	RCC_CFGR |= (RCC_PPRE1 << RCC_PPRE1_bit);
- 8000dda:	4b16      	ldr	r3, [pc, #88]	; (8000e34 <RCC_voidInitSysClock+0x9c>)
- 8000ddc:	681b      	ldr	r3, [r3, #0]
- 8000dde:	4a15      	ldr	r2, [pc, #84]	; (8000e34 <RCC_voidInitSysClock+0x9c>)
- 8000de0:	f443 5380 	orr.w	r3, r3, #4096	; 0x1000
- 8000de4:	6013      	str	r3, [r2, #0]
+ 800077a:	4b16      	ldr	r3, [pc, #88]	; (80007d4 <RCC_voidInitSysClock+0x9c>)
+ 800077c:	681b      	ldr	r3, [r3, #0]
+ 800077e:	4a15      	ldr	r2, [pc, #84]	; (80007d4 <RCC_voidInitSysClock+0x9c>)
+ 8000780:	f443 5380 	orr.w	r3, r3, #4096	; 0x1000
+ 8000784:	6013      	str	r3, [r2, #0]
 	// Setting the APB2 pre-scaler
 	RCC_CFGR |= (RCC_PPRE2 << RCC_PPRE2_bit);
- 8000de6:	4b13      	ldr	r3, [pc, #76]	; (8000e34 <RCC_voidInitSysClock+0x9c>)
- 8000de8:	681b      	ldr	r3, [r3, #0]
- 8000dea:	4a12      	ldr	r2, [pc, #72]	; (8000e34 <RCC_voidInitSysClock+0x9c>)
- 8000dec:	f443 4300 	orr.w	r3, r3, #32768	; 0x8000
- 8000df0:	6013      	str	r3, [r2, #0]
+ 8000786:	4b13      	ldr	r3, [pc, #76]	; (80007d4 <RCC_voidInitSysClock+0x9c>)
+ 8000788:	681b      	ldr	r3, [r3, #0]
+ 800078a:	4a12      	ldr	r2, [pc, #72]	; (80007d4 <RCC_voidInitSysClock+0x9c>)
+ 800078c:	f443 4300 	orr.w	r3, r3, #32768	; 0x8000
+ 8000790:	6013      	str	r3, [r2, #0]
 
 	// Enable and disable peripherals of Bus AHB1
 	RCC_AHB1ENR |= RCC_AHB1LPENR_init;
- 8000df2:	4b11      	ldr	r3, [pc, #68]	; (8000e38 <RCC_voidInitSysClock+0xa0>)
- 8000df4:	681b      	ldr	r3, [r3, #0]
- 8000df6:	4a10      	ldr	r2, [pc, #64]	; (8000e38 <RCC_voidInitSysClock+0xa0>)
- 8000df8:	f043 0303 	orr.w	r3, r3, #3
- 8000dfc:	6013      	str	r3, [r2, #0]
+ 8000792:	4b11      	ldr	r3, [pc, #68]	; (80007d8 <RCC_voidInitSysClock+0xa0>)
+ 8000794:	681b      	ldr	r3, [r3, #0]
+ 8000796:	4a10      	ldr	r2, [pc, #64]	; (80007d8 <RCC_voidInitSysClock+0xa0>)
+ 8000798:	f043 0303 	orr.w	r3, r3, #3
+ 800079c:	6013      	str	r3, [r2, #0]
 	// Enable and disable peripherals of Bus AHB1
 	RCC_AHB2ENR |= RCC_AHB2LPENR_init;
- 8000dfe:	4b0f      	ldr	r3, [pc, #60]	; (8000e3c <RCC_voidInitSysClock+0xa4>)
- 8000e00:	4a0e      	ldr	r2, [pc, #56]	; (8000e3c <RCC_voidInitSysClock+0xa4>)
- 8000e02:	681b      	ldr	r3, [r3, #0]
- 8000e04:	6013      	str	r3, [r2, #0]
+ 800079e:	4b0f      	ldr	r3, [pc, #60]	; (80007dc <RCC_voidInitSysClock+0xa4>)
+ 80007a0:	4a0e      	ldr	r2, [pc, #56]	; (80007dc <RCC_voidInitSysClock+0xa4>)
+ 80007a2:	681b      	ldr	r3, [r3, #0]
+ 80007a4:	6013      	str	r3, [r2, #0]
 	// Enable and disable peripherals of Bus ABP1
 	RCC_APB1ENR |= RCC_APB1LPENR_init;
- 8000e06:	4b0e      	ldr	r3, [pc, #56]	; (8000e40 <RCC_voidInitSysClock+0xa8>)
- 8000e08:	681b      	ldr	r3, [r3, #0]
- 8000e0a:	4a0d      	ldr	r2, [pc, #52]	; (8000e40 <RCC_voidInitSysClock+0xa8>)
- 8000e0c:	f043 030f 	orr.w	r3, r3, #15
- 8000e10:	6013      	str	r3, [r2, #0]
+ 80007a6:	4b0e      	ldr	r3, [pc, #56]	; (80007e0 <RCC_voidInitSysClock+0xa8>)
+ 80007a8:	681b      	ldr	r3, [r3, #0]
+ 80007aa:	4a0d      	ldr	r2, [pc, #52]	; (80007e0 <RCC_voidInitSysClock+0xa8>)
+ 80007ac:	f043 030f 	orr.w	r3, r3, #15
+ 80007b0:	6013      	str	r3, [r2, #0]
 	// Enable and disable peripherals of Bus ABP2
 	RCC_APB2ENR |= RCC_APB2LPENR_init;
- 8000e12:	4b0c      	ldr	r3, [pc, #48]	; (8000e44 <RCC_voidInitSysClock+0xac>)
- 8000e14:	681b      	ldr	r3, [r3, #0]
- 8000e16:	4a0b      	ldr	r2, [pc, #44]	; (8000e44 <RCC_voidInitSysClock+0xac>)
- 8000e18:	f443 3300 	orr.w	r3, r3, #131072	; 0x20000
- 8000e1c:	f043 0310 	orr.w	r3, r3, #16
- 8000e20:	6013      	str	r3, [r2, #0]
+ 80007b2:	4b0c      	ldr	r3, [pc, #48]	; (80007e4 <RCC_voidInitSysClock+0xac>)
+ 80007b4:	681b      	ldr	r3, [r3, #0]
+ 80007b6:	4a0b      	ldr	r2, [pc, #44]	; (80007e4 <RCC_voidInitSysClock+0xac>)
+ 80007b8:	f443 3300 	orr.w	r3, r3, #131072	; 0x20000
+ 80007bc:	f043 0310 	orr.w	r3, r3, #16
+ 80007c0:	6013      	str	r3, [r2, #0]
 }
- 8000e22:	bf00      	nop
- 8000e24:	46bd      	mov	sp, r7
- 8000e26:	f85d 7b04 	ldr.w	r7, [sp], #4
- 8000e2a:	4770      	bx	lr
- 8000e2c:	40023800 	.word	0x40023800
- 8000e30:	40023804 	.word	0x40023804
- 8000e34:	40023808 	.word	0x40023808
- 8000e38:	40023830 	.word	0x40023830
- 8000e3c:	40023834 	.word	0x40023834
- 8000e40:	40023840 	.word	0x40023840
- 8000e44:	40023844 	.word	0x40023844
+ 80007c2:	bf00      	nop
+ 80007c4:	46bd      	mov	sp, r7
+ 80007c6:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 80007ca:	4770      	bx	lr
+ 80007cc:	40023800 	.word	0x40023800
+ 80007d0:	40023804 	.word	0x40023804
+ 80007d4:	40023808 	.word	0x40023808
+ 80007d8:	40023830 	.word	0x40023830
+ 80007dc:	40023834 	.word	0x40023834
+ 80007e0:	40023840 	.word	0x40023840
+ 80007e4:	40023844 	.word	0x40023844
 
-08000e48 <main>:
-/*  Temporary Global Variables  */
-u8 Global_u8ReRightUS = 0;
-u8 Global_u8ReLeftUS  = 0;
+080007e8 <UART_u8Init>:
+
+/* Configure UART Peripheral using pre-build configurations			*/
+/* Input Parameters: UART Peripheral ID								*/
+/* Return value: STD_TRUE -> Success, STD_FALSE -> Failed			*/
+STD_ReturnType UART_u8Init( u8 copy_u8UART_ID )
+{
+ 80007e8:	b480      	push	{r7}
+ 80007ea:	b083      	sub	sp, #12
+ 80007ec:	af00      	add	r7, sp, #0
+ 80007ee:	4603      	mov	r3, r0
+ 80007f0:	71fb      	strb	r3, [r7, #7]
+	// Check input data validity
+	if( ( copy_u8UART_ID == UART1ID ) && ( ( UART_Init & UART1_INIT ) == UART_NOT_INIT ) )
+ 80007f2:	79fb      	ldrb	r3, [r7, #7]
+ 80007f4:	2b00      	cmp	r3, #0
+ 80007f6:	d12d      	bne.n	8000854 <UART_u8Init+0x6c>
+ 80007f8:	4b1a      	ldr	r3, [pc, #104]	; (8000864 <UART_u8Init+0x7c>)
+ 80007fa:	781b      	ldrb	r3, [r3, #0]
+ 80007fc:	f003 0303 	and.w	r3, r3, #3
+ 8000800:	2b00      	cmp	r3, #0
+ 8000802:	d127      	bne.n	8000854 <UART_u8Init+0x6c>
+	{// If valid
+		// Check which channel is selected
+		switch( copy_u8UART_ID )
+ 8000804:	79fb      	ldrb	r3, [r7, #7]
+ 8000806:	2b02      	cmp	r3, #2
+ 8000808:	d01f      	beq.n	800084a <UART_u8Init+0x62>
+ 800080a:	2b02      	cmp	r3, #2
+ 800080c:	dc1b      	bgt.n	8000846 <UART_u8Init+0x5e>
+ 800080e:	2b00      	cmp	r3, #0
+ 8000810:	d002      	beq.n	8000818 <UART_u8Init+0x30>
+ 8000812:	2b01      	cmp	r3, #1
+ 8000814:	d01b      	beq.n	800084e <UART_u8Init+0x66>
+ 8000816:	e016      	b.n	8000846 <UART_u8Init+0x5e>
+		{
+		case UART1ID: // Case of selecting UART 1
+			// Set the Boad Rate value
+			UART_bases[copy_u8UART_ID]->UART_BRR = ( ( UART1_MANTISSA << UART_MANTISSA_BIT ) | UART1_FRACTION );
+ 8000818:	79fb      	ldrb	r3, [r7, #7]
+ 800081a:	4a13      	ldr	r2, [pc, #76]	; (8000868 <UART_u8Init+0x80>)
+ 800081c:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
+ 8000820:	f640 5203 	movw	r2, #3331	; 0xd03
+ 8000824:	609a      	str	r2, [r3, #8]
+			// Set the control register configurations
+			UART_bases[copy_u8UART_ID]->UART_CR1 = UART1_CR1;
+ 8000826:	79fb      	ldrb	r3, [r7, #7]
+ 8000828:	4a0f      	ldr	r2, [pc, #60]	; (8000868 <UART_u8Init+0x80>)
+ 800082a:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
+ 800082e:	f24a 022c 	movw	r2, #41004	; 0xa02c
+ 8000832:	60da      	str	r2, [r3, #12]
+			// Set init variable for UART1 init
+			UART_Init |= UART1_INIT;
+ 8000834:	4b0b      	ldr	r3, [pc, #44]	; (8000864 <UART_u8Init+0x7c>)
+ 8000836:	781b      	ldrb	r3, [r3, #0]
+ 8000838:	f043 0303 	orr.w	r3, r3, #3
+ 800083c:	b2da      	uxtb	r2, r3
+ 800083e:	4b09      	ldr	r3, [pc, #36]	; (8000864 <UART_u8Init+0x7c>)
+ 8000840:	701a      	strb	r2, [r3, #0]
+			// Return success
+			return STD_TRUE;
+ 8000842:	2301      	movs	r3, #1
+ 8000844:	e007      	b.n	8000856 <UART_u8Init+0x6e>
+			break;
+		case UART6ID: // Case of selecting UART 6
+			break;
+		default: // Case of wrong selection
+			// Return failed
+			return STD_FALSE;
+ 8000846:	2300      	movs	r3, #0
+ 8000848:	e005      	b.n	8000856 <UART_u8Init+0x6e>
+			break;
+ 800084a:	bf00      	nop
+ 800084c:	e000      	b.n	8000850 <UART_u8Init+0x68>
+			break;
+ 800084e:	bf00      	nop
+			break;
+		}
+		// Return failed
+		return STD_FALSE;
+ 8000850:	2300      	movs	r3, #0
+ 8000852:	e000      	b.n	8000856 <UART_u8Init+0x6e>
+	}
+	else
+	{// If not valid
+		// Return failed
+		return STD_FALSE;
+ 8000854:	2300      	movs	r3, #0
+	}
+}
+ 8000856:	4618      	mov	r0, r3
+ 8000858:	370c      	adds	r7, #12
+ 800085a:	46bd      	mov	sp, r7
+ 800085c:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 8000860:	4770      	bx	lr
+ 8000862:	bf00      	nop
+ 8000864:	2000005c 	.word	0x2000005c
+ 8000868:	20000018 	.word	0x20000018
+
+0800086c <UART_u8SendByte>:
+/*--------------------------------------------------------------------------------*/
+/* Put one byte in the transmit buffer of the UART Peripheral		*/
+/* Input Parameters: UART Peripheral ID, Data Byte					*/
+/* Return value: STD_TRUE -> Success, STD_FALSE -> Collision action	*/
+STD_ReturnType UART_u8SendByte( u8 copy_u8UART_ID , u8 copy_u8DataByte )
+{
+ 800086c:	b480      	push	{r7}
+ 800086e:	b083      	sub	sp, #12
+ 8000870:	af00      	add	r7, sp, #0
+ 8000872:	4603      	mov	r3, r0
+ 8000874:	460a      	mov	r2, r1
+ 8000876:	71fb      	strb	r3, [r7, #7]
+ 8000878:	4613      	mov	r3, r2
+ 800087a:	71bb      	strb	r3, [r7, #6]
+	// Check data validity
+	if( ( copy_u8UART_ID == UART1ID ) && ( ( UART_Init & UART1_INIT ) == UART1_INIT ) )
+ 800087c:	79fb      	ldrb	r3, [r7, #7]
+ 800087e:	2b00      	cmp	r3, #0
+ 8000880:	d119      	bne.n	80008b6 <UART_u8SendByte+0x4a>
+ 8000882:	4b10      	ldr	r3, [pc, #64]	; (80008c4 <UART_u8SendByte+0x58>)
+ 8000884:	781b      	ldrb	r3, [r3, #0]
+ 8000886:	f003 0303 	and.w	r3, r3, #3
+ 800088a:	2b03      	cmp	r3, #3
+ 800088c:	d113      	bne.n	80008b6 <UART_u8SendByte+0x4a>
+	{// If valid
+		// It data transmission is ready or not
+		if( get_bit( (UART_bases[copy_u8UART_ID]->UART_SR) , UART_TC_BIT ) == STD_TRUE )
+ 800088e:	79fb      	ldrb	r3, [r7, #7]
+ 8000890:	4a0d      	ldr	r2, [pc, #52]	; (80008c8 <UART_u8SendByte+0x5c>)
+ 8000892:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
+ 8000896:	681b      	ldr	r3, [r3, #0]
+ 8000898:	099b      	lsrs	r3, r3, #6
+ 800089a:	f003 0301 	and.w	r3, r3, #1
+ 800089e:	2b01      	cmp	r3, #1
+ 80008a0:	d107      	bne.n	80008b2 <UART_u8SendByte+0x46>
+		{// if available
+			// Sent data byte to the buffer
+			UART_bases[copy_u8UART_ID]->UART_DR = copy_u8DataByte;
+ 80008a2:	79fb      	ldrb	r3, [r7, #7]
+ 80008a4:	4a08      	ldr	r2, [pc, #32]	; (80008c8 <UART_u8SendByte+0x5c>)
+ 80008a6:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
+ 80008aa:	79ba      	ldrb	r2, [r7, #6]
+ 80008ac:	605a      	str	r2, [r3, #4]
+			// Return success
+			return STD_TRUE;
+ 80008ae:	2301      	movs	r3, #1
+ 80008b0:	e002      	b.n	80008b8 <UART_u8SendByte+0x4c>
+		}
+		else
+		{// if not available
+			// Return failed
+			return STD_FALSE;
+ 80008b2:	2300      	movs	r3, #0
+ 80008b4:	e000      	b.n	80008b8 <UART_u8SendByte+0x4c>
+		}
+	}
+	else
+	{// If not valid
+		// Return failed
+		return STD_FALSE;
+ 80008b6:	2300      	movs	r3, #0
+	}
+}
+ 80008b8:	4618      	mov	r0, r3
+ 80008ba:	370c      	adds	r7, #12
+ 80008bc:	46bd      	mov	sp, r7
+ 80008be:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 80008c2:	4770      	bx	lr
+ 80008c4:	2000005c 	.word	0x2000005c
+ 80008c8:	20000018 	.word	0x20000018
+
+080008cc <UART_u8ReceiveByte>:
+/*--------------------------------------------------------------------------------*/
+/* Get Data byte from the receive buffer of the UART peripheral		*/
+/* Input Parameters: UART Peripheral ID, Ptr to Rx data variable	*/
+/* Return value: STD_TRUE -> Success, STD_FALSE -> Collision action	*/
+STD_ReturnType UART_u8ReceiveByte( u8 copy_u8UART_ID , u8* ptr_u8DataByte  )
+{
+ 80008cc:	b480      	push	{r7}
+ 80008ce:	b083      	sub	sp, #12
+ 80008d0:	af00      	add	r7, sp, #0
+ 80008d2:	4603      	mov	r3, r0
+ 80008d4:	6039      	str	r1, [r7, #0]
+ 80008d6:	71fb      	strb	r3, [r7, #7]
+	// Check data validity
+	if( ( copy_u8UART_ID == UART1ID ) && ( ( UART_Init & UART1_INIT ) == UART1_INIT ) )
+ 80008d8:	79fb      	ldrb	r3, [r7, #7]
+ 80008da:	2b00      	cmp	r3, #0
+ 80008dc:	d10f      	bne.n	80008fe <UART_u8ReceiveByte+0x32>
+ 80008de:	4b0b      	ldr	r3, [pc, #44]	; (800090c <UART_u8ReceiveByte+0x40>)
+ 80008e0:	781b      	ldrb	r3, [r3, #0]
+ 80008e2:	f003 0303 	and.w	r3, r3, #3
+ 80008e6:	2b03      	cmp	r3, #3
+ 80008e8:	d109      	bne.n	80008fe <UART_u8ReceiveByte+0x32>
+	{// If valid
+		// It recived data is ready in the DR
+		//if( get_bit( (UART_bases[copy_u8UART_ID]->UART_SR) , UART_RXNE_BIT ) == STD_TRUE )
+		//{// if available
+			// Recive data byte
+			*ptr_u8DataByte = UART_bases[copy_u8UART_ID]->UART_DR;
+ 80008ea:	79fb      	ldrb	r3, [r7, #7]
+ 80008ec:	4a08      	ldr	r2, [pc, #32]	; (8000910 <UART_u8ReceiveByte+0x44>)
+ 80008ee:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
+ 80008f2:	685b      	ldr	r3, [r3, #4]
+ 80008f4:	b2da      	uxtb	r2, r3
+ 80008f6:	683b      	ldr	r3, [r7, #0]
+ 80008f8:	701a      	strb	r2, [r3, #0]
+			// Return success
+			return STD_TRUE;
+ 80008fa:	2301      	movs	r3, #1
+ 80008fc:	e000      	b.n	8000900 <UART_u8ReceiveByte+0x34>
+		//}
+	}
+	else
+	{// If not valid
+		// Return failed
+		return STD_FALSE;
+ 80008fe:	2300      	movs	r3, #0
+	}
+}
+ 8000900:	4618      	mov	r0, r3
+ 8000902:	370c      	adds	r7, #12
+ 8000904:	46bd      	mov	sp, r7
+ 8000906:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 800090a:	4770      	bx	lr
+ 800090c:	2000005c 	.word	0x2000005c
+ 8000910:	20000018 	.word	0x20000018
+
+08000914 <UART_u8SetCallback>:
+/*--------------------------------------------------------------------------------*/
+/* Set callback function for the UART receive by interrupt			*/
+/* Input Parameters: UART Peripheral ID								*/
+/* Return value: STD_TRUE -> Success, STD_FALSE -> Failed			*/
+STD_ReturnType UART_u8SetCallback( u8 copy_u8UART_ID , void ( *ptr_UARTcallback )( void ) )
+{
+ 8000914:	b480      	push	{r7}
+ 8000916:	b083      	sub	sp, #12
+ 8000918:	af00      	add	r7, sp, #0
+ 800091a:	4603      	mov	r3, r0
+ 800091c:	6039      	str	r1, [r7, #0]
+ 800091e:	71fb      	strb	r3, [r7, #7]
+	// Check is the input pointer to function is not null
+	if( (ptr_UARTcallback != Null) )
+ 8000920:	683b      	ldr	r3, [r7, #0]
+ 8000922:	2b00      	cmp	r3, #0
+ 8000924:	d014      	beq.n	8000950 <UART_u8SetCallback+0x3c>
+	{// if valid
+		// Check which UART peripheral is selected
+		switch(copy_u8UART_ID)
+ 8000926:	79fb      	ldrb	r3, [r7, #7]
+ 8000928:	2b02      	cmp	r3, #2
+ 800092a:	d00d      	beq.n	8000948 <UART_u8SetCallback+0x34>
+ 800092c:	2b02      	cmp	r3, #2
+ 800092e:	dc0d      	bgt.n	800094c <UART_u8SetCallback+0x38>
+ 8000930:	2b00      	cmp	r3, #0
+ 8000932:	d002      	beq.n	800093a <UART_u8SetCallback+0x26>
+ 8000934:	2b01      	cmp	r3, #1
+ 8000936:	d005      	beq.n	8000944 <UART_u8SetCallback+0x30>
+ 8000938:	e008      	b.n	800094c <UART_u8SetCallback+0x38>
+		{
+		case UART1ID: // Case UART1 is selected
+			// Set the interrupt callback
+			ptr_UART1_IRQHandlerCallback = ptr_UARTcallback;
+ 800093a:	4a09      	ldr	r2, [pc, #36]	; (8000960 <UART_u8SetCallback+0x4c>)
+ 800093c:	683b      	ldr	r3, [r7, #0]
+ 800093e:	6013      	str	r3, [r2, #0]
+			// Return success
+			return STD_TRUE;
+ 8000940:	2301      	movs	r3, #1
+ 8000942:	e006      	b.n	8000952 <UART_u8SetCallback+0x3e>
+			break;
+		case UART2ID: // Case UART2 is selected
+			// Set the interrupt callback
+
+			// Return success
+			return STD_FALSE;
+ 8000944:	2300      	movs	r3, #0
+ 8000946:	e004      	b.n	8000952 <UART_u8SetCallback+0x3e>
+			break;
+		case UART6ID: // Case UART6 is selected
+			// Set the interrupt callback
+
+			// Return success
+			return STD_FALSE;
+ 8000948:	2300      	movs	r3, #0
+ 800094a:	e002      	b.n	8000952 <UART_u8SetCallback+0x3e>
+			break;
+		default: // Case of wrong selection
+			// Return failed
+			return STD_FALSE;
+ 800094c:	2300      	movs	r3, #0
+ 800094e:	e000      	b.n	8000952 <UART_u8SetCallback+0x3e>
+		return STD_FALSE;
+	}
+	else
+	{// if not valid
+		// return failed
+		return STD_FALSE;
+ 8000950:	2300      	movs	r3, #0
+	}
+}
+ 8000952:	4618      	mov	r0, r3
+ 8000954:	370c      	adds	r7, #12
+ 8000956:	46bd      	mov	sp, r7
+ 8000958:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 800095c:	4770      	bx	lr
+ 800095e:	bf00      	nop
+ 8000960:	20000058 	.word	0x20000058
+
+08000964 <USART1_IRQHandler>:
+/*--------------------------------------------------------------------------------*/
+/* UART interrupt request handler									*/
+/* Input Parameters: void											*/
+/* Return value: void												*/
+void USART1_IRQHandler( void )
+{
+ 8000964:	b580      	push	{r7, lr}
+ 8000966:	af00      	add	r7, sp, #0
+	if(ptr_UART1_IRQHandlerCallback != Null)
+ 8000968:	4b04      	ldr	r3, [pc, #16]	; (800097c <USART1_IRQHandler+0x18>)
+ 800096a:	681b      	ldr	r3, [r3, #0]
+ 800096c:	2b00      	cmp	r3, #0
+ 800096e:	d002      	beq.n	8000976 <USART1_IRQHandler+0x12>
+		ptr_UART1_IRQHandlerCallback();
+ 8000970:	4b02      	ldr	r3, [pc, #8]	; (800097c <USART1_IRQHandler+0x18>)
+ 8000972:	681b      	ldr	r3, [r3, #0]
+ 8000974:	4798      	blx	r3
+}
+ 8000976:	bf00      	nop
+ 8000978:	bd80      	pop	{r7, pc}
+ 800097a:	bf00      	nop
+ 800097c:	20000058 	.word	0x20000058
+
+08000980 <main>:
+u16 Global_u16FrRightUS = 0;
+u16 Global_u16FrLeftUS  = 0;
+u8* Recived_UART_ptr;
 
 int main( void )
 {
- 8000e48:	b580      	push	{r7, lr}
- 8000e4a:	b082      	sub	sp, #8
- 8000e4c:	af00      	add	r7, sp, #0
+ 8000980:	b580      	push	{r7, lr}
+ 8000982:	b082      	sub	sp, #8
+ 8000984:	af00      	add	r7, sp, #0
+	u8 Recived_UART[2] = { 0 };
+ 8000986:	2300      	movs	r3, #0
+ 8000988:	80bb      	strh	r3, [r7, #4]
+	Recived_UART_ptr = &Recived_UART;
+ 800098a:	4a16      	ldr	r2, [pc, #88]	; (80009e4 <main+0x64>)
+ 800098c:	1d3b      	adds	r3, r7, #4
+ 800098e:	6013      	str	r3, [r2, #0]
 	RCC_voidInitSysClock();
- 8000e4e:	f7ff ffa3 	bl	8000d98 <RCC_voidInitSysClock>
-	MDC_u8Init(MDC_MOTION_CHANNEL);
- 8000e52:	2000      	movs	r0, #0
- 8000e54:	f7ff fc76 	bl	8000744 <MDC_u8Init>
-	MDC_u8Init(MDC_STEERING_CHANNEL);
- 8000e58:	2001      	movs	r0, #1
- 8000e5a:	f7ff fc73 	bl	8000744 <MDC_u8Init>
-	MDC_u8StartCW(MDC_MOTION_CHANNEL, 70);
- 8000e5e:	2146      	movs	r1, #70	; 0x46
- 8000e60:	2000      	movs	r0, #0
- 8000e62:	f7ff fd31 	bl	80008c8 <MDC_u8StartCW>
-	MDC_u8StartCCW(MDC_STEERING_CHANNEL, 50);
- 8000e66:	2132      	movs	r1, #50	; 0x32
- 8000e68:	2001      	movs	r0, #1
- 8000e6a:	f7ff fd89 	bl	8000980 <MDC_u8StartCCW>
-	u16 i;
-	for(i=0; i<500000; i++);
- 8000e6e:	2300      	movs	r3, #0
- 8000e70:	607b      	str	r3, [r7, #4]
- 8000e72:	e002      	b.n	8000e7a <main+0x32>
- 8000e74:	687b      	ldr	r3, [r7, #4]
- 8000e76:	3301      	adds	r3, #1
- 8000e78:	607b      	str	r3, [r7, #4]
- 8000e7a:	687b      	ldr	r3, [r7, #4]
- 8000e7c:	4a04      	ldr	r2, [pc, #16]	; (8000e90 <main+0x48>)
- 8000e7e:	4293      	cmp	r3, r2
- 8000e80:	d9f8      	bls.n	8000e74 <main+0x2c>
-	MDC_u8Stop(MDC_MOTION_CHANNEL);
- 8000e82:	2000      	movs	r0, #0
- 8000e84:	f7ff fdd8 	bl	8000a38 <MDC_u8Stop>
-	MDC_u8Stop(MDC_STEERING_CHANNEL);
- 8000e88:	2001      	movs	r0, #1
- 8000e8a:	f7ff fdd5 	bl	8000a38 <MDC_u8Stop>
+ 8000990:	f7ff fed2 	bl	8000738 <RCC_voidInitSysClock>
+	GPIO_voidSetPinMode(GPIOA_PORT, PIN9, MODE_ALTF);
+ 8000994:	2202      	movs	r2, #2
+ 8000996:	2109      	movs	r1, #9
+ 8000998:	2000      	movs	r0, #0
+ 800099a:	f7ff fc1b 	bl	80001d4 <GPIO_voidSetPinMode>
+	GPIO_voidPinSetAltFn(GPIOA_PORT, PIN9, 0x07);
+ 800099e:	2207      	movs	r2, #7
+ 80009a0:	2109      	movs	r1, #9
+ 80009a2:	2000      	movs	r0, #0
+ 80009a4:	f7ff fc50 	bl	8000248 <GPIO_voidPinSetAltFn>
+	GPIO_voidSetPinMode(GPIOA_PORT, PIN10, MODE_ALTF);
+ 80009a8:	2202      	movs	r2, #2
+ 80009aa:	210a      	movs	r1, #10
+ 80009ac:	2000      	movs	r0, #0
+ 80009ae:	f7ff fc11 	bl	80001d4 <GPIO_voidSetPinMode>
+	GPIO_voidPinSetAltFn(GPIOA_PORT, PIN10, 0x07);
+ 80009b2:	2207      	movs	r2, #7
+ 80009b4:	210a      	movs	r1, #10
+ 80009b6:	2000      	movs	r0, #0
+ 80009b8:	f7ff fc46 	bl	8000248 <GPIO_voidPinSetAltFn>
+	NVIC_u8EnableIRQ(NVIC_IRQ_ID_USART1);
+ 80009bc:	2025      	movs	r0, #37	; 0x25
+ 80009be:	f7ff fe8b 	bl	80006d8 <NVIC_u8EnableIRQ>
+	UART_u8Init(UART1ID);
+ 80009c2:	2000      	movs	r0, #0
+ 80009c4:	f7ff ff10 	bl	80007e8 <UART_u8Init>
+	UART_u8SetCallback(UART1ID, Callback_test);
+ 80009c8:	4907      	ldr	r1, [pc, #28]	; (80009e8 <main+0x68>)
+ 80009ca:	2000      	movs	r0, #0
+ 80009cc:	f7ff ffa2 	bl	8000914 <UART_u8SetCallback>
+
 
 	/* Loop forever */
 	while( 1 )
- 8000e8e:	e7fe      	b.n	8000e8e <main+0x46>
- 8000e90:	0007a11f 	.word	0x0007a11f
+	{
+		UART_u8SendByte(UART1ID, 0x42);
+ 80009d0:	2142      	movs	r1, #66	; 0x42
+ 80009d2:	2000      	movs	r0, #0
+ 80009d4:	f7ff ff4a 	bl	800086c <UART_u8SendByte>
+		UART_u8SendByte(UART1ID, 0x43);
+ 80009d8:	2143      	movs	r1, #67	; 0x43
+ 80009da:	2000      	movs	r0, #0
+ 80009dc:	f7ff ff46 	bl	800086c <UART_u8SendByte>
+		UART_u8SendByte(UART1ID, 0x42);
+ 80009e0:	e7f6      	b.n	80009d0 <main+0x50>
+ 80009e2:	bf00      	nop
+ 80009e4:	20000060 	.word	0x20000060
+ 80009e8:	080009ed 	.word	0x080009ed
 
-08000e94 <Reset_Handler>:
+080009ec <Callback_test>:
+	}
+	return 0;
+}
+
+void Callback_test( void )
+{
+ 80009ec:	b580      	push	{r7, lr}
+ 80009ee:	af00      	add	r7, sp, #0
+	static u8 index = 0;
+	if(index == 2)
+ 80009f0:	4b0b      	ldr	r3, [pc, #44]	; (8000a20 <Callback_test+0x34>)
+ 80009f2:	781b      	ldrb	r3, [r3, #0]
+ 80009f4:	2b02      	cmp	r3, #2
+ 80009f6:	d102      	bne.n	80009fe <Callback_test+0x12>
+		index = 0;
+ 80009f8:	4b09      	ldr	r3, [pc, #36]	; (8000a20 <Callback_test+0x34>)
+ 80009fa:	2200      	movs	r2, #0
+ 80009fc:	701a      	strb	r2, [r3, #0]
+	UART_u8ReceiveByte(UART1ID, Recived_UART_ptr+index);
+ 80009fe:	4b09      	ldr	r3, [pc, #36]	; (8000a24 <Callback_test+0x38>)
+ 8000a00:	681b      	ldr	r3, [r3, #0]
+ 8000a02:	4a07      	ldr	r2, [pc, #28]	; (8000a20 <Callback_test+0x34>)
+ 8000a04:	7812      	ldrb	r2, [r2, #0]
+ 8000a06:	4413      	add	r3, r2
+ 8000a08:	4619      	mov	r1, r3
+ 8000a0a:	2000      	movs	r0, #0
+ 8000a0c:	f7ff ff5e 	bl	80008cc <UART_u8ReceiveByte>
+	index++;
+ 8000a10:	4b03      	ldr	r3, [pc, #12]	; (8000a20 <Callback_test+0x34>)
+ 8000a12:	781b      	ldrb	r3, [r3, #0]
+ 8000a14:	3301      	adds	r3, #1
+ 8000a16:	b2da      	uxtb	r2, r3
+ 8000a18:	4b01      	ldr	r3, [pc, #4]	; (8000a20 <Callback_test+0x34>)
+ 8000a1a:	701a      	strb	r2, [r3, #0]
+}
+ 8000a1c:	bf00      	nop
+ 8000a1e:	bd80      	pop	{r7, pc}
+ 8000a20:	20000064 	.word	0x20000064
+ 8000a24:	20000060 	.word	0x20000060
+
+08000a28 <Reset_Handler>:
 
   .section .text.Reset_Handler
   .weak Reset_Handler
   .type Reset_Handler, %function
 Reset_Handler:
   ldr   r0, =_estack
- 8000e94:	480d      	ldr	r0, [pc, #52]	; (8000ecc <LoopForever+0x2>)
+ 8000a28:	480d      	ldr	r0, [pc, #52]	; (8000a60 <LoopForever+0x2>)
   mov   sp, r0          /* set stack pointer */
- 8000e96:	4685      	mov	sp, r0
+ 8000a2a:	4685      	mov	sp, r0
 /* Call the clock system initialization function.*/
   bl  SystemInit
- 8000e98:	f3af 8000 	nop.w
+ 8000a2c:	f3af 8000 	nop.w
 
 /* Copy the data segment initializers from flash to SRAM */
   ldr r0, =_sdata
- 8000e9c:	480c      	ldr	r0, [pc, #48]	; (8000ed0 <LoopForever+0x6>)
+ 8000a30:	480c      	ldr	r0, [pc, #48]	; (8000a64 <LoopForever+0x6>)
   ldr r1, =_edata
- 8000e9e:	490d      	ldr	r1, [pc, #52]	; (8000ed4 <LoopForever+0xa>)
+ 8000a32:	490d      	ldr	r1, [pc, #52]	; (8000a68 <LoopForever+0xa>)
   ldr r2, =_sidata
- 8000ea0:	4a0d      	ldr	r2, [pc, #52]	; (8000ed8 <LoopForever+0xe>)
+ 8000a34:	4a0d      	ldr	r2, [pc, #52]	; (8000a6c <LoopForever+0xe>)
   movs r3, #0
- 8000ea2:	2300      	movs	r3, #0
+ 8000a36:	2300      	movs	r3, #0
   b LoopCopyDataInit
- 8000ea4:	e002      	b.n	8000eac <LoopCopyDataInit>
+ 8000a38:	e002      	b.n	8000a40 <LoopCopyDataInit>
 
-08000ea6 <CopyDataInit>:
+08000a3a <CopyDataInit>:
 
 CopyDataInit:
   ldr r4, [r2, r3]
- 8000ea6:	58d4      	ldr	r4, [r2, r3]
+ 8000a3a:	58d4      	ldr	r4, [r2, r3]
   str r4, [r0, r3]
- 8000ea8:	50c4      	str	r4, [r0, r3]
+ 8000a3c:	50c4      	str	r4, [r0, r3]
   adds r3, r3, #4
- 8000eaa:	3304      	adds	r3, #4
+ 8000a3e:	3304      	adds	r3, #4
 
-08000eac <LoopCopyDataInit>:
+08000a40 <LoopCopyDataInit>:
 
 LoopCopyDataInit:
   adds r4, r0, r3
- 8000eac:	18c4      	adds	r4, r0, r3
+ 8000a40:	18c4      	adds	r4, r0, r3
   cmp r4, r1
- 8000eae:	428c      	cmp	r4, r1
+ 8000a42:	428c      	cmp	r4, r1
   bcc CopyDataInit
- 8000eb0:	d3f9      	bcc.n	8000ea6 <CopyDataInit>
+ 8000a44:	d3f9      	bcc.n	8000a3a <CopyDataInit>
 
 /* Zero fill the bss segment. */
   ldr r2, =_sbss
- 8000eb2:	4a0a      	ldr	r2, [pc, #40]	; (8000edc <LoopForever+0x12>)
+ 8000a46:	4a0a      	ldr	r2, [pc, #40]	; (8000a70 <LoopForever+0x12>)
   ldr r4, =_ebss
- 8000eb4:	4c0a      	ldr	r4, [pc, #40]	; (8000ee0 <LoopForever+0x16>)
+ 8000a48:	4c0a      	ldr	r4, [pc, #40]	; (8000a74 <LoopForever+0x16>)
   movs r3, #0
- 8000eb6:	2300      	movs	r3, #0
+ 8000a4a:	2300      	movs	r3, #0
   b LoopFillZerobss
- 8000eb8:	e001      	b.n	8000ebe <LoopFillZerobss>
+ 8000a4c:	e001      	b.n	8000a52 <LoopFillZerobss>
 
-08000eba <FillZerobss>:
+08000a4e <FillZerobss>:
 
 FillZerobss:
   str  r3, [r2]
- 8000eba:	6013      	str	r3, [r2, #0]
+ 8000a4e:	6013      	str	r3, [r2, #0]
   adds r2, r2, #4
- 8000ebc:	3204      	adds	r2, #4
+ 8000a50:	3204      	adds	r2, #4
 
-08000ebe <LoopFillZerobss>:
+08000a52 <LoopFillZerobss>:
 
 LoopFillZerobss:
   cmp r2, r4
- 8000ebe:	42a2      	cmp	r2, r4
+ 8000a52:	42a2      	cmp	r2, r4
   bcc FillZerobss
- 8000ec0:	d3fb      	bcc.n	8000eba <FillZerobss>
+ 8000a54:	d3fb      	bcc.n	8000a4e <FillZerobss>
 
 /* Call static constructors */
   bl __libc_init_array
- 8000ec2:	f000 f811 	bl	8000ee8 <__libc_init_array>
+ 8000a56:	f000 f811 	bl	8000a7c <__libc_init_array>
 /* Call the application's entry point.*/
   bl main
- 8000ec6:	f7ff ffbf 	bl	8000e48 <main>
+ 8000a5a:	f7ff ff91 	bl	8000980 <main>
 
-08000eca <LoopForever>:
+08000a5e <LoopForever>:
 
 LoopForever:
   b LoopForever
- 8000eca:	e7fe      	b.n	8000eca <LoopForever>
+ 8000a5e:	e7fe      	b.n	8000a5e <LoopForever>
   ldr   r0, =_estack
- 8000ecc:	20010000 	.word	0x20010000
+ 8000a60:	20010000 	.word	0x20010000
   ldr r0, =_sdata
- 8000ed0:	20000000 	.word	0x20000000
+ 8000a64:	20000000 	.word	0x20000000
   ldr r1, =_edata
- 8000ed4:	20000020 	.word	0x20000020
+ 8000a68:	20000024 	.word	0x20000024
   ldr r2, =_sidata
- 8000ed8:	08000f50 	.word	0x08000f50
+ 8000a6c:	08000ae4 	.word	0x08000ae4
   ldr r2, =_sbss
- 8000edc:	20000020 	.word	0x20000020
+ 8000a70:	20000024 	.word	0x20000024
   ldr r4, =_ebss
- 8000ee0:	20000054 	.word	0x20000054
+ 8000a74:	20000068 	.word	0x20000068
 
-08000ee4 <ADC_IRQHandler>:
+08000a78 <ADC_IRQHandler>:
  * @retval : None
 */
   .section .text.Default_Handler,"ax",%progbits
 Default_Handler:
 Infinite_Loop:
   b Infinite_Loop
- 8000ee4:	e7fe      	b.n	8000ee4 <ADC_IRQHandler>
+ 8000a78:	e7fe      	b.n	8000a78 <ADC_IRQHandler>
 	...
 
-08000ee8 <__libc_init_array>:
- 8000ee8:	b570      	push	{r4, r5, r6, lr}
- 8000eea:	4d0d      	ldr	r5, [pc, #52]	; (8000f20 <__libc_init_array+0x38>)
- 8000eec:	4c0d      	ldr	r4, [pc, #52]	; (8000f24 <__libc_init_array+0x3c>)
- 8000eee:	1b64      	subs	r4, r4, r5
- 8000ef0:	10a4      	asrs	r4, r4, #2
- 8000ef2:	2600      	movs	r6, #0
- 8000ef4:	42a6      	cmp	r6, r4
- 8000ef6:	d109      	bne.n	8000f0c <__libc_init_array+0x24>
- 8000ef8:	4d0b      	ldr	r5, [pc, #44]	; (8000f28 <__libc_init_array+0x40>)
- 8000efa:	4c0c      	ldr	r4, [pc, #48]	; (8000f2c <__libc_init_array+0x44>)
- 8000efc:	f000 f818 	bl	8000f30 <_init>
- 8000f00:	1b64      	subs	r4, r4, r5
- 8000f02:	10a4      	asrs	r4, r4, #2
- 8000f04:	2600      	movs	r6, #0
- 8000f06:	42a6      	cmp	r6, r4
- 8000f08:	d105      	bne.n	8000f16 <__libc_init_array+0x2e>
- 8000f0a:	bd70      	pop	{r4, r5, r6, pc}
- 8000f0c:	f855 3b04 	ldr.w	r3, [r5], #4
- 8000f10:	4798      	blx	r3
- 8000f12:	3601      	adds	r6, #1
- 8000f14:	e7ee      	b.n	8000ef4 <__libc_init_array+0xc>
- 8000f16:	f855 3b04 	ldr.w	r3, [r5], #4
- 8000f1a:	4798      	blx	r3
- 8000f1c:	3601      	adds	r6, #1
- 8000f1e:	e7f2      	b.n	8000f06 <__libc_init_array+0x1e>
- 8000f20:	08000f48 	.word	0x08000f48
- 8000f24:	08000f48 	.word	0x08000f48
- 8000f28:	08000f48 	.word	0x08000f48
- 8000f2c:	08000f4c 	.word	0x08000f4c
+08000a7c <__libc_init_array>:
+ 8000a7c:	b570      	push	{r4, r5, r6, lr}
+ 8000a7e:	4d0d      	ldr	r5, [pc, #52]	; (8000ab4 <__libc_init_array+0x38>)
+ 8000a80:	4c0d      	ldr	r4, [pc, #52]	; (8000ab8 <__libc_init_array+0x3c>)
+ 8000a82:	1b64      	subs	r4, r4, r5
+ 8000a84:	10a4      	asrs	r4, r4, #2
+ 8000a86:	2600      	movs	r6, #0
+ 8000a88:	42a6      	cmp	r6, r4
+ 8000a8a:	d109      	bne.n	8000aa0 <__libc_init_array+0x24>
+ 8000a8c:	4d0b      	ldr	r5, [pc, #44]	; (8000abc <__libc_init_array+0x40>)
+ 8000a8e:	4c0c      	ldr	r4, [pc, #48]	; (8000ac0 <__libc_init_array+0x44>)
+ 8000a90:	f000 f818 	bl	8000ac4 <_init>
+ 8000a94:	1b64      	subs	r4, r4, r5
+ 8000a96:	10a4      	asrs	r4, r4, #2
+ 8000a98:	2600      	movs	r6, #0
+ 8000a9a:	42a6      	cmp	r6, r4
+ 8000a9c:	d105      	bne.n	8000aaa <__libc_init_array+0x2e>
+ 8000a9e:	bd70      	pop	{r4, r5, r6, pc}
+ 8000aa0:	f855 3b04 	ldr.w	r3, [r5], #4
+ 8000aa4:	4798      	blx	r3
+ 8000aa6:	3601      	adds	r6, #1
+ 8000aa8:	e7ee      	b.n	8000a88 <__libc_init_array+0xc>
+ 8000aaa:	f855 3b04 	ldr.w	r3, [r5], #4
+ 8000aae:	4798      	blx	r3
+ 8000ab0:	3601      	adds	r6, #1
+ 8000ab2:	e7f2      	b.n	8000a9a <__libc_init_array+0x1e>
+ 8000ab4:	08000adc 	.word	0x08000adc
+ 8000ab8:	08000adc 	.word	0x08000adc
+ 8000abc:	08000adc 	.word	0x08000adc
+ 8000ac0:	08000ae0 	.word	0x08000ae0
 
-08000f30 <_init>:
- 8000f30:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
- 8000f32:	bf00      	nop
- 8000f34:	bcf8      	pop	{r3, r4, r5, r6, r7}
- 8000f36:	bc08      	pop	{r3}
- 8000f38:	469e      	mov	lr, r3
- 8000f3a:	4770      	bx	lr
+08000ac4 <_init>:
+ 8000ac4:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 8000ac6:	bf00      	nop
+ 8000ac8:	bcf8      	pop	{r3, r4, r5, r6, r7}
+ 8000aca:	bc08      	pop	{r3}
+ 8000acc:	469e      	mov	lr, r3
+ 8000ace:	4770      	bx	lr
 
-08000f3c <_fini>:
- 8000f3c:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
- 8000f3e:	bf00      	nop
- 8000f40:	bcf8      	pop	{r3, r4, r5, r6, r7}
- 8000f42:	bc08      	pop	{r3}
- 8000f44:	469e      	mov	lr, r3
- 8000f46:	4770      	bx	lr
+08000ad0 <_fini>:
+ 8000ad0:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 8000ad2:	bf00      	nop
+ 8000ad4:	bcf8      	pop	{r3, r4, r5, r6, r7}
+ 8000ad6:	bc08      	pop	{r3}
+ 8000ad8:	469e      	mov	lr, r3
+ 8000ada:	4770      	bx	lr

@@ -20,7 +20,7 @@
 /**********************************************************************************
  *******************	 		Global variables section			***************
  **********************************************************************************/ 
-volatile GPIO_t* GPIO_bases[GPIO_bases_max] = {GPIOA_BASE_ADDRESS,
+static volatile GPIO_t* GPIO_bases[GPIO_bases_max] = {GPIOA_BASE_ADDRESS,
 									  	  	   GPIOB_BASE_ADDRESS,
 											   GPIOC_BASE_ADDRESS,
 											   GPIOD_BASE_ADDRESS,

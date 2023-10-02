@@ -10,6 +10,10 @@
 #include "../Inc/LIB/STD_TYPES.h"
 #include "../Inc/LIB/BIT_MATH.h"
 
+#define UART1ID				0
+#define UART2ID				1
+#define UART6ID				2
+
 /* Configure UART Peripheral using pre-build configurations			*/
 /* Input Parameters: UART Peripheral ID								*/
 /* Return value: STD_TRUE -> Success, STD_FALSE -> Failed			*/
@@ -38,6 +42,6 @@ STD_ReturnType UART_u8ReceiveByte( u8 , u8* );
 /* Set callback function for the UART receive by interrupt			*/
 /* Input Parameters: UART Peripheral ID								*/
 /* Return value: STD_TRUE -> Success, STD_FALSE -> Failed			*/
-STD_ReturnType UART_u8SetRxCallback( u8 ,  void ( *ptr_UARTcallback ) ( u8 ) );
+STD_ReturnType UART_u8SetCallback( u8 , void ( *ptr_UARTcallback )( void ) );
 
 #endif /* UART_INTERFACE_H_ */

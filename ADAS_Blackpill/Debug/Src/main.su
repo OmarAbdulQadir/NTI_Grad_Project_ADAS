@@ -1,1 +1,2 @@
-../Src/main.c:10:5:main	16	static
+../Src/main.c:17:5:main	16	static
+../Src/main.c:40:6:Callback_test	8	static
