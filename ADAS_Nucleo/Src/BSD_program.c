@@ -25,11 +25,6 @@ extern const u8 Global_u8ReLeftUS;
 /*					Global functions implementation								  */
 
 
-STD_ReturnType BSD_u8Init( void )
-{
-	return 0;
-}
-
 void BSD_vMain( void )
 {
 	
@@ -38,19 +33,34 @@ void BSD_vMain( void )
 		 if     ( (Global_u8ReRightUS < BLIND_SPOT_THRESHOLD) &&
                   (Global_u8ReLeftUS  > BLIND_SPOT_THRESHOLD) ) {
              // Turn on right LED
+             STD_ReturnType LED_u8Init( LED_Right_CHANNEL );
+             STD_ReturnType LED_u8On( LED_Right_CHANNEL );
         }
         else if ( (Global_u8ReRightUS  < BLIND_SPOT_THRESHOLD) &&
                   (Global_u8ReLeftUS   < BLIND_SPOT_THRESHOLD) ) {
              // Turn on two LEDs
+             STD_ReturnType LED_u8Init( LED_Right_CHANNEL );
+             STD_ReturnType LED_u8Init( LED_Left_CHANNEL );
+			 
+			 STD_ReturnType LED_u8On( LED_Right_CHANNEL );
+             STD_ReturnType LED_u8On( LED_Left_CHANNEL );			 
         }
         else if ( (Global_u8ReRightUS > BLIND_SPOT_THRESHOLD) &&
                   (Global_u8ReLeftUS  < BLIND_SPOT_THRESHOLD) ) {
              // Turn on left LED
+             STD_ReturnType LED_u8Init( LED_Left_CHANNEL );
+             STD_ReturnType LED_u8On( LED_Left_CHANNEL );			 
         }
 
         else {
              // Turn off front LEDs
+             STD_ReturnType LED_u8Init( LED_Right_CHANNEL );
+             STD_ReturnType LED_u8Init( LED_Left_CHANNEL );
+			 
+			 STD_ReturnType LED_u8Off( LED_Right_CHANNEL );
+             STD_ReturnType LED_u8Off( LED_Left_CHANNEL );
         }
 		
 	}
 }
+
